@@ -13,7 +13,7 @@ public class DaoBook
 
     public void addBook(Book book)
     {
-        logger.trace("Adding new Book");
+        logger.trace("Adding new Book " + book.getBookIsbn());
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try
@@ -33,18 +33,18 @@ public class DaoBook
             session.flush();
             session.close();
         }
-        logger.trace("New Book added");
+        logger.trace("New Book " + book.getBookIsbn() + " added");
     }
 
-    public void deleteBook(int bookId)
+    public void deleteBook(String isbn)
     {
-        logger.trace("Deleting Book");
+        logger.trace("Deleting Book " + isbn);
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try
         {
             trns = session.beginTransaction();
-            Book book = (Book) session.load(Book.class, new Integer(bookId));
+            Book book = (Book) session.load(Book.class, isbn);
             session.delete(book);
             session.getTransaction().commit();
         } catch (RuntimeException e)
@@ -59,12 +59,12 @@ public class DaoBook
             session.flush();
             session.close();
         }
-        logger.trace("Book deleted");
+        logger.trace("Book " + isbn + " deleted");
     }
 
     public void updateBook(Book book)
     {
-        logger.trace("Updating book");
+        logger.trace("Updating book " + book.getBookIsbn());
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try
@@ -84,7 +84,7 @@ public class DaoBook
             session.flush();
             session.close();
         }
-        logger.trace("Book updated");
+        logger.trace("Book " + book.getBookIsbn() + " updated");
     }
 
     public List<Book> getAllBooks()
@@ -109,18 +109,18 @@ public class DaoBook
         return people;
     }
 
-    public Book getBookById(int bookId)
+    public Book getBookById(String isbn)
     {
-        logger.trace("Getting Book");
+        logger.trace("Getting Book " + isbn);
         Book user = null;
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try
         {
             trns = session.beginTransaction();
-            String queryString = "from Book where id = :id";
+            String queryString = "from Book where Book_isbn = :isbn";
             Query query = session.createQuery(queryString);
-            query.setInteger("id", bookId);
+            query.setString("isbn", isbn);
             user = (Book) query.uniqueResult();
         } catch (RuntimeException e)
         {
@@ -130,7 +130,7 @@ public class DaoBook
             session.flush();
             session.close();
         }
-        logger.trace("Got book");
+        logger.trace("Got book " + isbn);
         return user;
     }
 }
