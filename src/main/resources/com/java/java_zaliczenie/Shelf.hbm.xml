@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-05-29 19:46:30 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.java.java_zaliczenie.Shelf" table="Shelf" catalog="luki91_java2">
+        <id name="idShelf" type="java.lang.Integer">
+            <column name="idShelf" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="stand" class="com.java.java_zaliczenie.Stand" fetch="select">
+            <column name="Stand_idStand" not-null="true" />
+        </many-to-one>
+        <set name="books" inverse="true">
+            <key>
+                <column name="Shelf_idShelf" not-null="true" />
+            </key>
+            <one-to-many class="com.java.java_zaliczenie.Book" />
+        </set>
+    </class>
+</hibernate-mapping>

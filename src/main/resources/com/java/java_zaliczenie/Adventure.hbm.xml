@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-05-29 19:46:30 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.java.java_zaliczenie.Adventure" table="Adventure" catalog="luki91_java2">
+        <id name="categoryIdCategory" type="int">
+            <column name="Category_idCategory" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="category" class="com.java.java_zaliczenie.Category" update="false" insert="false" fetch="select">
+            <column name="Category_idCategory" not-null="true" unique="true" />
+        </many-to-one>
+        <property name="adventureInformations" type="string">
+            <column name="Adventure_informations" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>

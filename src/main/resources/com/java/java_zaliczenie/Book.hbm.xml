@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-05-29 19:46:30 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.java.java_zaliczenie.Book" table="Book" catalog="luki91_java2">
+        <id name="bookIsbn" type="string">
+            <column name="Book_isbn" length="13" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="category" class="com.java.java_zaliczenie.Category" fetch="select">
+            <column name="Category_idCategory" not-null="true" />
+        </many-to-one>
+        <many-to-one name="shelf" class="com.java.java_zaliczenie.Shelf" fetch="select">
+            <column name="Shelf_idShelf" not-null="true" />
+        </many-to-one>
+        <property name="bookAuthor" type="string">
+            <column name="Book_author" length="100" not-null="true" />
+        </property>
+        <property name="bookTitle" type="string">
+            <column name="Book_title" length="200" not-null="true" />
+        </property>
+        <property name="bookDescription" type="string">
+            <column name="Book_description" length="500" />
+        </property>
+        <property name="bookPrice" type="long">
+            <column name="Book_price" precision="10" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
