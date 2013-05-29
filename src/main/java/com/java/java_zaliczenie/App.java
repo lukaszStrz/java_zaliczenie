@@ -6,17 +6,27 @@ import com.java.java_zaliczenie.daos.*;
  * Hello world!
  *
  */
-public class App 
+public class App
 {
-    public static void main( String[] args )
+
+    public static void main(String[] args)
     {
-//        Book book = new Book();
-//        book.setBookAuthor("jakiś autor");
-//        book.setBookIsbn("1234567890123");
-//        book.setBookPrice((long) 10.10);
-//        book.setBookTitle("wuwuwuwuwuwuwuw");
+        DaoBook daobook = new DaoBook();
+        DaoShelf daoshelf = new DaoShelf();
+//        DaoStand daostand = new DaoStand();
+       
+        Shelf shelf=daoshelf.getShelfById(2);
+        //System.out.println(shelf.getShelfName());
         
-        DaoBook daobook=new DaoBook();
-        daobook.deleteBook("1234567890123");
+        AdventureBook book = new AdventureBook();
+        book.setAdventureInformations("informacje jakieś do przygodówki");
+        book.setBookAuthor("jakiśtam autor");
+        book.setBookDescription("fjdksafhdjkvba,vbuiahfuirealhfn");
+        book.setBookIsbn("1234567890123");
+        book.setBookPrice((long) 9.99);
+        book.setBookTitle("pupa pupa pupa");
+        book.setShelf(shelf);
+        
+        daobook.addBook(book);
     }
 }

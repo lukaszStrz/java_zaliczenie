@@ -1,5 +1,5 @@
 package com.java.java_zaliczenie;
-// Generated 2013-05-29 20:35:51 by Hibernate Tools 3.2.1.GA
+// Generated 2013-05-29 23:28:36 by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -13,17 +13,20 @@ public class Shelf  implements java.io.Serializable {
 
      private Integer idShelf;
      private Stand stand;
+     private String shelfName;
      private Set books = new HashSet(0);
 
     public Shelf() {
     }
 
 	
-    public Shelf(Stand stand) {
+    public Shelf(Stand stand, String shelfName) {
         this.stand = stand;
+        this.shelfName = shelfName;
     }
-    public Shelf(Stand stand, Set books) {
+    public Shelf(Stand stand, String shelfName, Set books) {
        this.stand = stand;
+       this.shelfName = shelfName;
        this.books = books;
     }
    
@@ -40,6 +43,13 @@ public class Shelf  implements java.io.Serializable {
     
     public void setStand(Stand stand) {
         this.stand = stand;
+    }
+    public String getShelfName() {
+        return this.shelfName;
+    }
+    
+    public void setShelfName(String shelfName) {
+        this.shelfName = shelfName;
     }
     public Set getBooks() {
         return this.books;

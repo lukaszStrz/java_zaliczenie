@@ -8,11 +8,7 @@
     <property name="hibernate.connection.username">luki91_java</property>
     <property name="hibernate.connection.password">1234</property>
     <mapping resource="com/java/java_zaliczenie/Shelf.hbm.xml"/>
-    <mapping resource="com/java/java_zaliczenie/Drama.hbm.xml"/>
-    <mapping resource="com/java/java_zaliczenie/Sf.hbm.xml"/>
     <mapping resource="com/java/java_zaliczenie/Book.hbm.xml"/>
     <mapping resource="com/java/java_zaliczenie/Stand.hbm.xml"/>
-    <mapping resource="com/java/java_zaliczenie/Category.hbm.xml"/>
-    <mapping resource="com/java/java_zaliczenie/Adventure.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
