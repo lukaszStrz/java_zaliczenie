@@ -9,13 +9,13 @@ import com.java.java_zaliczenie.utils.HibernateUtil;
 public class DaoShelf
 {
 
+    Session session = HibernateUtil.getSessionFactory().openSession();
     Logger logger = Logger.getLogger(DaoShelf.class.getName());
 
     public void addShelf(Shelf shelf)
     {
         logger.trace("Adding new Shelf " + shelf.getIdShelf());
         Transaction trns = null;
-        Session session = HibernateUtil.getSessionFactory().openSession();
         try
         {
             trns = session.beginTransaction();
@@ -31,7 +31,7 @@ public class DaoShelf
         } finally
         {
             session.flush();
-            session.close();
+//            session.close();
         }
         logger.trace("New Shelf " + shelf.getIdShelf() + " added");
     }
@@ -40,7 +40,6 @@ public class DaoShelf
     {
         logger.trace("Deleting Shelf " + id);
         Transaction trns = null;
-        Session session = HibernateUtil.getSessionFactory().openSession();
         try
         {
             trns = session.beginTransaction();
@@ -57,7 +56,7 @@ public class DaoShelf
         } finally
         {
             session.flush();
-            session.close();
+//            session.close();
         }
         logger.trace("Shelf " + id + " deleted");
     }
@@ -66,7 +65,6 @@ public class DaoShelf
     {
         logger.trace("Updating shelf " + shelf.getIdShelf());
         Transaction trns = null;
-        Session session = HibernateUtil.getSessionFactory().openSession();
         try
         {
             trns = session.beginTransaction();
@@ -82,7 +80,7 @@ public class DaoShelf
         } finally
         {
             session.flush();
-            session.close();
+//            session.close();
         }
         logger.trace("Shelf " + shelf.getIdShelf() + " updated");
     }
@@ -92,7 +90,6 @@ public class DaoShelf
         logger.trace("Listing Shelfs");
         List<Shelf> people = new ArrayList<Shelf>();
         Transaction trns = null;
-        Session session = HibernateUtil.getSessionFactory().openSession();
         try
         {
             trns = session.beginTransaction();
@@ -103,7 +100,7 @@ public class DaoShelf
         } finally
         {
             session.flush();
-            session.close();
+//            session.close();
         }
         logger.trace("Shelfs listed");
         return people;
@@ -114,7 +111,6 @@ public class DaoShelf
         logger.trace("Getting Shelf " + id);
         Shelf user = null;
         Transaction trns = null;
-        Session session = HibernateUtil.getSessionFactory().openSession();
         try
         {
             trns = session.beginTransaction();
@@ -128,9 +124,14 @@ public class DaoShelf
         } finally
         {
             session.flush();
-            session.close();
+//            session.close();
         }
         logger.trace("Got shelf " + id);
         return user;
+    }
+    
+    public void closeSession()
+    {
+        session.close();
     }
 }

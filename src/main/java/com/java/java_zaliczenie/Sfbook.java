@@ -29,4 +29,10 @@ public class Sfbook extends Book implements java.io.Serializable
     {
         this.sfMovie = sfMovie;
     }
+
+    @Override
+    public String toString()
+    {
+        return super.toString() + " (s-f)";
+    }
 }

@@ -29,4 +29,10 @@ public class AdventureBook extends Book implements java.io.Serializable
     {
         this.adventureInformations = adventureInformations;
     }
+
+    @Override
+    public String toString()
+    {
+        return super.toString() + " (przygodowa)";
+    }
 }

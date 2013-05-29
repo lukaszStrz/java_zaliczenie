@@ -9,13 +9,13 @@ import com.java.java_zaliczenie.utils.HibernateUtil;
 public class DaoBook
 {
 
+    Session session = HibernateUtil.getSessionFactory().openSession();
     Logger logger = Logger.getLogger(DaoBook.class.getName());
 
     public void addBook(Book book)
     {
         logger.trace("Adding new Book " + book.getBookIsbn());
         Transaction trns = null;
-        Session session = HibernateUtil.getSessionFactory().openSession();
         try
         {
             trns = session.beginTransaction();
@@ -31,7 +31,7 @@ public class DaoBook
         } finally
         {
             session.flush();
-            session.close();
+//            session.close();
         }
         logger.trace("New Book " + book.getBookIsbn() + " added");
     }
@@ -40,7 +40,6 @@ public class DaoBook
     {
         logger.trace("Deleting Book " + isbn);
         Transaction trns = null;
-        Session session = HibernateUtil.getSessionFactory().openSession();
         try
         {
             trns = session.beginTransaction();
@@ -57,7 +56,7 @@ public class DaoBook
         } finally
         {
             session.flush();
-            session.close();
+//            session.close();
         }
         logger.trace("Book " + isbn + " deleted");
     }
@@ -66,7 +65,6 @@ public class DaoBook
     {
         logger.trace("Updating book " + book.getBookIsbn());
         Transaction trns = null;
-        Session session = HibernateUtil.getSessionFactory().openSession();
         try
         {
             trns = session.beginTransaction();
@@ -82,7 +80,7 @@ public class DaoBook
         } finally
         {
             session.flush();
-            session.close();
+//            session.close();
         }
         logger.trace("Book " + book.getBookIsbn() + " updated");
     }
@@ -92,7 +90,6 @@ public class DaoBook
         logger.trace("Listing Books");
         List<Book> people = new ArrayList<Book>();
         Transaction trns = null;
-        Session session = HibernateUtil.getSessionFactory().openSession();
         try
         {
             trns = session.beginTransaction();
@@ -103,7 +100,7 @@ public class DaoBook
         } finally
         {
             session.flush();
-            session.close();
+//            session.close();
         }
         logger.trace("Books listed");
         return people;
@@ -114,7 +111,6 @@ public class DaoBook
         logger.trace("Getting Book " + isbn);
         Book user = null;
         Transaction trns = null;
-        Session session = HibernateUtil.getSessionFactory().openSession();
         try
         {
             trns = session.beginTransaction();
@@ -128,9 +124,14 @@ public class DaoBook
         } finally
         {
             session.flush();
-            session.close();
+//            session.close();
         }
         logger.trace("Got book " + isbn);
         return user;
+    }
+    
+    public void closeSession()
+    {
+        session.close();
     }
 }

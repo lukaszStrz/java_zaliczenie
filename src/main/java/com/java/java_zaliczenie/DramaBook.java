@@ -11,4 +11,10 @@ public class DramaBook extends Book implements java.io.Serializable
     {
         super(bookIsbn, book.getShelf(), book.getBookAuthor(), book.getBookTitle(), book.getBookPrice());
     }
+
+    @Override
+    public String toString()
+    {
+        return super.toString() + " (dramat)";
+    }
 }

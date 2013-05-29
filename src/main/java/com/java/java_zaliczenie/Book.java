@@ -86,4 +86,10 @@ public class Book implements java.io.Serializable
     {
         this.bookPrice = bookPrice;
     }
+    
+    @Override
+    public String toString()
+    {
+        return bookAuthor+" "+bookTitle+" "+bookIsbn;
+    }
 }

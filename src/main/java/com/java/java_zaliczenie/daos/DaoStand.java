@@ -9,13 +9,13 @@ import com.java.java_zaliczenie.utils.HibernateUtil;
 public class DaoStand
 {
 
+    Session session = HibernateUtil.getSessionFactory().openSession();
     Logger logger = Logger.getLogger(DaoStand.class.getName());
 
     public void addStand(Stand stand)
     {
         logger.trace("Adding new Stand " + stand.getIdStand());
         Transaction trns = null;
-        Session session = HibernateUtil.getSessionFactory().openSession();
         try
         {
             trns = session.beginTransaction();
@@ -31,7 +31,7 @@ public class DaoStand
         } finally
         {
             session.flush();
-            session.close();
+//            session.close();
         }
         logger.trace("New Stand " + stand.getIdStand() + " added");
     }
@@ -40,7 +40,6 @@ public class DaoStand
     {
         logger.trace("Deleting Stand " + id);
         Transaction trns = null;
-        Session session = HibernateUtil.getSessionFactory().openSession();
         try
         {
             trns = session.beginTransaction();
@@ -57,7 +56,7 @@ public class DaoStand
         } finally
         {
             session.flush();
-            session.close();
+//            session.close();
         }
         logger.trace("Stand " + id + " deleted");
     }
@@ -66,7 +65,6 @@ public class DaoStand
     {
         logger.trace("Updating stand " + stand.getIdStand());
         Transaction trns = null;
-        Session session = HibernateUtil.getSessionFactory().openSession();
         try
         {
             trns = session.beginTransaction();
@@ -82,7 +80,7 @@ public class DaoStand
         } finally
         {
             session.flush();
-            session.close();
+//            session.close();
         }
         logger.trace("Stand " + stand.getIdStand() + " updated");
     }
@@ -92,7 +90,6 @@ public class DaoStand
         logger.trace("Listing Stands");
         List<Stand> people = new ArrayList<Stand>();
         Transaction trns = null;
-        Session session = HibernateUtil.getSessionFactory().openSession();
         try
         {
             trns = session.beginTransaction();
@@ -103,7 +100,7 @@ public class DaoStand
         } finally
         {
             session.flush();
-            session.close();
+//            session.close();
         }
         logger.trace("Stands listed");
         return people;
@@ -114,7 +111,6 @@ public class DaoStand
         logger.trace("Getting Stand " + id);
         Stand user = null;
         Transaction trns = null;
-        Session session = HibernateUtil.getSessionFactory().openSession();
         try
         {
             trns = session.beginTransaction();
@@ -128,9 +124,14 @@ public class DaoStand
         } finally
         {
             session.flush();
-            session.close();
+//            session.close();
         }
         logger.trace("Got stand " + id);
         return user;
+    }
+    
+    public void closeSession()
+    {
+        session.close();
     }
 }

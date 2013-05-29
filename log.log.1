@@ -1,15 +1,4 @@
-DEBUG main org.hibernate.loader.Loader - Static select for entity com.java.java_zaliczenie.Book [NONE]: select book0_.Book_isbn as Book1_3_0_, book0_.Shelf_idShelf as Shelf2_3_0_, book0_.Book_author as Book3_3_0_, book0_.Book_title as Book4_3_0_, book0_.Book_description as Book5_3_0_, book0_.Book_price as Book6_3_0_, case when book0_1_.Book_isbn is not null then 1 when book0_2_.Book_isbn is not null then 2 when book0_3_.Book_isbn is not null then 3 when book0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book book0_ left outer join AdventureBook book0_1_ on book0_.Book_isbn=book0_1_.Book_isbn left outer join DramaBook book0_2_ on book0_.Book_isbn=book0_2_.Book_isbn left outer join SFBook book0_3_ on book0_.Book_isbn=book0_3_.Book_isbn where book0_.Book_isbn=?
-DEBUG main org.hibernate.loader.Loader - Static select for entity com.java.java_zaliczenie.Book [READ]: select book0_.Book_isbn as Book1_3_0_, book0_.Shelf_idShelf as Shelf2_3_0_, book0_.Book_author as Book3_3_0_, book0_.Book_title as Book4_3_0_, book0_.Book_description as Book5_3_0_, book0_.Book_price as Book6_3_0_, case when book0_1_.Book_isbn is not null then 1 when book0_2_.Book_isbn is not null then 2 when book0_3_.Book_isbn is not null then 3 when book0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book book0_ left outer join AdventureBook book0_1_ on book0_.Book_isbn=book0_1_.Book_isbn left outer join DramaBook book0_2_ on book0_.Book_isbn=book0_2_.Book_isbn left outer join SFBook book0_3_ on book0_.Book_isbn=book0_3_.Book_isbn where book0_.Book_isbn=?
-DEBUG main org.hibernate.loader.Loader - Static select for entity com.java.java_zaliczenie.Book [UPGRADE]: select book0_.Book_isbn as Book1_3_0_, book0_.Shelf_idShelf as Shelf2_3_0_, book0_.Book_author as Book3_3_0_, book0_.Book_title as Book4_3_0_, book0_.Book_description as Book5_3_0_, book0_.Book_price as Book6_3_0_, case when book0_1_.Book_isbn is not null then 1 when book0_2_.Book_isbn is not null then 2 when book0_3_.Book_isbn is not null then 3 when book0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book book0_ left outer join AdventureBook book0_1_ on book0_.Book_isbn=book0_1_.Book_isbn left outer join DramaBook book0_2_ on book0_.Book_isbn=book0_2_.Book_isbn left outer join SFBook book0_3_ on book0_.Book_isbn=book0_3_.Book_isbn where book0_.Book_isbn=? for update
-DEBUG main org.hibernate.loader.Loader - Static select for entity com.java.java_zaliczenie.Book [UPGRADE_NOWAIT]: select book0_.Book_isbn as Book1_3_0_, book0_.Shelf_idShelf as Shelf2_3_0_, book0_.Book_author as Book3_3_0_, book0_.Book_title as Book4_3_0_, book0_.Book_description as Book5_3_0_, book0_.Book_price as Book6_3_0_, case when book0_1_.Book_isbn is not null then 1 when book0_2_.Book_isbn is not null then 2 when book0_3_.Book_isbn is not null then 3 when book0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book book0_ left outer join AdventureBook book0_1_ on book0_.Book_isbn=book0_1_.Book_isbn left outer join DramaBook book0_2_ on book0_.Book_isbn=book0_2_.Book_isbn left outer join SFBook book0_3_ on book0_.Book_isbn=book0_3_.Book_isbn where book0_.Book_isbn=? for update
-DEBUG main org.hibernate.loader.Loader - Static select for entity com.java.java_zaliczenie.Book [FORCE]: select book0_.Book_isbn as Book1_3_0_, book0_.Shelf_idShelf as Shelf2_3_0_, book0_.Book_author as Book3_3_0_, book0_.Book_title as Book4_3_0_, book0_.Book_description as Book5_3_0_, book0_.Book_price as Book6_3_0_, case when book0_1_.Book_isbn is not null then 1 when book0_2_.Book_isbn is not null then 2 when book0_3_.Book_isbn is not null then 3 when book0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book book0_ left outer join AdventureBook book0_1_ on book0_.Book_isbn=book0_1_.Book_isbn left outer join DramaBook book0_2_ on book0_.Book_isbn=book0_2_.Book_isbn left outer join SFBook book0_3_ on book0_.Book_isbn=book0_3_.Book_isbn where book0_.Book_isbn=? for update
-DEBUG main org.hibernate.loader.Loader - Static select for entity com.java.java_zaliczenie.Book [PESSIMISTIC_READ]: select book0_.Book_isbn as Book1_3_0_, book0_.Shelf_idShelf as Shelf2_3_0_, book0_.Book_author as Book3_3_0_, book0_.Book_title as Book4_3_0_, book0_.Book_description as Book5_3_0_, book0_.Book_price as Book6_3_0_, case when book0_1_.Book_isbn is not null then 1 when book0_2_.Book_isbn is not null then 2 when book0_3_.Book_isbn is not null then 3 when book0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book book0_ left outer join AdventureBook book0_1_ on book0_.Book_isbn=book0_1_.Book_isbn left outer join DramaBook book0_2_ on book0_.Book_isbn=book0_2_.Book_isbn left outer join SFBook book0_3_ on book0_.Book_isbn=book0_3_.Book_isbn where book0_.Book_isbn=? lock in share mode
-DEBUG main org.hibernate.loader.Loader - Static select for entity com.java.java_zaliczenie.Book [PESSIMISTIC_WRITE]: select book0_.Book_isbn as Book1_3_0_, book0_.Shelf_idShelf as Shelf2_3_0_, book0_.Book_author as Book3_3_0_, book0_.Book_title as Book4_3_0_, book0_.Book_description as Book5_3_0_, book0_.Book_price as Book6_3_0_, case when book0_1_.Book_isbn is not null then 1 when book0_2_.Book_isbn is not null then 2 when book0_3_.Book_isbn is not null then 3 when book0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book book0_ left outer join AdventureBook book0_1_ on book0_.Book_isbn=book0_1_.Book_isbn left outer join DramaBook book0_2_ on book0_.Book_isbn=book0_2_.Book_isbn left outer join SFBook book0_3_ on book0_.Book_isbn=book0_3_.Book_isbn where book0_.Book_isbn=? for update
-DEBUG main org.hibernate.loader.Loader - Static select for entity com.java.java_zaliczenie.Book [PESSIMISTIC_FORCE_INCREMENT]: select book0_.Book_isbn as Book1_3_0_, book0_.Shelf_idShelf as Shelf2_3_0_, book0_.Book_author as Book3_3_0_, book0_.Book_title as Book4_3_0_, book0_.Book_description as Book5_3_0_, book0_.Book_price as Book6_3_0_, case when book0_1_.Book_isbn is not null then 1 when book0_2_.Book_isbn is not null then 2 when book0_3_.Book_isbn is not null then 3 when book0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book book0_ left outer join AdventureBook book0_1_ on book0_.Book_isbn=book0_1_.Book_isbn left outer join DramaBook book0_2_ on book0_.Book_isbn=book0_2_.Book_isbn left outer join SFBook book0_3_ on book0_.Book_isbn=book0_3_.Book_isbn where book0_.Book_isbn=? for update
-DEBUG main org.hibernate.loader.Loader - Static select for entity com.java.java_zaliczenie.Book [OPTIMISTIC]: select book0_.Book_isbn as Book1_3_0_, book0_.Shelf_idShelf as Shelf2_3_0_, book0_.Book_author as Book3_3_0_, book0_.Book_title as Book4_3_0_, book0_.Book_description as Book5_3_0_, book0_.Book_price as Book6_3_0_, case when book0_1_.Book_isbn is not null then 1 when book0_2_.Book_isbn is not null then 2 when book0_3_.Book_isbn is not null then 3 when book0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book book0_ left outer join AdventureBook book0_1_ on book0_.Book_isbn=book0_1_.Book_isbn left outer join DramaBook book0_2_ on book0_.Book_isbn=book0_2_.Book_isbn left outer join SFBook book0_3_ on book0_.Book_isbn=book0_3_.Book_isbn where book0_.Book_isbn=?
-DEBUG main org.hibernate.loader.Loader - Static select for entity com.java.java_zaliczenie.Book [OPTIMISTIC_FORCE_INCREMENT]: select book0_.Book_isbn as Book1_3_0_, book0_.Shelf_idShelf as Shelf2_3_0_, book0_.Book_author as Book3_3_0_, book0_.Book_title as Book4_3_0_, book0_.Book_description as Book5_3_0_, book0_.Book_price as Book6_3_0_, case when book0_1_.Book_isbn is not null then 1 when book0_2_.Book_isbn is not null then 2 when book0_3_.Book_isbn is not null then 3 when book0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book book0_ left outer join AdventureBook book0_1_ on book0_.Book_isbn=book0_1_.Book_isbn left outer join DramaBook book0_2_ on book0_.Book_isbn=book0_2_.Book_isbn left outer join SFBook book0_3_ on book0_.Book_isbn=book0_3_.Book_isbn where book0_.Book_isbn=?
-DEBUG main org.hibernate.loader.Loader - Static select for action ACTION_MERGE on entity com.java.java_zaliczenie.Book: select book0_.Book_isbn as Book1_3_0_, book0_.Shelf_idShelf as Shelf2_3_0_, book0_.Book_author as Book3_3_0_, book0_.Book_title as Book4_3_0_, book0_.Book_description as Book5_3_0_, book0_.Book_price as Book6_3_0_, case when book0_1_.Book_isbn is not null then 1 when book0_2_.Book_isbn is not null then 2 when book0_3_.Book_isbn is not null then 3 when book0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book book0_ left outer join AdventureBook book0_1_ on book0_.Book_isbn=book0_1_.Book_isbn left outer join DramaBook book0_2_ on book0_.Book_isbn=book0_2_.Book_isbn left outer join SFBook book0_3_ on book0_.Book_isbn=book0_3_.Book_isbn where book0_.Book_isbn=?
-DEBUG main org.hibernate.loader.Loader - Static select for action ACTION_REFRESH on entity com.java.java_zaliczenie.Book: select book0_.Book_isbn as Book1_3_0_, book0_.Shelf_idShelf as Shelf2_3_0_, book0_.Book_author as Book3_3_0_, book0_.Book_title as Book4_3_0_, book0_.Book_description as Book5_3_0_, book0_.Book_price as Book6_3_0_, case when book0_1_.Book_isbn is not null then 1 when book0_2_.Book_isbn is not null then 2 when book0_3_.Book_isbn is not null then 3 when book0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book book0_ left outer join AdventureBook book0_1_ on book0_.Book_isbn=book0_1_.Book_isbn left outer join DramaBook book0_2_ on book0_.Book_isbn=book0_2_.Book_isbn left outer join SFBook book0_3_ on book0_.Book_isbn=book0_3_.Book_isbn where book0_.Book_isbn=?
+DEBUG main org.hibernate.loader.Loader - Static select for action ACTION_REFRESH on entity com.java.java_zaliczenie.Book: select book0_.Book_isbn as Book1_3_0_, book0_.Shelf_idShelf as Shelf2_3_0_, book0_.Book_author as Book3_3_0_, book0_.Book_title as Book4_3_0_, book0_.Book_description as Book5_3_0_, book0_.Book_price as Book6_3_0_, book0_1_.Adventure_informations as Adventur2_0_0_, book0_3_.SF_movie as SF2_2_0_, case when book0_1_.Book_isbn is not null then 1 when book0_2_.Book_isbn is not null then 2 when book0_3_.Book_isbn is not null then 3 when book0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book book0_ left outer join AdventureBook book0_1_ on book0_.Book_isbn=book0_1_.Book_isbn left outer join DramaBook book0_2_ on book0_.Book_isbn=book0_2_.Book_isbn left outer join SFBook book0_3_ on book0_.Book_isbn=book0_3_.Book_isbn where book0_.Book_isbn=?
 DEBUG main org.hibernate.loader.Loader - Static select for entity com.java.java_zaliczenie.Stand [NONE]: select stand0_.idStand as idStand1_5_0_, stand0_.Stand_name as Stand2_5_0_ from luki91_java2.Stand stand0_ where stand0_.idStand=?
 DEBUG main org.hibernate.loader.Loader - Static select for entity com.java.java_zaliczenie.Stand [READ]: select stand0_.idStand as idStand1_5_0_, stand0_.Stand_name as Stand2_5_0_ from luki91_java2.Stand stand0_ where stand0_.idStand=?
 DEBUG main org.hibernate.loader.Loader - Static select for entity com.java.java_zaliczenie.Stand [UPGRADE]: select stand0_.idStand as idStand1_5_0_, stand0_.Stand_name as Stand2_5_0_ from luki91_java2.Stand stand0_ where stand0_.idStand=? for update
@@ -22,11 +11,11 @@ DEBUG main org.hibernate.loader.Loader - Static select for entity com.java.java_
 DEBUG main org.hibernate.loader.Loader - Static select for entity com.java.java_zaliczenie.Stand [OPTIMISTIC_FORCE_INCREMENT]: select stand0_.idStand as idStand1_5_0_, stand0_.Stand_name as Stand2_5_0_ from luki91_java2.Stand stand0_ where stand0_.idStand=?
 DEBUG main org.hibernate.loader.Loader - Static select for action ACTION_MERGE on entity com.java.java_zaliczenie.Stand: select stand0_.idStand as idStand1_5_0_, stand0_.Stand_name as Stand2_5_0_ from luki91_java2.Stand stand0_ where stand0_.idStand=?
 DEBUG main org.hibernate.loader.Loader - Static select for action ACTION_REFRESH on entity com.java.java_zaliczenie.Stand: select stand0_.idStand as idStand1_5_0_, stand0_.Stand_name as Stand2_5_0_ from luki91_java2.Stand stand0_ where stand0_.idStand=?
-DEBUG main org.hibernate.loader.collection.OneToManyLoader - Static select for one-to-many com.java.java_zaliczenie.Shelf.books: select books0_.Shelf_idShelf as Shelf2_4_1_, books0_.Book_isbn as Book1_3_1_, books0_.Book_isbn as Book1_3_0_, books0_.Shelf_idShelf as Shelf2_3_0_, books0_.Book_author as Book3_3_0_, books0_.Book_title as Book4_3_0_, books0_.Book_description as Book5_3_0_, books0_.Book_price as Book6_3_0_, case when books0_1_.Book_isbn is not null then 1 when books0_2_.Book_isbn is not null then 2 when books0_3_.Book_isbn is not null then 3 when books0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book books0_ left outer join AdventureBook books0_1_ on books0_.Book_isbn=books0_1_.Book_isbn left outer join DramaBook books0_2_ on books0_.Book_isbn=books0_2_.Book_isbn left outer join SFBook books0_3_ on books0_.Book_isbn=books0_3_.Book_isbn where books0_.Shelf_idShelf=?
+DEBUG main org.hibernate.loader.collection.OneToManyLoader - Static select for one-to-many com.java.java_zaliczenie.Shelf.books: select books0_.Shelf_idShelf as Shelf2_4_1_, books0_.Book_isbn as Book1_3_1_, books0_.Book_isbn as Book1_3_0_, books0_.Shelf_idShelf as Shelf2_3_0_, books0_.Book_author as Book3_3_0_, books0_.Book_title as Book4_3_0_, books0_.Book_description as Book5_3_0_, books0_.Book_price as Book6_3_0_, books0_1_.Adventure_informations as Adventur2_0_0_, books0_3_.SF_movie as SF2_2_0_, case when books0_1_.Book_isbn is not null then 1 when books0_2_.Book_isbn is not null then 2 when books0_3_.Book_isbn is not null then 3 when books0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book books0_ left outer join AdventureBook books0_1_ on books0_.Book_isbn=books0_1_.Book_isbn left outer join DramaBook books0_2_ on books0_.Book_isbn=books0_2_.Book_isbn left outer join SFBook books0_3_ on books0_.Book_isbn=books0_3_.Book_isbn where books0_.Shelf_idShelf=?
 DEBUG main org.hibernate.loader.collection.OneToManyLoader - Static select for one-to-many com.java.java_zaliczenie.Stand.shelfs: select shelfs0_.Stand_idStand as Stand2_5_1_, shelfs0_.idShelf as idShelf1_4_1_, shelfs0_.idShelf as idShelf1_4_0_, shelfs0_.Stand_idStand as Stand2_4_0_, shelfs0_.Shelf_name as Shelf3_4_0_ from luki91_java2.Shelf shelfs0_ where shelfs0_.Stand_idStand=?
-DEBUG main org.hibernate.internal.SessionFactoryRegistry - Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@65f76838
+DEBUG main org.hibernate.internal.SessionFactoryRegistry - Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@1626ac0
 TRACE main org.hibernate.service.internal.AbstractServiceRegistryImpl - Initializing service [role=org.hibernate.service.jndi.spi.JndiService]
-DEBUG main org.hibernate.internal.SessionFactoryRegistry - Registering SessionFactory: 213dc87c-9204-4c23-b3df-71a063f84470 (<unnamed>)
+DEBUG main org.hibernate.internal.SessionFactoryRegistry - Registering SessionFactory: ccf2f0ed-10ce-416f-a74b-c94d23ab5e5c (<unnamed>)
 DEBUG main org.hibernate.internal.SessionFactoryRegistry - Not binding SessionFactory to JNDI, no JNDI name configured
 DEBUG main org.hibernate.internal.SessionFactoryImpl - Instantiated session factory
 DEBUG main org.hibernate.internal.SessionFactoryImpl - Checking 0 named HQL queries
@@ -34,299 +23,405 @@ DEBUG main org.hibernate.internal.SessionFactoryImpl - Checking 0 named SQL quer
 TRACE main org.hibernate.service.internal.AbstractServiceRegistryImpl - Initializing service [role=org.hibernate.service.config.spi.ConfigurationService]
 TRACE main org.hibernate.service.internal.AbstractServiceRegistryImpl - Initializing service [role=org.hibernate.stat.spi.StatisticsImplementor]
 DEBUG main org.hibernate.stat.internal.StatisticsInitiator - Statistics initialized [enabled=false]
-TRACE main org.hibernate.internal.SessionImpl - Opened session at timestamp: 13698648840
+TRACE main org.hibernate.internal.SessionImpl - Opened session at timestamp: 13698695332
+TRACE main org.hibernate.internal.SessionImpl - Opened session at timestamp: 13698695332
+TRACE main org.hibernate.internal.SessionImpl - Opened session at timestamp: 13698695332
+TRACE main com.java.java_zaliczenie.daos.DaoStand - Listing Stands
 DEBUG main org.hibernate.engine.transaction.spi.AbstractTransactionImpl - begin
 DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Obtaining JDBC connection
 TRACE main org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl - Total checked-out connections: 0
 TRACE main org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl - Using pooled JDBC connection, pool size: 0
 DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Obtained JDBC connection
 DEBUG main org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction - initial autocommit status: false
-TRACE main org.hibernate.engine.query.spi.QueryPlanCache - Unable to locate HQL query plan in cache; generating (from Shelf where idShelf = :id)
-DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - parse() - HQL: from com.java.java_zaliczenie.Shelf where idShelf = :id
+TRACE main org.hibernate.engine.query.spi.QueryPlanCache - Unable to locate HQL query plan in cache; generating (from Stand)
+DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - parse() - HQL: from com.java.java_zaliczenie.Stand
 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - --- HQL AST ---
  \-[QUERY] Node: 'query'
-    +-[SELECT_FROM] Node: 'SELECT_FROM'
-    |  \-[FROM] Node: 'from'
-    |     \-[RANGE] Node: 'RANGE'
-    |        \-[DOT] Node: '.'
-    |           +-[DOT] Node: '.'
-    |           |  +-[DOT] Node: '.'
-    |           |  |  +-[IDENT] Node: 'com'
-    |           |  |  \-[IDENT] Node: 'java'
-    |           |  \-[IDENT] Node: 'java_zaliczenie'
-    |           \-[IDENT] Node: 'Shelf'
-    \-[WHERE] Node: 'where'
-       \-[EQ] Node: '='
-          +-[IDENT] Node: 'idShelf'
-          \-[COLON] Node: ':'
-             \-[IDENT] Node: 'id'
+    \-[SELECT_FROM] Node: 'SELECT_FROM'
+       \-[FROM] Node: 'from'
+          \-[RANGE] Node: 'RANGE'
+             \-[DOT] Node: '.'
+                +-[DOT] Node: '.'
+                |  +-[DOT] Node: '.'
+                |  |  +-[IDENT] Node: 'com'
+                |  |  \-[IDENT] Node: 'java'
+                |  \-[IDENT] Node: 'java_zaliczenie'
+                \-[IDENT] Node: 'Stand'
 
 DEBUG main org.hibernate.hql.internal.ast.ErrorCounter - throwQueryException() : no errors
 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select << begin [level=1, statement=select]
-DEBUG main org.hibernate.hql.internal.ast.tree.FromElement - FromClause{level=1} : com.java.java_zaliczenie.Shelf (<no alias>) -> shelf0_
-TRACE main org.hibernate.hql.internal.ast.HqlSqlWalker - Attempting to resolve property [idShelf] as a non-qualified ref
-DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : {synthetic-alias} -> {synthetic-alias}
-TRACE main org.hibernate.hql.internal.ast.tree.FromElement - Handling property dereference [com.java.java_zaliczenie.Shelf (null) -> idShelf (class)]
-DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - getDataType() : idShelf -> org.hibernate.type.IntegerType@303c96a9
-DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : {synthetic-alias}.idShelf -> shelf0_.idShelf
+DEBUG main org.hibernate.hql.internal.ast.tree.FromElement - FromClause{level=1} : com.java.java_zaliczenie.Stand (<no alias>) -> stand0_
 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select : finishing up [level=1, statement=select]
-DEBUG main org.hibernate.hql.internal.ast.HqlSqlWalker - processQuery() :  ( SELECT ( FromClause{level=1} luki91_java2.Shelf shelf0_ ) ( where ( = ( shelf0_.idShelf {synthetic-alias} idShelf ) ? ) ) )
+DEBUG main org.hibernate.hql.internal.ast.HqlSqlWalker - processQuery() :  ( SELECT ( FromClause{level=1} luki91_java2.Stand stand0_ ) )
 DEBUG main org.hibernate.hql.internal.ast.HqlSqlWalker - Derived SELECT clause created.
-DEBUG main org.hibernate.hql.internal.ast.util.JoinProcessor - Using FROM fragment [luki91_java2.Shelf shelf0_]
+DEBUG main org.hibernate.hql.internal.ast.util.JoinProcessor - Using FROM fragment [luki91_java2.Stand stand0_]
 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select >> end [level=1, statement=select]
 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - --- SQL AST ---
- \-[SELECT] QueryNode: 'SELECT'  querySpaces (luki91_java2.Shelf)
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (luki91_java2.Stand)
     +-[SELECT_CLAUSE] SelectClause: '{derived select clause}'
-    |  +-[SELECT_EXPR] SelectExpressionImpl: 'shelf0_.idShelf as idShelf1_4_' {FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=null,role=null,tableName=luki91_java2.Shelf,tableAlias=shelf0_,origin=null,columns={,className=com.java.java_zaliczenie.Shelf}}}
-    |  \-[SQL_TOKEN] SqlFragment: 'shelf0_.Stand_idStand as Stand2_4_, shelf0_.Shelf_name as Shelf3_4_'
-    +-[FROM] FromClause: 'from' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[], fromElementByTableAlias=[shelf0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
-    |  \-[FROM_FRAGMENT] FromElement: 'luki91_java2.Shelf shelf0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=null,role=null,tableName=luki91_java2.Shelf,tableAlias=shelf0_,origin=null,columns={,className=com.java.java_zaliczenie.Shelf}}
-    \-[WHERE] SqlNode: 'where'
-       \-[EQ] BinaryLogicOperatorNode: '='
-          +-[DOT] DotNode: 'shelf0_.idShelf' {propertyName=idShelf,dereferenceType=ALL,propertyPath=idShelf,path={synthetic-alias}.idShelf,tableAlias=shelf0_,className=com.java.java_zaliczenie.Shelf,classAlias=null}
-          |  +-[IDENT] IdentNode: '{synthetic-alias}' {originalText={synthetic-alias}}
-          |  \-[IDENT] IdentNode: 'idShelf' {originalText=idShelf}
-          \-[NAMED_PARAM] ParameterNode: '?' {name=id, expectedType=org.hibernate.type.IntegerType@303c96a9}
+    |  +-[SELECT_EXPR] SelectExpressionImpl: 'stand0_.idStand as idStand1_5_' {FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=null,role=null,tableName=luki91_java2.Stand,tableAlias=stand0_,origin=null,columns={,className=com.java.java_zaliczenie.Stand}}}
+    |  \-[SQL_TOKEN] SqlFragment: 'stand0_.Stand_name as Stand2_5_'
+    \-[FROM] FromClause: 'from' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[], fromElementByTableAlias=[stand0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+       \-[FROM_FRAGMENT] FromElement: 'luki91_java2.Stand stand0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=null,role=null,tableName=luki91_java2.Stand,tableAlias=stand0_,origin=null,columns={,className=com.java.java_zaliczenie.Stand}}
 
 DEBUG main org.hibernate.hql.internal.ast.ErrorCounter - throwQueryException() : no errors
-DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - HQL: from com.java.java_zaliczenie.Shelf where idShelf = :id
-DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - SQL: select shelf0_.idShelf as idShelf1_4_, shelf0_.Stand_idStand as Stand2_4_, shelf0_.Shelf_name as Shelf3_4_ from luki91_java2.Shelf shelf0_ where shelf0_.idShelf=?
+DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - HQL: from com.java.java_zaliczenie.Stand
+DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - SQL: select stand0_.idStand as idStand1_5_, stand0_.Stand_name as Stand2_5_ from luki91_java2.Stand stand0_
 DEBUG main org.hibernate.hql.internal.ast.ErrorCounter - throwQueryException() : no errors
-TRACE main org.hibernate.engine.query.spi.HQLQueryPlan - HQL param location recognition took 2 mills (from Shelf where idShelf = :id)
-TRACE main org.hibernate.engine.query.spi.QueryPlanCache - Located HQL query plan in cache (from Shelf where idShelf = :id)
+TRACE main org.hibernate.engine.query.spi.HQLQueryPlan - HQL param location recognition took 1 mills (from Stand)
+TRACE main org.hibernate.engine.query.spi.QueryPlanCache - Located HQL query plan in cache (from Stand)
 TRACE main org.hibernate.service.internal.AbstractServiceRegistryImpl - Initializing service [role=org.hibernate.event.service.spi.EventListenerRegistry]
-TRACE main org.hibernate.engine.query.spi.HQLQueryPlan - Find: from Shelf where idShelf = :id
-TRACE main org.hibernate.engine.spi.QueryParameters - Named parameters: {id=2}
-DEBUG main org.hibernate.SQL - select shelf0_.idShelf as idShelf1_4_, shelf0_.Stand_idStand as Stand2_4_, shelf0_.Shelf_name as Shelf3_4_ from luki91_java2.Shelf shelf0_ where shelf0_.idShelf=?
-TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Registering statement [com.mysql.jdbc.JDBC4PreparedStatement@4188c8e6: select shelf0_.idShelf as idShelf1_4_, shelf0_.Stand_idStand as Stand2_4_, shelf0_.Shelf_name as Shelf3_4_ from luki91_java2.Shelf shelf0_ where shelf0_.idShelf=** NOT SPECIFIED **]
-TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Registering last query statement [com.mysql.jdbc.JDBC4PreparedStatement@4188c8e6: select shelf0_.idShelf as idShelf1_4_, shelf0_.Stand_idStand as Stand2_4_, shelf0_.Shelf_name as Shelf3_4_ from luki91_java2.Shelf shelf0_ where shelf0_.idShelf=** NOT SPECIFIED **]
-TRACE main org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - 2
-TRACE main org.hibernate.loader.Loader - Bound [2] parameters total
-TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Registering result set [com.mysql.jdbc.JDBC4ResultSet@5de5bfa4]
+TRACE main org.hibernate.engine.query.spi.HQLQueryPlan - Find: from Stand
+TRACE main org.hibernate.engine.spi.QueryParameters - Named parameters: {}
+DEBUG main org.hibernate.SQL - select stand0_.idStand as idStand1_5_, stand0_.Stand_name as Stand2_5_ from luki91_java2.Stand stand0_
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Registering statement [com.mysql.jdbc.JDBC4PreparedStatement@64dd4991: select stand0_.idStand as idStand1_5_, stand0_.Stand_name as Stand2_5_ from luki91_java2.Stand stand0_]
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Registering last query statement [com.mysql.jdbc.JDBC4PreparedStatement@64dd4991: select stand0_.idStand as idStand1_5_, stand0_.Stand_name as Stand2_5_ from luki91_java2.Stand stand0_]
+TRACE main org.hibernate.loader.Loader - Bound [1] parameters total
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Registering result set [com.mysql.jdbc.JDBC4ResultSet@d7c0716]
 TRACE main org.hibernate.loader.Loader - Processing result set
 DEBUG main org.hibernate.loader.Loader - Result set row: 0
-TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [2] as column [idShelf1_4_]
-DEBUG main org.hibernate.loader.Loader - Result row: EntityKey[com.java.java_zaliczenie.Shelf#2]
-TRACE main org.hibernate.loader.Loader - Initializing object from ResultSet: [com.java.java_zaliczenie.Shelf#2]
-TRACE main org.hibernate.persister.entity.AbstractEntityPersister - Hydrating entity: [com.java.java_zaliczenie.Shelf#2]
-TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [1] as column [Stand2_4_]
-TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [Pó³ka nr 1 na regale 1] as column [Shelf3_4_]
-TRACE main org.hibernate.loader.Loader - Done processing result set (1 rows)
-TRACE main org.hibernate.loader.Loader - Total objects hydrated: 1
-DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [com.java.java_zaliczenie.Shelf#2]
-TRACE main org.hibernate.event.internal.DefaultLoadEventListener - Loading entity: [com.java.java_zaliczenie.Stand#1]
-TRACE main org.hibernate.event.internal.DefaultLoadEventListener - Creating new proxy for entity
-TRACE main org.hibernate.type.CollectionType - Created collection wrapper: [com.java.java_zaliczenie.Shelf.books#2]
-DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [com.java.java_zaliczenie.Shelf#2]
-TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Releasing statement [com.mysql.jdbc.JDBC4PreparedStatement@4188c8e6: select shelf0_.idShelf as idShelf1_4_, shelf0_.Stand_idStand as Stand2_4_, shelf0_.Shelf_name as Shelf3_4_ from luki91_java2.Shelf shelf0_ where shelf0_.idShelf=2]
-TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Closing result set [com.mysql.jdbc.JDBC4ResultSet@5de5bfa4]
-TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Closing prepared statement [com.mysql.jdbc.JDBC4PreparedStatement@4188c8e6: select shelf0_.idShelf as idShelf1_4_, shelf0_.Stand_idStand as Stand2_4_, shelf0_.Shelf_name as Shelf3_4_ from luki91_java2.Shelf shelf0_ where shelf0_.idShelf=2]
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [1] as column [idStand1_5_]
+DEBUG main org.hibernate.loader.Loader - Result row: EntityKey[com.java.java_zaliczenie.Stand#1]
+TRACE main org.hibernate.loader.Loader - Initializing object from ResultSet: [com.java.java_zaliczenie.Stand#1]
+TRACE main org.hibernate.persister.entity.AbstractEntityPersister - Hydrating entity: [com.java.java_zaliczenie.Stand#1]
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [Rega³ nr 1] as column [Stand2_5_]
+DEBUG main org.hibernate.loader.Loader - Result set row: 1
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [2] as column [idStand1_5_]
+DEBUG main org.hibernate.loader.Loader - Result row: EntityKey[com.java.java_zaliczenie.Stand#2]
+TRACE main org.hibernate.loader.Loader - Initializing object from ResultSet: [com.java.java_zaliczenie.Stand#2]
+TRACE main org.hibernate.persister.entity.AbstractEntityPersister - Hydrating entity: [com.java.java_zaliczenie.Stand#2]
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [Rega³ nr 2] as column [Stand2_5_]
+TRACE main org.hibernate.loader.Loader - Done processing result set (2 rows)
+TRACE main org.hibernate.loader.Loader - Total objects hydrated: 2
+DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [com.java.java_zaliczenie.Stand#1]
+TRACE main org.hibernate.type.CollectionType - Created collection wrapper: [com.java.java_zaliczenie.Stand.shelfs#1]
+DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [com.java.java_zaliczenie.Stand#1]
+DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [com.java.java_zaliczenie.Stand#2]
+TRACE main org.hibernate.type.CollectionType - Created collection wrapper: [com.java.java_zaliczenie.Stand.shelfs#2]
+DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [com.java.java_zaliczenie.Stand#2]
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Releasing statement [com.mysql.jdbc.JDBC4PreparedStatement@64dd4991: select stand0_.idStand as idStand1_5_, stand0_.Stand_name as Stand2_5_ from luki91_java2.Stand stand0_]
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Closing result set [com.mysql.jdbc.JDBC4ResultSet@d7c0716]
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Closing prepared statement [com.mysql.jdbc.JDBC4PreparedStatement@64dd4991: select stand0_.idStand as idStand1_5_, stand0_.Stand_name as Stand2_5_ from luki91_java2.Stand stand0_]
 TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Starting after statement execution processing [ON_CLOSE]
 TRACE main org.hibernate.engine.internal.StatefulPersistenceContext - Initializing non-lazy collections
 TRACE main org.hibernate.event.internal.AbstractFlushingEventListener - Flushing session
 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Processing flush-time cascades
 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Dirty checking collections
 TRACE main org.hibernate.event.internal.AbstractFlushingEventListener - Flushing entities and processing referenced collections
-DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.java.java_zaliczenie.Shelf.books#2], was: [com.java.java_zaliczenie.Shelf.books#2] (uninitialized)
+DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.java.java_zaliczenie.Stand.shelfs#1], was: [com.java.java_zaliczenie.Stand.shelfs#1] (uninitialized)
+DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.java.java_zaliczenie.Stand.shelfs#2], was: [com.java.java_zaliczenie.Stand.shelfs#2] (uninitialized)
 TRACE main org.hibernate.event.internal.AbstractFlushingEventListener - Processing unreferenced collections
 TRACE main org.hibernate.event.internal.AbstractFlushingEventListener - Scheduling collection removes/(re)creates/updates
-DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
-DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 1 collections
+DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 2 objects
+DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 2 collections
 DEBUG main org.hibernate.internal.util.EntityPrinter - Listing entities:
-DEBUG main org.hibernate.internal.util.EntityPrinter - com.java.java_zaliczenie.Shelf{books=<uninitialized>, stand=com.java.java_zaliczenie.Stand#1, shelfName=Pó³ka nr 1 na regale 1, idShelf=2}
+DEBUG main org.hibernate.internal.util.EntityPrinter - com.java.java_zaliczenie.Stand{idStand=1, shelfs=<uninitialized>, standName=Rega³ nr 1}
+DEBUG main org.hibernate.internal.util.EntityPrinter - com.java.java_zaliczenie.Stand{idStand=2, shelfs=<uninitialized>, standName=Rega³ nr 2}
 TRACE main org.hibernate.event.internal.AbstractFlushingEventListener - Executing flush
 TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Starting after statement execution processing [ON_CLOSE]
 TRACE main org.hibernate.event.internal.AbstractFlushingEventListener - Post flush
-TRACE main org.hibernate.internal.SessionImpl - Closing session
-TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Closing JDBC container [org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl@577dc2ae]
-TRACE main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Closing logical connection
-DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Releasing JDBC connection
-TRACE main org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl - Returning connection to pool, pool size: 1
-DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Released JDBC connection
-TRACE main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Logical connection closed
-TRACE main com.java.java_zaliczenie.daos.DaoShelf - Got shelf 2
-TRACE main com.java.java_zaliczenie.daos.DaoBook - Adding new Book 1234567890123
-TRACE main org.hibernate.internal.SessionImpl - Opened session at timestamp: 13698648842
-DEBUG main org.hibernate.engine.transaction.spi.AbstractTransactionImpl - begin
-DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Obtaining JDBC connection
-TRACE main org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl - Total checked-out connections: 0
-TRACE main org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl - Using pooled JDBC connection, pool size: 0
-DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Obtained JDBC connection
-DEBUG main org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction - initial autocommit status: false
-TRACE main org.hibernate.event.internal.DefaultSaveOrUpdateEventListener - Saving transient instance
-DEBUG main org.hibernate.event.internal.AbstractSaveEventListener - Generated identifier: 1234567890123, using strategy: org.hibernate.id.Assigned
-TRACE main org.hibernate.event.internal.AbstractSaveEventListener - Saving [com.java.java_zaliczenie.AdventureBook#1234567890123]
-TRACE main org.hibernate.engine.spi.ActionQueue - Adding an EntityInsertAction for [com.java.java_zaliczenie.AdventureBook] object
-TRACE main org.hibernate.engine.spi.IdentifierValue - ID unsaved-value: null
-TRACE main org.hibernate.engine.spi.ActionQueue - Adding insert with no non-nullable, transient entities: [EntityInsertAction[com.java.java_zaliczenie.AdventureBook#1234567890123]]
-TRACE main org.hibernate.engine.spi.ActionQueue - Adding resolved non-early insert action.
-TRACE main org.hibernate.engine.spi.IdentifierValue - ID unsaved-value: null
-TRACE main org.hibernate.action.internal.UnresolvedEntityInsertActions - No unresolved entity inserts that depended on [[com.java.java_zaliczenie.AdventureBook#1234567890123]]
-TRACE main org.hibernate.action.internal.UnresolvedEntityInsertActions - No entity insert actions have non-nullable, transient entity dependencies.
-DEBUG main org.hibernate.engine.transaction.spi.AbstractTransactionImpl - committing
-TRACE main org.hibernate.internal.SessionImpl - Automatically flushing session
-TRACE main org.hibernate.event.internal.AbstractFlushingEventListener - Flushing session
-DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Processing flush-time cascades
-DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Dirty checking collections
-TRACE main org.hibernate.event.internal.AbstractFlushingEventListener - Flushing entities and processing referenced collections
-TRACE main org.hibernate.event.internal.AbstractFlushingEventListener - Processing unreferenced collections
-TRACE main org.hibernate.event.internal.AbstractFlushingEventListener - Scheduling collection removes/(re)creates/updates
-DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 1 insertions, 0 updates, 0 deletions to 1 objects
-DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
-DEBUG main org.hibernate.internal.util.EntityPrinter - Listing entities:
-DEBUG main org.hibernate.internal.util.EntityPrinter - com.java.java_zaliczenie.AdventureBook{bookTitle=pupa pupa pupa, bookAuthor=jakiœtam autor, bookIsbn=1234567890123, shelf=com.java.java_zaliczenie.Shelf#2, bookPrice=9, bookDescription=fjdksafhdjkvba,vbuiahfuirealhfn}
-TRACE main org.hibernate.event.internal.AbstractFlushingEventListener - Executing flush
-TRACE main org.hibernate.persister.entity.AbstractEntityPersister - Inserting entity: [com.java.java_zaliczenie.AdventureBook#1234567890123]
-TRACE main org.hibernate.service.internal.AbstractServiceRegistryImpl - Initializing service [role=org.hibernate.engine.jdbc.batch.spi.BatchBuilder]
-TRACE main org.hibernate.service.internal.AbstractServiceRegistryImpl - Initializing service [role=org.hibernate.service.jmx.spi.JmxService]
-TRACE main org.hibernate.engine.jdbc.batch.internal.BatchBuilderImpl - Building batch [size=1]
-DEBUG main org.hibernate.SQL - insert into luki91_java2.Book (Shelf_idShelf, Book_author, Book_title, Book_description, Book_price, Book_isbn) values (?, ?, ?, ?, ?, ?)
-TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Registering statement [com.mysql.jdbc.JDBC4PreparedStatement@7ac68e7c: insert into luki91_java2.Book (Shelf_idShelf, Book_author, Book_title, Book_description, Book_price, Book_isbn) values (** NOT SPECIFIED **, ** NOT SPECIFIED **, ** NOT SPECIFIED **, ** NOT SPECIFIED **, ** NOT SPECIFIED **, ** NOT SPECIFIED **)]
-TRACE main org.hibernate.persister.entity.AbstractEntityPersister - Dehydrating entity: [com.java.java_zaliczenie.AdventureBook#1234567890123]
-TRACE main org.hibernate.engine.spi.IdentifierValue - ID unsaved-value: null
+TRACE main com.java.java_zaliczenie.daos.DaoStand - Stands listed
+TRACE main org.hibernate.event.internal.DefaultInitializeCollectionEventListener - Initializing collection [com.java.java_zaliczenie.Stand.shelfs#1]
+TRACE main org.hibernate.event.internal.DefaultInitializeCollectionEventListener - Checking second-level cache
+TRACE main org.hibernate.event.internal.DefaultInitializeCollectionEventListener - Collection not cached
+DEBUG main org.hibernate.loader.Loader - Loading collection: [com.java.java_zaliczenie.Stand.shelfs#1]
+DEBUG main org.hibernate.SQL - select shelfs0_.Stand_idStand as Stand2_5_1_, shelfs0_.idShelf as idShelf1_4_1_, shelfs0_.idShelf as idShelf1_4_0_, shelfs0_.Stand_idStand as Stand2_4_0_, shelfs0_.Shelf_name as Shelf3_4_0_ from luki91_java2.Shelf shelfs0_ where shelfs0_.Stand_idStand=?
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Registering statement [com.mysql.jdbc.JDBC4PreparedStatement@52dbb3e8: select shelfs0_.Stand_idStand as Stand2_5_1_, shelfs0_.idShelf as idShelf1_4_1_, shelfs0_.idShelf as idShelf1_4_0_, shelfs0_.Stand_idStand as Stand2_4_0_, shelfs0_.Shelf_name as Shelf3_4_0_ from luki91_java2.Shelf shelfs0_ where shelfs0_.Stand_idStand=** NOT SPECIFIED **]
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Registering last query statement [com.mysql.jdbc.JDBC4PreparedStatement@52dbb3e8: select shelfs0_.Stand_idStand as Stand2_5_1_, shelfs0_.idShelf as idShelf1_4_1_, shelfs0_.idShelf as idShelf1_4_0_, shelfs0_.Stand_idStand as Stand2_4_0_, shelfs0_.Shelf_name as Shelf3_4_0_ from luki91_java2.Shelf shelfs0_ where shelfs0_.Stand_idStand=** NOT SPECIFIED **]
+TRACE main org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - 1
+TRACE main org.hibernate.loader.Loader - Bound [2] parameters total
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Registering result set [com.mysql.jdbc.JDBC4ResultSet@56eaab85]
+DEBUG main org.hibernate.loader.Loader - Result set contains (possibly empty) collection: [com.java.java_zaliczenie.Stand.shelfs#1]
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Constructing collection load context for result set [com.mysql.jdbc.JDBC4ResultSet@56eaab85]
+TRACE main org.hibernate.engine.loading.internal.CollectionLoadContext - Starting attempt to find loading collection [[com.java.java_zaliczenie.Stand.shelfs#1]]
+TRACE main org.hibernate.engine.loading.internal.CollectionLoadContext - Collection not yet initialized; initializing
+TRACE main org.hibernate.loader.Loader - Processing result set
+DEBUG main org.hibernate.loader.Loader - Result set row: 0
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [2] as column [idShelf1_4_0_]
+DEBUG main org.hibernate.loader.Loader - Result row: EntityKey[com.java.java_zaliczenie.Shelf#2]
+TRACE main org.hibernate.loader.Loader - Initializing object from ResultSet: [com.java.java_zaliczenie.Shelf#2]
+TRACE main org.hibernate.persister.entity.AbstractEntityPersister - Hydrating entity: [com.java.java_zaliczenie.Shelf#2]
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [1] as column [Stand2_4_0_]
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [Pó³ka nr 1 na regale 1] as column [Shelf3_4_0_]
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [1] as column [Stand2_5_1_]
+DEBUG main org.hibernate.loader.Loader - Found row of collection: [com.java.java_zaliczenie.Stand.shelfs#1]
+TRACE main org.hibernate.engine.loading.internal.CollectionLoadContext - Starting attempt to find loading collection [[com.java.java_zaliczenie.Stand.shelfs#1]]
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Attempting to locate loading collection entry [CollectionKey[com.java.java_zaliczenie.Stand.shelfs#1]] in any result-set context
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Collection [CollectionKey[com.java.java_zaliczenie.Stand.shelfs#1]] located in load context
+TRACE main org.hibernate.engine.loading.internal.CollectionLoadContext - Found loading collection bound to current result set processing; reading row
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [2] as column [idShelf1_4_1_]
+TRACE main org.hibernate.event.internal.DefaultLoadEventListener - Loading entity: [com.java.java_zaliczenie.Shelf#2]
+TRACE main org.hibernate.event.internal.DefaultLoadEventListener - Attempting to resolve: [com.java.java_zaliczenie.Shelf#2]
+TRACE main org.hibernate.event.internal.DefaultLoadEventListener - Resolved object in session cache: [com.java.java_zaliczenie.Shelf#2]
+TRACE main org.hibernate.loader.Loader - Done processing result set (1 rows)
+TRACE main org.hibernate.loader.Loader - Total objects hydrated: 1
+DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [com.java.java_zaliczenie.Shelf#2]
+TRACE main org.hibernate.event.internal.DefaultLoadEventListener - Loading entity: [com.java.java_zaliczenie.Stand#1]
+TRACE main org.hibernate.event.internal.DefaultLoadEventListener - Entity found in session cache
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Attempting to locate loading collection entry [CollectionKey[com.java.java_zaliczenie.Shelf.books#2]] in any result-set context
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Collection [CollectionKey[com.java.java_zaliczenie.Shelf.books#2]] not located in load context
+TRACE main org.hibernate.type.CollectionType - Created collection wrapper: [com.java.java_zaliczenie.Shelf.books#2]
+DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [com.java.java_zaliczenie.Shelf#2]
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Attempting to locate loading collection entry [CollectionKey[com.java.java_zaliczenie.Stand.shelfs#1]] in any result-set context
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Collection [CollectionKey[com.java.java_zaliczenie.Stand.shelfs#1]] located in load context
+TRACE main org.hibernate.engine.loading.internal.CollectionLoadContext - Removing collection load entry [org.hibernate.engine.loading.internal.LoadingCollectionEntry<rs=com.mysql.jdbc.JDBC4ResultSet@56eaab85, coll=[com.java.java_zaliczenie.Stand.shelfs#1]>@66b27bbf]
+DEBUG main org.hibernate.engine.loading.internal.CollectionLoadContext - 1 collections were found in result set for role: com.java.java_zaliczenie.Stand.shelfs
+TRACE main org.hibernate.engine.loading.internal.CollectionLoadContext - Ending loading collection [org.hibernate.engine.loading.internal.LoadingCollectionEntry<rs=com.mysql.jdbc.JDBC4ResultSet@56eaab85, coll=[com.java.java_zaliczenie.Stand.shelfs#1]>@66b27bbf]
+DEBUG main org.hibernate.engine.loading.internal.CollectionLoadContext - Collection fully initialized: [com.java.java_zaliczenie.Stand.shelfs#1]
+DEBUG main org.hibernate.engine.loading.internal.CollectionLoadContext - 1 collections initialized for role: com.java.java_zaliczenie.Stand.shelfs
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Releasing statement [com.mysql.jdbc.JDBC4PreparedStatement@52dbb3e8: select shelfs0_.Stand_idStand as Stand2_5_1_, shelfs0_.idShelf as idShelf1_4_1_, shelfs0_.idShelf as idShelf1_4_0_, shelfs0_.Stand_idStand as Stand2_4_0_, shelfs0_.Shelf_name as Shelf3_4_0_ from luki91_java2.Shelf shelfs0_ where shelfs0_.Stand_idStand=1]
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Closing result set [com.mysql.jdbc.JDBC4ResultSet@56eaab85]
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Closing prepared statement [com.mysql.jdbc.JDBC4PreparedStatement@52dbb3e8: select shelfs0_.Stand_idStand as Stand2_5_1_, shelfs0_.idShelf as idShelf1_4_1_, shelfs0_.idShelf as idShelf1_4_0_, shelfs0_.Stand_idStand as Stand2_4_0_, shelfs0_.Shelf_name as Shelf3_4_0_ from luki91_java2.Shelf shelfs0_ where shelfs0_.Stand_idStand=1]
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Starting after statement execution processing [ON_CLOSE]
+TRACE main org.hibernate.engine.internal.StatefulPersistenceContext - Initializing non-lazy collections
+DEBUG main org.hibernate.loader.Loader - Done loading collection
+TRACE main org.hibernate.event.internal.DefaultInitializeCollectionEventListener - Collection initialized
+TRACE main org.hibernate.event.internal.DefaultInitializeCollectionEventListener - Initializing collection [com.java.java_zaliczenie.Shelf.books#2]
+TRACE main org.hibernate.event.internal.DefaultInitializeCollectionEventListener - Checking second-level cache
+TRACE main org.hibernate.event.internal.DefaultInitializeCollectionEventListener - Collection not cached
+DEBUG main org.hibernate.loader.Loader - Loading collection: [com.java.java_zaliczenie.Shelf.books#2]
+DEBUG main org.hibernate.SQL - select books0_.Shelf_idShelf as Shelf2_4_1_, books0_.Book_isbn as Book1_3_1_, books0_.Book_isbn as Book1_3_0_, books0_.Shelf_idShelf as Shelf2_3_0_, books0_.Book_author as Book3_3_0_, books0_.Book_title as Book4_3_0_, books0_.Book_description as Book5_3_0_, books0_.Book_price as Book6_3_0_, books0_1_.Adventure_informations as Adventur2_0_0_, books0_3_.SF_movie as SF2_2_0_, case when books0_1_.Book_isbn is not null then 1 when books0_2_.Book_isbn is not null then 2 when books0_3_.Book_isbn is not null then 3 when books0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book books0_ left outer join AdventureBook books0_1_ on books0_.Book_isbn=books0_1_.Book_isbn left outer join DramaBook books0_2_ on books0_.Book_isbn=books0_2_.Book_isbn left outer join SFBook books0_3_ on books0_.Book_isbn=books0_3_.Book_isbn where books0_.Shelf_idShelf=?
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Registering statement [com.mysql.jdbc.JDBC4PreparedStatement@2a3a638e: select books0_.Shelf_idShelf as Shelf2_4_1_, books0_.Book_isbn as Book1_3_1_, books0_.Book_isbn as Book1_3_0_, books0_.Shelf_idShelf as Shelf2_3_0_, books0_.Book_author as Book3_3_0_, books0_.Book_title as Book4_3_0_, books0_.Book_description as Book5_3_0_, books0_.Book_price as Book6_3_0_, books0_1_.Adventure_informations as Adventur2_0_0_, books0_3_.SF_movie as SF2_2_0_, case when books0_1_.Book_isbn is not null then 1 when books0_2_.Book_isbn is not null then 2 when books0_3_.Book_isbn is not null then 3 when books0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book books0_ left outer join AdventureBook books0_1_ on books0_.Book_isbn=books0_1_.Book_isbn left outer join DramaBook books0_2_ on books0_.Book_isbn=books0_2_.Book_isbn left outer join SFBook books0_3_ on books0_.Book_isbn=books0_3_.Book_isbn where books0_.Shelf_idShelf=** NOT SPECIFIED **]
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Registering last query statement [com.mysql.jdbc.JDBC4PreparedStatement@2a3a638e: select books0_.Shelf_idShelf as Shelf2_4_1_, books0_.Book_isbn as Book1_3_1_, books0_.Book_isbn as Book1_3_0_, books0_.Shelf_idShelf as Shelf2_3_0_, books0_.Book_author as Book3_3_0_, books0_.Book_title as Book4_3_0_, books0_.Book_description as Book5_3_0_, books0_.Book_price as Book6_3_0_, books0_1_.Adventure_informations as Adventur2_0_0_, books0_3_.SF_movie as SF2_2_0_, case when books0_1_.Book_isbn is not null then 1 when books0_2_.Book_isbn is not null then 2 when books0_3_.Book_isbn is not null then 3 when books0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book books0_ left outer join AdventureBook books0_1_ on books0_.Book_isbn=books0_1_.Book_isbn left outer join DramaBook books0_2_ on books0_.Book_isbn=books0_2_.Book_isbn left outer join SFBook books0_3_ on books0_.Book_isbn=books0_3_.Book_isbn where books0_.Shelf_idShelf=** NOT SPECIFIED **]
 TRACE main org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - 2
-TRACE main org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - jakiœtam autor
-TRACE main org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - pupa pupa pupa
-TRACE main org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [4] as [VARCHAR] - fjdksafhdjkvba,vbuiahfuirealhfn
-TRACE main org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [5] as [BIGINT] - 9
-TRACE main org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [6] as [VARCHAR] - 1234567890123
-TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Releasing statement [com.mysql.jdbc.JDBC4PreparedStatement@7ac68e7c: insert into luki91_java2.Book (Shelf_idShelf, Book_author, Book_title, Book_description, Book_price, Book_isbn) values (2, 'jakiœtam autor', 'pupa pupa pupa', 'fjdksafhdjkvba,vbuiahfuirealhfn', 9, '1234567890123')]
-TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Closing prepared statement [com.mysql.jdbc.JDBC4PreparedStatement@7ac68e7c: insert into luki91_java2.Book (Shelf_idShelf, Book_author, Book_title, Book_description, Book_price, Book_isbn) values (2, 'jakiœtam autor', 'pupa pupa pupa', 'fjdksafhdjkvba,vbuiahfuirealhfn', 9, '1234567890123')]
+TRACE main org.hibernate.loader.Loader - Bound [2] parameters total
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Registering result set [com.mysql.jdbc.JDBC4ResultSet@5f5e154a]
+DEBUG main org.hibernate.loader.Loader - Result set contains (possibly empty) collection: [com.java.java_zaliczenie.Shelf.books#2]
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Constructing collection load context for result set [com.mysql.jdbc.JDBC4ResultSet@5f5e154a]
+TRACE main org.hibernate.engine.loading.internal.CollectionLoadContext - Starting attempt to find loading collection [[com.java.java_zaliczenie.Shelf.books#2]]
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Attempting to locate loading collection entry [CollectionKey[com.java.java_zaliczenie.Shelf.books#2]] in any result-set context
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Collection [CollectionKey[com.java.java_zaliczenie.Shelf.books#2]] not located in load context
+TRACE main org.hibernate.engine.loading.internal.CollectionLoadContext - Collection not yet initialized; initializing
+TRACE main org.hibernate.loader.Loader - Processing result set
+DEBUG main org.hibernate.loader.Loader - Result set row: 0
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [1234567890123] as column [Book1_3_0_]
+DEBUG main org.hibernate.loader.Loader - Result row: EntityKey[com.java.java_zaliczenie.Book#1234567890123]
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [1] as column [clazz_0_]
+TRACE main org.hibernate.loader.Loader - Initializing object from ResultSet: [com.java.java_zaliczenie.AdventureBook#1234567890123]
+TRACE main org.hibernate.persister.entity.AbstractEntityPersister - Hydrating entity: [com.java.java_zaliczenie.AdventureBook#1234567890123]
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [2] as column [Shelf2_3_0_]
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [jakiœtam autor] as column [Book3_3_0_]
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [pupa pupa pupa] as column [Book4_3_0_]
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [fjdksafhdjkvba,vbuiahfuirealhfn] as column [Book5_3_0_]
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [9] as column [Book6_3_0_]
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [informacje jakieœ do przygodówki] as column [Adventur2_0_0_]
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [2] as column [Shelf2_4_1_]
+DEBUG main org.hibernate.loader.Loader - Found row of collection: [com.java.java_zaliczenie.Shelf.books#2]
+TRACE main org.hibernate.engine.loading.internal.CollectionLoadContext - Starting attempt to find loading collection [[com.java.java_zaliczenie.Shelf.books#2]]
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Attempting to locate loading collection entry [CollectionKey[com.java.java_zaliczenie.Shelf.books#2]] in any result-set context
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Collection [CollectionKey[com.java.java_zaliczenie.Shelf.books#2]] located in load context
+TRACE main org.hibernate.engine.loading.internal.CollectionLoadContext - Found loading collection bound to current result set processing; reading row
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [1234567890123] as column [Book1_3_1_]
+TRACE main org.hibernate.event.internal.DefaultLoadEventListener - Loading entity: [com.java.java_zaliczenie.Book#1234567890123]
+TRACE main org.hibernate.event.internal.DefaultLoadEventListener - Attempting to resolve: [com.java.java_zaliczenie.Book#1234567890123]
+TRACE main org.hibernate.event.internal.DefaultLoadEventListener - Resolved object in session cache: [com.java.java_zaliczenie.Book#1234567890123]
+TRACE main org.hibernate.loader.Loader - Done processing result set (1 rows)
+TRACE main org.hibernate.loader.Loader - Total objects hydrated: 1
+DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [com.java.java_zaliczenie.AdventureBook#1234567890123]
+TRACE main org.hibernate.event.internal.DefaultLoadEventListener - Loading entity: [com.java.java_zaliczenie.Shelf#2]
+TRACE main org.hibernate.event.internal.DefaultLoadEventListener - Entity found in session cache
+DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [com.java.java_zaliczenie.AdventureBook#1234567890123]
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Attempting to locate loading collection entry [CollectionKey[com.java.java_zaliczenie.Shelf.books#2]] in any result-set context
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Collection [CollectionKey[com.java.java_zaliczenie.Shelf.books#2]] located in load context
+TRACE main org.hibernate.engine.loading.internal.CollectionLoadContext - Removing collection load entry [org.hibernate.engine.loading.internal.LoadingCollectionEntry<rs=com.mysql.jdbc.JDBC4ResultSet@5f5e154a, coll=[com.java.java_zaliczenie.Shelf.books#2]>@1cf7bba1]
+DEBUG main org.hibernate.engine.loading.internal.CollectionLoadContext - 1 collections were found in result set for role: com.java.java_zaliczenie.Shelf.books
+TRACE main org.hibernate.engine.loading.internal.CollectionLoadContext - Ending loading collection [org.hibernate.engine.loading.internal.LoadingCollectionEntry<rs=com.mysql.jdbc.JDBC4ResultSet@5f5e154a, coll=[com.java.java_zaliczenie.Shelf.books#2]>@1cf7bba1]
+DEBUG main org.hibernate.engine.loading.internal.CollectionLoadContext - Collection fully initialized: [com.java.java_zaliczenie.Shelf.books#2]
+DEBUG main org.hibernate.engine.loading.internal.CollectionLoadContext - 1 collections initialized for role: com.java.java_zaliczenie.Shelf.books
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Releasing statement [com.mysql.jdbc.JDBC4PreparedStatement@2a3a638e: select books0_.Shelf_idShelf as Shelf2_4_1_, books0_.Book_isbn as Book1_3_1_, books0_.Book_isbn as Book1_3_0_, books0_.Shelf_idShelf as Shelf2_3_0_, books0_.Book_author as Book3_3_0_, books0_.Book_title as Book4_3_0_, books0_.Book_description as Book5_3_0_, books0_.Book_price as Book6_3_0_, books0_1_.Adventure_informations as Adventur2_0_0_, books0_3_.SF_movie as SF2_2_0_, case when books0_1_.Book_isbn is not null then 1 when books0_2_.Book_isbn is not null then 2 when books0_3_.Book_isbn is not null then 3 when books0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book books0_ left outer join AdventureBook books0_1_ on books0_.Book_isbn=books0_1_.Book_isbn left outer join DramaBook books0_2_ on books0_.Book_isbn=books0_2_.Book_isbn left outer join SFBook books0_3_ on books0_.Book_isbn=books0_3_.Book_isbn where books0_.Shelf_idShelf=2]
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Closing result set [com.mysql.jdbc.JDBC4ResultSet@5f5e154a]
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Closing prepared statement [com.mysql.jdbc.JDBC4PreparedStatement@2a3a638e: select books0_.Shelf_idShelf as Shelf2_4_1_, books0_.Book_isbn as Book1_3_1_, books0_.Book_isbn as Book1_3_0_, books0_.Shelf_idShelf as Shelf2_3_0_, books0_.Book_author as Book3_3_0_, books0_.Book_title as Book4_3_0_, books0_.Book_description as Book5_3_0_, books0_.Book_price as Book6_3_0_, books0_1_.Adventure_informations as Adventur2_0_0_, books0_3_.SF_movie as SF2_2_0_, case when books0_1_.Book_isbn is not null then 1 when books0_2_.Book_isbn is not null then 2 when books0_3_.Book_isbn is not null then 3 when books0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book books0_ left outer join AdventureBook books0_1_ on books0_.Book_isbn=books0_1_.Book_isbn left outer join DramaBook books0_2_ on books0_.Book_isbn=books0_2_.Book_isbn left outer join SFBook books0_3_ on books0_.Book_isbn=books0_3_.Book_isbn where books0_.Shelf_idShelf=2]
 TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Starting after statement execution processing [ON_CLOSE]
-TRACE main org.hibernate.persister.entity.AbstractEntityPersister - Inserting entity: [com.java.java_zaliczenie.AdventureBook#1234567890123]
-DEBUG main org.hibernate.SQL - insert into AdventureBook (Book_isbn) values (?)
-TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Registering statement [com.mysql.jdbc.JDBC4PreparedStatement@3c48d394: insert into AdventureBook (Book_isbn) values (** NOT SPECIFIED **)]
-TRACE main org.hibernate.persister.entity.AbstractEntityPersister - Dehydrating entity: [com.java.java_zaliczenie.AdventureBook#1234567890123]
-TRACE main org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - 1234567890123
-TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Releasing statement [com.mysql.jdbc.JDBC4PreparedStatement@3c48d394: insert into AdventureBook (Book_isbn) values ('1234567890123')]
-TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Closing prepared statement [com.mysql.jdbc.JDBC4PreparedStatement@3c48d394: insert into AdventureBook (Book_isbn) values ('1234567890123')]
+TRACE main org.hibernate.engine.internal.StatefulPersistenceContext - Initializing non-lazy collections
+DEBUG main org.hibernate.loader.Loader - Done loading collection
+TRACE main org.hibernate.event.internal.DefaultInitializeCollectionEventListener - Collection initialized
+TRACE main org.hibernate.event.internal.DefaultInitializeCollectionEventListener - Initializing collection [com.java.java_zaliczenie.Stand.shelfs#2]
+TRACE main org.hibernate.event.internal.DefaultInitializeCollectionEventListener - Checking second-level cache
+TRACE main org.hibernate.event.internal.DefaultInitializeCollectionEventListener - Collection not cached
+DEBUG main org.hibernate.loader.Loader - Loading collection: [com.java.java_zaliczenie.Stand.shelfs#2]
+DEBUG main org.hibernate.SQL - select shelfs0_.Stand_idStand as Stand2_5_1_, shelfs0_.idShelf as idShelf1_4_1_, shelfs0_.idShelf as idShelf1_4_0_, shelfs0_.Stand_idStand as Stand2_4_0_, shelfs0_.Shelf_name as Shelf3_4_0_ from luki91_java2.Shelf shelfs0_ where shelfs0_.Stand_idStand=?
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Registering statement [com.mysql.jdbc.JDBC4PreparedStatement@521f8f89: select shelfs0_.Stand_idStand as Stand2_5_1_, shelfs0_.idShelf as idShelf1_4_1_, shelfs0_.idShelf as idShelf1_4_0_, shelfs0_.Stand_idStand as Stand2_4_0_, shelfs0_.Shelf_name as Shelf3_4_0_ from luki91_java2.Shelf shelfs0_ where shelfs0_.Stand_idStand=** NOT SPECIFIED **]
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Registering last query statement [com.mysql.jdbc.JDBC4PreparedStatement@521f8f89: select shelfs0_.Stand_idStand as Stand2_5_1_, shelfs0_.idShelf as idShelf1_4_1_, shelfs0_.idShelf as idShelf1_4_0_, shelfs0_.Stand_idStand as Stand2_4_0_, shelfs0_.Shelf_name as Shelf3_4_0_ from luki91_java2.Shelf shelfs0_ where shelfs0_.Stand_idStand=** NOT SPECIFIED **]
+TRACE main org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - 2
+TRACE main org.hibernate.loader.Loader - Bound [2] parameters total
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Registering result set [com.mysql.jdbc.JDBC4ResultSet@1608957e]
+DEBUG main org.hibernate.loader.Loader - Result set contains (possibly empty) collection: [com.java.java_zaliczenie.Stand.shelfs#2]
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Constructing collection load context for result set [com.mysql.jdbc.JDBC4ResultSet@1608957e]
+TRACE main org.hibernate.engine.loading.internal.CollectionLoadContext - Starting attempt to find loading collection [[com.java.java_zaliczenie.Stand.shelfs#2]]
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Attempting to locate loading collection entry [CollectionKey[com.java.java_zaliczenie.Stand.shelfs#2]] in any result-set context
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Collection [CollectionKey[com.java.java_zaliczenie.Stand.shelfs#2]] not located in load context
+TRACE main org.hibernate.engine.loading.internal.CollectionLoadContext - Collection not yet initialized; initializing
+TRACE main org.hibernate.loader.Loader - Processing result set
+DEBUG main org.hibernate.loader.Loader - Result set row: 0
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [1] as column [idShelf1_4_0_]
+DEBUG main org.hibernate.loader.Loader - Result row: EntityKey[com.java.java_zaliczenie.Shelf#1]
+TRACE main org.hibernate.loader.Loader - Initializing object from ResultSet: [com.java.java_zaliczenie.Shelf#1]
+TRACE main org.hibernate.persister.entity.AbstractEntityPersister - Hydrating entity: [com.java.java_zaliczenie.Shelf#1]
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [2] as column [Stand2_4_0_]
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [Pó³ka nr 1 na regale 2] as column [Shelf3_4_0_]
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [2] as column [Stand2_5_1_]
+DEBUG main org.hibernate.loader.Loader - Found row of collection: [com.java.java_zaliczenie.Stand.shelfs#2]
+TRACE main org.hibernate.engine.loading.internal.CollectionLoadContext - Starting attempt to find loading collection [[com.java.java_zaliczenie.Stand.shelfs#2]]
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Attempting to locate loading collection entry [CollectionKey[com.java.java_zaliczenie.Stand.shelfs#2]] in any result-set context
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Collection [CollectionKey[com.java.java_zaliczenie.Stand.shelfs#2]] located in load context
+TRACE main org.hibernate.engine.loading.internal.CollectionLoadContext - Found loading collection bound to current result set processing; reading row
+TRACE main org.hibernate.type.descriptor.sql.BasicExtractor - Found [1] as column [idShelf1_4_1_]
+TRACE main org.hibernate.event.internal.DefaultLoadEventListener - Loading entity: [com.java.java_zaliczenie.Shelf#1]
+TRACE main org.hibernate.event.internal.DefaultLoadEventListener - Attempting to resolve: [com.java.java_zaliczenie.Shelf#1]
+TRACE main org.hibernate.event.internal.DefaultLoadEventListener - Resolved object in session cache: [com.java.java_zaliczenie.Shelf#1]
+TRACE main org.hibernate.loader.Loader - Done processing result set (1 rows)
+TRACE main org.hibernate.loader.Loader - Total objects hydrated: 1
+DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [com.java.java_zaliczenie.Shelf#1]
+TRACE main org.hibernate.event.internal.DefaultLoadEventListener - Loading entity: [com.java.java_zaliczenie.Stand#2]
+TRACE main org.hibernate.event.internal.DefaultLoadEventListener - Entity found in session cache
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Attempting to locate loading collection entry [CollectionKey[com.java.java_zaliczenie.Shelf.books#1]] in any result-set context
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Collection [CollectionKey[com.java.java_zaliczenie.Shelf.books#1]] not located in load context
+TRACE main org.hibernate.type.CollectionType - Created collection wrapper: [com.java.java_zaliczenie.Shelf.books#1]
+DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [com.java.java_zaliczenie.Shelf#1]
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Attempting to locate loading collection entry [CollectionKey[com.java.java_zaliczenie.Stand.shelfs#2]] in any result-set context
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Collection [CollectionKey[com.java.java_zaliczenie.Stand.shelfs#2]] located in load context
+TRACE main org.hibernate.engine.loading.internal.CollectionLoadContext - Removing collection load entry [org.hibernate.engine.loading.internal.LoadingCollectionEntry<rs=com.mysql.jdbc.JDBC4ResultSet@1608957e, coll=[com.java.java_zaliczenie.Stand.shelfs#2]>@1f6f6df3]
+DEBUG main org.hibernate.engine.loading.internal.CollectionLoadContext - 1 collections were found in result set for role: com.java.java_zaliczenie.Stand.shelfs
+TRACE main org.hibernate.engine.loading.internal.CollectionLoadContext - Ending loading collection [org.hibernate.engine.loading.internal.LoadingCollectionEntry<rs=com.mysql.jdbc.JDBC4ResultSet@1608957e, coll=[com.java.java_zaliczenie.Stand.shelfs#2]>@1f6f6df3]
+DEBUG main org.hibernate.engine.loading.internal.CollectionLoadContext - Collection fully initialized: [com.java.java_zaliczenie.Stand.shelfs#2]
+DEBUG main org.hibernate.engine.loading.internal.CollectionLoadContext - 1 collections initialized for role: com.java.java_zaliczenie.Stand.shelfs
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Releasing statement [com.mysql.jdbc.JDBC4PreparedStatement@521f8f89: select shelfs0_.Stand_idStand as Stand2_5_1_, shelfs0_.idShelf as idShelf1_4_1_, shelfs0_.idShelf as idShelf1_4_0_, shelfs0_.Stand_idStand as Stand2_4_0_, shelfs0_.Shelf_name as Shelf3_4_0_ from luki91_java2.Shelf shelfs0_ where shelfs0_.Stand_idStand=2]
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Closing result set [com.mysql.jdbc.JDBC4ResultSet@1608957e]
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Closing prepared statement [com.mysql.jdbc.JDBC4PreparedStatement@521f8f89: select shelfs0_.Stand_idStand as Stand2_5_1_, shelfs0_.idShelf as idShelf1_4_1_, shelfs0_.idShelf as idShelf1_4_0_, shelfs0_.Stand_idStand as Stand2_4_0_, shelfs0_.Shelf_name as Shelf3_4_0_ from luki91_java2.Shelf shelfs0_ where shelfs0_.Stand_idStand=2]
 TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Starting after statement execution processing [ON_CLOSE]
+TRACE main org.hibernate.engine.internal.StatefulPersistenceContext - Initializing non-lazy collections
+DEBUG main org.hibernate.loader.Loader - Done loading collection
+TRACE main org.hibernate.event.internal.DefaultInitializeCollectionEventListener - Collection initialized
+TRACE main org.hibernate.event.internal.DefaultInitializeCollectionEventListener - Initializing collection [com.java.java_zaliczenie.Shelf.books#1]
+TRACE main org.hibernate.event.internal.DefaultInitializeCollectionEventListener - Checking second-level cache
+TRACE main org.hibernate.event.internal.DefaultInitializeCollectionEventListener - Collection not cached
+DEBUG main org.hibernate.loader.Loader - Loading collection: [com.java.java_zaliczenie.Shelf.books#1]
+DEBUG main org.hibernate.SQL - select books0_.Shelf_idShelf as Shelf2_4_1_, books0_.Book_isbn as Book1_3_1_, books0_.Book_isbn as Book1_3_0_, books0_.Shelf_idShelf as Shelf2_3_0_, books0_.Book_author as Book3_3_0_, books0_.Book_title as Book4_3_0_, books0_.Book_description as Book5_3_0_, books0_.Book_price as Book6_3_0_, books0_1_.Adventure_informations as Adventur2_0_0_, books0_3_.SF_movie as SF2_2_0_, case when books0_1_.Book_isbn is not null then 1 when books0_2_.Book_isbn is not null then 2 when books0_3_.Book_isbn is not null then 3 when books0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book books0_ left outer join AdventureBook books0_1_ on books0_.Book_isbn=books0_1_.Book_isbn left outer join DramaBook books0_2_ on books0_.Book_isbn=books0_2_.Book_isbn left outer join SFBook books0_3_ on books0_.Book_isbn=books0_3_.Book_isbn where books0_.Shelf_idShelf=?
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Registering statement [com.mysql.jdbc.JDBC4PreparedStatement@4c9b7ca4: select books0_.Shelf_idShelf as Shelf2_4_1_, books0_.Book_isbn as Book1_3_1_, books0_.Book_isbn as Book1_3_0_, books0_.Shelf_idShelf as Shelf2_3_0_, books0_.Book_author as Book3_3_0_, books0_.Book_title as Book4_3_0_, books0_.Book_description as Book5_3_0_, books0_.Book_price as Book6_3_0_, books0_1_.Adventure_informations as Adventur2_0_0_, books0_3_.SF_movie as SF2_2_0_, case when books0_1_.Book_isbn is not null then 1 when books0_2_.Book_isbn is not null then 2 when books0_3_.Book_isbn is not null then 3 when books0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book books0_ left outer join AdventureBook books0_1_ on books0_.Book_isbn=books0_1_.Book_isbn left outer join DramaBook books0_2_ on books0_.Book_isbn=books0_2_.Book_isbn left outer join SFBook books0_3_ on books0_.Book_isbn=books0_3_.Book_isbn where books0_.Shelf_idShelf=** NOT SPECIFIED **]
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Registering last query statement [com.mysql.jdbc.JDBC4PreparedStatement@4c9b7ca4: select books0_.Shelf_idShelf as Shelf2_4_1_, books0_.Book_isbn as Book1_3_1_, books0_.Book_isbn as Book1_3_0_, books0_.Shelf_idShelf as Shelf2_3_0_, books0_.Book_author as Book3_3_0_, books0_.Book_title as Book4_3_0_, books0_.Book_description as Book5_3_0_, books0_.Book_price as Book6_3_0_, books0_1_.Adventure_informations as Adventur2_0_0_, books0_3_.SF_movie as SF2_2_0_, case when books0_1_.Book_isbn is not null then 1 when books0_2_.Book_isbn is not null then 2 when books0_3_.Book_isbn is not null then 3 when books0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book books0_ left outer join AdventureBook books0_1_ on books0_.Book_isbn=books0_1_.Book_isbn left outer join DramaBook books0_2_ on books0_.Book_isbn=books0_2_.Book_isbn left outer join SFBook books0_3_ on books0_.Book_isbn=books0_3_.Book_isbn where books0_.Shelf_idShelf=** NOT SPECIFIED **]
+TRACE main org.hibernate.type.descriptor.sql.BasicBinder - binding parameter [1] as [INTEGER] - 1
+TRACE main org.hibernate.loader.Loader - Bound [2] parameters total
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Registering result set [com.mysql.jdbc.JDBC4ResultSet@74141a46]
+DEBUG main org.hibernate.loader.Loader - Result set contains (possibly empty) collection: [com.java.java_zaliczenie.Shelf.books#1]
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Constructing collection load context for result set [com.mysql.jdbc.JDBC4ResultSet@74141a46]
+TRACE main org.hibernate.engine.loading.internal.CollectionLoadContext - Starting attempt to find loading collection [[com.java.java_zaliczenie.Shelf.books#1]]
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Attempting to locate loading collection entry [CollectionKey[com.java.java_zaliczenie.Shelf.books#1]] in any result-set context
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Collection [CollectionKey[com.java.java_zaliczenie.Shelf.books#1]] not located in load context
+TRACE main org.hibernate.engine.loading.internal.CollectionLoadContext - Collection not yet initialized; initializing
+TRACE main org.hibernate.loader.Loader - Processing result set
+TRACE main org.hibernate.loader.Loader - Done processing result set (0 rows)
+TRACE main org.hibernate.loader.Loader - Total objects hydrated: 0
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Attempting to locate loading collection entry [CollectionKey[com.java.java_zaliczenie.Shelf.books#1]] in any result-set context
+TRACE main org.hibernate.engine.loading.internal.LoadContexts - Collection [CollectionKey[com.java.java_zaliczenie.Shelf.books#1]] located in load context
+TRACE main org.hibernate.engine.loading.internal.CollectionLoadContext - Removing collection load entry [org.hibernate.engine.loading.internal.LoadingCollectionEntry<rs=com.mysql.jdbc.JDBC4ResultSet@74141a46, coll=[com.java.java_zaliczenie.Shelf.books#1]>@53c92533]
+DEBUG main org.hibernate.engine.loading.internal.CollectionLoadContext - 1 collections were found in result set for role: com.java.java_zaliczenie.Shelf.books
+TRACE main org.hibernate.engine.loading.internal.CollectionLoadContext - Ending loading collection [org.hibernate.engine.loading.internal.LoadingCollectionEntry<rs=com.mysql.jdbc.JDBC4ResultSet@74141a46, coll=[com.java.java_zaliczenie.Shelf.books#1]>@53c92533]
+DEBUG main org.hibernate.engine.loading.internal.CollectionLoadContext - Collection fully initialized: [com.java.java_zaliczenie.Shelf.books#1]
+DEBUG main org.hibernate.engine.loading.internal.CollectionLoadContext - 1 collections initialized for role: com.java.java_zaliczenie.Shelf.books
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Releasing statement [com.mysql.jdbc.JDBC4PreparedStatement@4c9b7ca4: select books0_.Shelf_idShelf as Shelf2_4_1_, books0_.Book_isbn as Book1_3_1_, books0_.Book_isbn as Book1_3_0_, books0_.Shelf_idShelf as Shelf2_3_0_, books0_.Book_author as Book3_3_0_, books0_.Book_title as Book4_3_0_, books0_.Book_description as Book5_3_0_, books0_.Book_price as Book6_3_0_, books0_1_.Adventure_informations as Adventur2_0_0_, books0_3_.SF_movie as SF2_2_0_, case when books0_1_.Book_isbn is not null then 1 when books0_2_.Book_isbn is not null then 2 when books0_3_.Book_isbn is not null then 3 when books0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book books0_ left outer join AdventureBook books0_1_ on books0_.Book_isbn=books0_1_.Book_isbn left outer join DramaBook books0_2_ on books0_.Book_isbn=books0_2_.Book_isbn left outer join SFBook books0_3_ on books0_.Book_isbn=books0_3_.Book_isbn where books0_.Shelf_idShelf=1]
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Closing result set [com.mysql.jdbc.JDBC4ResultSet@74141a46]
+TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Closing prepared statement [com.mysql.jdbc.JDBC4PreparedStatement@4c9b7ca4: select books0_.Shelf_idShelf as Shelf2_4_1_, books0_.Book_isbn as Book1_3_1_, books0_.Book_isbn as Book1_3_0_, books0_.Shelf_idShelf as Shelf2_3_0_, books0_.Book_author as Book3_3_0_, books0_.Book_title as Book4_3_0_, books0_.Book_description as Book5_3_0_, books0_.Book_price as Book6_3_0_, books0_1_.Adventure_informations as Adventur2_0_0_, books0_3_.SF_movie as SF2_2_0_, case when books0_1_.Book_isbn is not null then 1 when books0_2_.Book_isbn is not null then 2 when books0_3_.Book_isbn is not null then 3 when books0_.Book_isbn is not null then 0 end as clazz_0_ from luki91_java2.Book books0_ left outer join AdventureBook books0_1_ on books0_.Book_isbn=books0_1_.Book_isbn left outer join DramaBook books0_2_ on books0_.Book_isbn=books0_2_.Book_isbn left outer join SFBook books0_3_ on books0_.Book_isbn=books0_3_.Book_isbn where books0_.Shelf_idShelf=1]
 TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Starting after statement execution processing [ON_CLOSE]
-TRACE main org.hibernate.event.internal.AbstractFlushingEventListener - Post flush
-TRACE main org.hibernate.internal.SessionImpl - before transaction completion
-DEBUG main org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction - committed JDBC Connection
-TRACE main org.hibernate.engine.transaction.internal.TransactionCoordinatorImpl - after transaction completion
-TRACE main org.hibernate.internal.SessionImpl - after transaction completion
-TRACE main org.hibernate.event.internal.AbstractFlushingEventListener - Flushing session
-DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Processing flush-time cascades
-DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Dirty checking collections
-TRACE main org.hibernate.event.internal.AbstractFlushingEventListener - Flushing entities and processing referenced collections
-TRACE main org.hibernate.event.internal.AbstractFlushingEventListener - Processing unreferenced collections
-TRACE main org.hibernate.event.internal.AbstractFlushingEventListener - Scheduling collection removes/(re)creates/updates
-DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
-DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
-DEBUG main org.hibernate.internal.util.EntityPrinter - Listing entities:
-DEBUG main org.hibernate.internal.util.EntityPrinter - com.java.java_zaliczenie.AdventureBook{bookTitle=pupa pupa pupa, bookAuthor=jakiœtam autor, bookIsbn=1234567890123, shelf=com.java.java_zaliczenie.Shelf#2, bookPrice=9, bookDescription=fjdksafhdjkvba,vbuiahfuirealhfn}
-TRACE main org.hibernate.event.internal.AbstractFlushingEventListener - Executing flush
-TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Starting after statement execution processing [ON_CLOSE]
-TRACE main org.hibernate.event.internal.AbstractFlushingEventListener - Post flush
-TRACE main org.hibernate.internal.SessionImpl - Closing session
-TRACE main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - Closing JDBC container [org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl@44b56ed9]
-DEBUG main org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl - HHH000420: Closing un-released batch
-TRACE main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Closing logical connection
-DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Releasing JDBC connection
-TRACE main org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl - Returning connection to pool, pool size: 1
-DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Released JDBC connection
-TRACE main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Logical connection closed
-TRACE main com.java.java_zaliczenie.daos.DaoBook - New Book 1234567890123 added
-TRACE main com.java.java_zaliczenie.daos.DaoShelf - Getting Shelf 2
+TRACE main org.hibernate.engine.internal.StatefulPersistenceContext - Initializing non-lazy collections
+DEBUG main org.hibernate.loader.Loader - Done loading collection
+TRACE main org.hibernate.event.internal.DefaultInitializeCollectionEventListener - Collection initialized
 DEBUG main org.jboss.logging - Logging Provider: org.jboss.logging.Log4jLoggerProvider
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration boolean -> org.hibernate.type.BooleanType@329a0466
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration boolean -> org.hibernate.type.BooleanType@329a0466
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@329a0466
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@5e5ad035
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration true_false -> org.hibernate.type.TrueFalseType@47cb3b45
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration yes_no -> org.hibernate.type.YesNoType@26955d1c
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration byte -> org.hibernate.type.ByteType@339274f9
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration byte -> org.hibernate.type.ByteType@339274f9
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@339274f9
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration character -> org.hibernate.type.CharacterType@6db38815
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration char -> org.hibernate.type.CharacterType@6db38815
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@6db38815
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration short -> org.hibernate.type.ShortType@3f6fc94f
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration short -> org.hibernate.type.ShortType@3f6fc94f
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@3f6fc94f
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration integer -> org.hibernate.type.IntegerType@693f23a2
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration int -> org.hibernate.type.IntegerType@693f23a2
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@693f23a2
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration long -> org.hibernate.type.LongType@68bac49a
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration long -> org.hibernate.type.LongType@68bac49a
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Long -> org.hibernate.type.LongType@68bac49a
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration float -> org.hibernate.type.FloatType@57c40e95
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration float -> org.hibernate.type.FloatType@57c40e95
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@57c40e95
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration double -> org.hibernate.type.DoubleType@1c7cd70c
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration double -> org.hibernate.type.DoubleType@1c7cd70c
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@1c7cd70c
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@6eaee86f
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@6eaee86f
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@51ab8a5
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@51ab8a5
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration string -> org.hibernate.type.StringType@3dc16307
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.String -> org.hibernate.type.StringType@3dc16307
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@7194b34a
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@2818de48
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration url -> org.hibernate.type.UrlType@4946101f
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.net.URL -> org.hibernate.type.UrlType@4946101f
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration date -> org.hibernate.type.DateType@4ca6c0c9
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Date -> org.hibernate.type.DateType@4ca6c0c9
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration time -> org.hibernate.type.TimeType@6d2a3e06
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@6d2a3e06
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration timestamp -> org.hibernate.type.TimestampType@5174202a
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@5174202a
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@5174202a
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@5f674b36
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration calendar -> org.hibernate.type.CalendarType@7d3eea2f
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@7d3eea2f
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@7d3eea2f
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@71f948b1
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration locale -> org.hibernate.type.LocaleType@4671b856
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@4671b856
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration currency -> org.hibernate.type.CurrencyType@717a07ac
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@717a07ac
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration timezone -> org.hibernate.type.TimeZoneType@fb52041
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@fb52041
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration class -> org.hibernate.type.ClassType@2488e6c7
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@2488e6c7
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@1b814a5
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@1b814a5
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@5412a54b
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@29ed3da1
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration binary -> org.hibernate.type.BinaryType@1ebe99f8
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration byte[] -> org.hibernate.type.BinaryType@1ebe99f8
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration [B -> org.hibernate.type.BinaryType@1ebe99f8
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@5abbfa4c
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@5abbfa4c
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@5abbfa4c
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration image -> org.hibernate.type.ImageType@2d8db76b
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration characters -> org.hibernate.type.CharArrayType@2843b164
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration char[] -> org.hibernate.type.CharArrayType@2843b164
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration [C -> org.hibernate.type.CharArrayType@2843b164
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@1fd889aa
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@1fd889aa
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@1fd889aa
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration text -> org.hibernate.type.TextType@4af42ea0
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration ntext -> org.hibernate.type.NTextType@60bb94d9
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration blob -> org.hibernate.type.BlobType@5b187658
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@5b187658
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@76656185
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration clob -> org.hibernate.type.ClobType@707a7686
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@707a7686
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration nclob -> org.hibernate.type.NClobType@71ba5839
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@71ba5839
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@3931b732
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@c3e65be
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration serializable -> org.hibernate.type.SerializableType@3796a671
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration object -> org.hibernate.type.ObjectType@5eab5809
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@5eab5809
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@142a3945
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@6015eb5a
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@3f0e92fe
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@55d48209
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@72a548e4
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@4154ab89
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@1dc9d0e1
-DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@2cb0730e
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration boolean -> org.hibernate.type.BooleanType@68aed52c
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration boolean -> org.hibernate.type.BooleanType@68aed52c
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@68aed52c
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@a9292cb
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration true_false -> org.hibernate.type.TrueFalseType@6aea206b
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration yes_no -> org.hibernate.type.YesNoType@746f6266
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration byte -> org.hibernate.type.ByteType@27738a7c
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration byte -> org.hibernate.type.ByteType@27738a7c
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@27738a7c
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration character -> org.hibernate.type.CharacterType@45c803ae
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration char -> org.hibernate.type.CharacterType@45c803ae
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@45c803ae
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration short -> org.hibernate.type.ShortType@16d14192
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration short -> org.hibernate.type.ShortType@16d14192
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@16d14192
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration integer -> org.hibernate.type.IntegerType@43e47e37
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration int -> org.hibernate.type.IntegerType@43e47e37
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@43e47e37
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration long -> org.hibernate.type.LongType@2443ac12
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration long -> org.hibernate.type.LongType@2443ac12
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Long -> org.hibernate.type.LongType@2443ac12
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration float -> org.hibernate.type.FloatType@4a05fd83
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration float -> org.hibernate.type.FloatType@4a05fd83
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@4a05fd83
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration double -> org.hibernate.type.DoubleType@5ba295be
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration double -> org.hibernate.type.DoubleType@5ba295be
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@5ba295be
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@6bc947
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@6bc947
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@68b88d29
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@68b88d29
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration string -> org.hibernate.type.StringType@515063db
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.String -> org.hibernate.type.StringType@515063db
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@571cb4a6
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@5c393d95
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration url -> org.hibernate.type.UrlType@47d1ab77
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.net.URL -> org.hibernate.type.UrlType@47d1ab77
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration date -> org.hibernate.type.DateType@1d1e082e
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Date -> org.hibernate.type.DateType@1d1e082e
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration time -> org.hibernate.type.TimeType@1ea3e365
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@1ea3e365
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration timestamp -> org.hibernate.type.TimestampType@5fd73cf4
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@5fd73cf4
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@5fd73cf4
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@734f0076
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration calendar -> org.hibernate.type.CalendarType@84cc70e
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@84cc70e
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@84cc70e
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@62a1d7d9
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration locale -> org.hibernate.type.LocaleType@5b65afa5
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@5b65afa5
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration currency -> org.hibernate.type.CurrencyType@e1ddc89
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@e1ddc89
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration timezone -> org.hibernate.type.TimeZoneType@dbca6b5
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@dbca6b5
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration class -> org.hibernate.type.ClassType@3c5ae487
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@3c5ae487
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@5e2c9d5b
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@5e2c9d5b
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@6e226cfe
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@46480e23
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration binary -> org.hibernate.type.BinaryType@2bb3768b
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration byte[] -> org.hibernate.type.BinaryType@2bb3768b
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration [B -> org.hibernate.type.BinaryType@2bb3768b
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@7f6ff8
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@7f6ff8
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@7f6ff8
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration image -> org.hibernate.type.ImageType@da69a9c
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration characters -> org.hibernate.type.CharArrayType@5d808366
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration char[] -> org.hibernate.type.CharArrayType@5d808366
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration [C -> org.hibernate.type.CharArrayType@5d808366
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@216f6006
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@216f6006
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@216f6006
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration text -> org.hibernate.type.TextType@39185ce6
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration ntext -> org.hibernate.type.NTextType@307d58ae
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration blob -> org.hibernate.type.BlobType@4b40de18
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@4b40de18
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@2063a0e5
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration clob -> org.hibernate.type.ClobType@29ed3da1
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@29ed3da1
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration nclob -> org.hibernate.type.NClobType@b6ba69
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@b6ba69
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@e861253
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@4cce8107
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration serializable -> org.hibernate.type.SerializableType@74f23ad3
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration object -> org.hibernate.type.ObjectType@bdc22ad
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@bdc22ad
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@2eaafcb8
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@5bb5abf7
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@742d142a
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@3b870cfc
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@1f6592ec
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@4590d40e
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@275206d0
+DEBUG main org.hibernate.type.BasicTypeRegistry - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@7a3d55da
 INFO main org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
 INFO main org.hibernate.Version - HHH000412: Hibernate Core {4.2.1.Final}
 INFO main org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
@@ -493,7 +588,7 @@ DEBUG main org.hibernate.cfg.SettingsFactory - JTA Track by Thread: enabled
 DEBUG main org.hibernate.internal.SessionFactoryImpl - Building session factory
 TRACE main org.hibernate.service.internal.AbstractServiceRegistryImpl - Initializing service [role=org.hibernate.service.spi.SessionFactoryServiceRegistryFactory]
 TRACE main org.hibernate.service.internal.AbstractServiceRegistryImpl - Initializing service [role=org.hibernate.engine.spi.CacheImplementor]
-TRACE main org.hibernate.type.TypeFactory - Scoping types to session factory org.hibernate.internal.SessionFactoryImpl@1453c29c
+TRACE main org.hibernate.type.TypeFactory - Scoping types to session factory org.hibernate.internal.SessionFactoryImpl@14fb3758
 DEBUG main org.hibernate.internal.SessionFactoryImpl - Session factory constructed with filter configurations : {}
 DEBUG main org.hibernate.internal.SessionFactoryImpl - Instantiating session factory with properties: {java.runtime.name=Java(TM) SE Runtime Environment, hibernate.connection.password=1234, sun.boot.library.path=C:\Program Files\Java\jdk1.7.0_21\jre\bin, java.vm.version=23.21-b01, hibernate.connection.username=luki91_java, java.vm.vendor=Oracle Corporation, java.vendor.url=http://java.oracle.com/, path.separator=;, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, file.encoding.pkg=sun.io, user.script=, user.country=PL, sun.java.launcher=SUN_STANDARD, sun.os.patch.level=, java.vm.specification.name=Java Virtual Machine Specification, user.dir=C:\Users\Luki\Documents\GitHub\java_zaliczenie, java.runtime.version=1.7.0_21-b11, java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment, java.endorsed.dirs=C:\Program Files\Java\jdk1.7.0_21\jre\lib\endorsed, os.arch=amd64, java.io.tmpdir=C:\Users\Luki\AppData\Local\Temp\, line.separator=
 , java.vm.specification.vendor=Oracle Corporation, user.variant=, os.name=Windows 8, sun.jnu.encoding=Cp1250, java.library.path=C:\Program Files\Java\jdk1.7.0_21\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Intel\Shared Files\cpp\bin\Intel64;C:\Python33\; C:\Program Files\Java\jre7\bin;C:\apache-maven-3.0.5\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Haskell\bin;C:\Program Files (x86)\Haskell Platform\2012.4.0.0\lib\extralibs\bin;C:\Program Files (x86)\Haskell Platform\2012.4.0.0\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files (x86)\Windows Kits\8.0\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\Haskell Platform\2012.4.0.0\mingw\bin;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Calibre2\;C:\Users\Luki\AppData\Roaming\cabal\bin;., java.specification.name=Java Platform API Specification, java.class.version=51.0, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, os.version=6.2, user.home=C:\Users\Luki, user.timezone=, java.awt.printerjob=sun.awt.windows.WPrinterJob, java.specification.version=1.7, file.encoding=Cp1250, hibernate.connection.driver_class=com.mysql.jdbc.Driver, user.name=Luki, java.class.path=C:\Users\Luki\Documents\GitHub\java_zaliczenie\target\classes;C:\Users\Luki\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\Luki\.m2\repository\mysql\mysql-connector-java\5.1.24\mysql-connector-java-5.1.24.jar;C:\Users\Luki\.m2\repository\org\hibernate\hibernate-core\4.2.1.Final\hibernate-core-4.2.1.Final.jar;C:\Users\Luki\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\Luki\.m2\repository\org\jboss\logging\jboss-logging\3.1.0.GA\jboss-logging-3.1.0.GA.jar;C:\Users\Luki\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;C:\Users\Luki\.m2\repository\org\jboss\spec\javax\transaction\jboss-transaction-api_1.1_spec\1.0.1.Final\jboss-transaction-api_1.1_spec-1.0.1.Final.jar;C:\Users\Luki\.m2\repository\org\hibernate\javax\persistence\hibernate-jpa-2.0-api\1.0.1.Final\hibernate-jpa-2.0-api-1.0.1.Final.jar;C:\Users\Luki\.m2\repository\org\javassist\javassist\3.15.0-GA\javassist-3.15.0-GA.jar;C:\Users\Luki\.m2\repository\org\hibernate\common\hibernate-commons-annotations\4.0.1.Final\hibernate-commons-annotations-4.0.1.Final.jar;C:\Users\Luki\.m2\repository\org\hibernate\hibernate\3.2.5.ga\hibernate-3.2.5.ga.jar;C:\Users\Luki\.m2\repository\net\sf\ehcache\ehcache\1.2.3\ehcache-1.2.3.jar;C:\Users\Luki\.m2\repository\commons-logging\commons-logging\1.0.4\commons-logging-1.0.4.jar;C:\Users\Luki\.m2\repository\asm\asm-attrs\1.5.3\asm-attrs-1.5.3.jar;C:\Users\Luki\.m2\repository\cglib\cglib\2.1_3\cglib-2.1_3.jar;C:\Users\Luki\.m2\repository\asm\asm\1.5.3\asm-1.5.3.jar;C:\Users\Luki\.m2\repository\commons-collections\commons-collections\2.1.1\commons-collections-2.1.1.jar;C:\Users\Luki\.m2\repository\org\hibernate\hibernate-entitymanager\3.3.2.GA\hibernate-entitymanager-3.3.2.GA.jar;C:\Users\Luki\.m2\repository\org\hibernate\hibernate-annotations\3.3.1.GA\hibernate-annotations-3.3.1.GA.jar;C:\Users\Luki\.m2\repository\org\hibernate\hibernate-commons-annotations\3.0.0.ga\hibernate-commons-annotations-3.0.0.ga.jar;C:\Users\Luki\.m2\repository\org\hibernate\ejb3-persistence\1.0.1.GA\ejb3-persistence-1.0.1.GA.jar;C:\Users\Luki\.m2\repository\javassist\javassist\3.4.GA\javassist-3.4.GA.jar;C:\Users\Luki\.m2\repository\javax\sql\jdbc-stdext\2.0\jdbc-stdext-2.0.jar;C:\Users\Luki\.m2\repository\javax\transaction\jta\1.0.1B\jta-1.0.1B.jar, hibernate.bytecode.use_reflection_optimizer=false, java.vm.specification.version=1.7, sun.arch.data.model=64, java.home=C:\Program Files\Java\jdk1.7.0_21\jre, sun.java.command=com.java.java_zaliczenie.App, hibernate.dialect=org.hibernate.dialect.MySQLDialect, hibernate.connection.url=jdbc:mysql://luki91.vot.pl:3306/luki91_java2?zeroDateTimeBehavior=convertToNull, java.specification.vendor=Oracle Corporation, user.language=pl, awt.toolkit=sun.awt.windows.WToolkit, java.vm.info=mixed mode, java.version=1.7.0_21, java.ext.dirs=C:\Program Files\Java\jdk1.7.0_21\jre\lib\ext;C:\Windows\Sun\Java\lib\ext, sun.boot.class.path=C:\Program Files\Java\jdk1.7.0_21\jre\lib\resources.jar;C:\Program Files\Java\jdk1.7.0_21\jre\lib\rt.jar;C:\Program Files\Java\jdk1.7.0_21\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.7.0_21\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.7.0_21\jre\lib\jce.jar;C:\Program Files\Java\jdk1.7.0_21\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.7.0_21\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.7.0_21\jre\classes, java.vendor=Oracle Corporation, file.separator=\, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, sun.cpu.endian=little, sun.io.unicode.encoding=UnicodeLittle, sun.desktop=windows, sun.cpu.isalist=amd64}
@@ -502,89 +597,14 @@ DEBUG main org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory -
 DEBUG main org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.MySQLDialect]
 TRACE main org.hibernate.service.internal.AbstractServiceRegistryImpl - Initializing service [role=org.hibernate.persister.spi.PersisterFactory]
 TRACE main org.hibernate.service.internal.AbstractServiceRegistryImpl - Initializing service [role=org.hibernate.persister.spi.PersisterClassResolver]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.id], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.idShelf], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
+TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.id], existing type = [org.hibernate.type.IntegerType@43e47e37], incoming type = [org.hibernate.type.IntegerType@43e47e37]
+TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.idShelf], existing type = [org.hibernate.type.IntegerType@43e47e37], incoming type = [org.hibernate.type.IntegerType@43e47e37]
 TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf], existing type = [org.hibernate.type.ManyToOneType(com.java.java_zaliczenie.Shelf)], incoming type = [org.hibernate.type.ManyToOneType(com.java.java_zaliczenie.Shelf)]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.id], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.id], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.idShelf], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.idShelf], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [bookAuthor], existing type = [org.hibernate.type.StringType@3dc16307], incoming type = [org.hibernate.type.StringType@3dc16307]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [bookTitle], existing type = [org.hibernate.type.StringType@3dc16307], incoming type = [org.hibernate.type.StringType@3dc16307]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [bookDescription], existing type = [org.hibernate.type.StringType@3dc16307], incoming type = [org.hibernate.type.StringType@3dc16307]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [bookPrice], existing type = [org.hibernate.type.LongType@68bac49a], incoming type = [org.hibernate.type.LongType@68bac49a]
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister - Static SQL for entity: com.java.java_zaliczenie.DramaBook
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Version select: select Book_isbn from luki91_java2.Book where Book_isbn =?
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Snapshot select: select dramabook_.Book_isbn, dramabook_1_.Shelf_idShelf as Shelf2_3_, dramabook_1_.Book_author as Book3_3_, dramabook_1_.Book_title as Book4_3_, dramabook_1_.Book_description as Book5_3_, dramabook_1_.Book_price as Book6_3_ from DramaBook dramabook_ inner join luki91_java2.Book dramabook_1_ on dramabook_.Book_isbn=dramabook_1_.Book_isbn where dramabook_.Book_isbn=?
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Insert 0: insert into luki91_java2.Book (Shelf_idShelf, Book_author, Book_title, Book_description, Book_price, Book_isbn) values (?, ?, ?, ?, ?, ?)
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Update 0: update luki91_java2.Book set Shelf_idShelf=?, Book_author=?, Book_title=?, Book_description=?, Book_price=? where Book_isbn=?
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Delete 0: delete from luki91_java2.Book where Book_isbn=?
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Insert 1: insert into DramaBook (Book_isbn) values (?)
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Update 1: null
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Delete 1: delete from DramaBook where Book_isbn=?
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.id], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.idShelf], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf], existing type = [org.hibernate.type.ManyToOneType(com.java.java_zaliczenie.Shelf)], incoming type = [org.hibernate.type.ManyToOneType(com.java.java_zaliczenie.Shelf)]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.id], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.id], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.idShelf], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.idShelf], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [bookAuthor], existing type = [org.hibernate.type.StringType@3dc16307], incoming type = [org.hibernate.type.StringType@3dc16307]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [bookTitle], existing type = [org.hibernate.type.StringType@3dc16307], incoming type = [org.hibernate.type.StringType@3dc16307]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [bookDescription], existing type = [org.hibernate.type.StringType@3dc16307], incoming type = [org.hibernate.type.StringType@3dc16307]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [bookPrice], existing type = [org.hibernate.type.LongType@68bac49a], incoming type = [org.hibernate.type.LongType@68bac49a]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [adventureInformations], existing type = [org.hibernate.type.StringType@3dc16307], incoming type = [org.hibernate.type.StringType@3dc16307]
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister - Static SQL for entity: com.java.java_zaliczenie.AdventureBook
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Version select: select Book_isbn from luki91_java2.Book where Book_isbn =?
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Snapshot select: select adventureb_.Book_isbn, adventureb_1_.Shelf_idShelf as Shelf2_3_, adventureb_1_.Book_author as Book3_3_, adventureb_1_.Book_title as Book4_3_, adventureb_1_.Book_description as Book5_3_, adventureb_1_.Book_price as Book6_3_, adventureb_.Adventure_informations as Adventur2_0_ from AdventureBook adventureb_ inner join luki91_java2.Book adventureb_1_ on adventureb_.Book_isbn=adventureb_1_.Book_isbn where adventureb_.Book_isbn=?
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Insert 0: insert into luki91_java2.Book (Shelf_idShelf, Book_author, Book_title, Book_description, Book_price, Book_isbn) values (?, ?, ?, ?, ?, ?)
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Update 0: update luki91_java2.Book set Shelf_idShelf=?, Book_author=?, Book_title=?, Book_description=?, Book_price=? where Book_isbn=?
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Delete 0: delete from luki91_java2.Book where Book_isbn=?
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Insert 1: insert into AdventureBook (Adventure_informations, Book_isbn) values (?, ?)
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Update 1: update AdventureBook set Adventure_informations=? where Book_isbn=?
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Delete 1: delete from AdventureBook where Book_isbn=?
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.id], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.idShelf], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf], existing type = [org.hibernate.type.ManyToOneType(com.java.java_zaliczenie.Shelf)], incoming type = [org.hibernate.type.ManyToOneType(com.java.java_zaliczenie.Shelf)]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.id], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.id], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.idShelf], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.idShelf], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [bookAuthor], existing type = [org.hibernate.type.StringType@3dc16307], incoming type = [org.hibernate.type.StringType@3dc16307]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [bookTitle], existing type = [org.hibernate.type.StringType@3dc16307], incoming type = [org.hibernate.type.StringType@3dc16307]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [bookDescription], existing type = [org.hibernate.type.StringType@3dc16307], incoming type = [org.hibernate.type.StringType@3dc16307]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [bookPrice], existing type = [org.hibernate.type.LongType@68bac49a], incoming type = [org.hibernate.type.LongType@68bac49a]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [sfMovie], existing type = [org.hibernate.type.StringType@3dc16307], incoming type = [org.hibernate.type.StringType@3dc16307]
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister - Static SQL for entity: com.java.java_zaliczenie.Sfbook
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Version select: select Book_isbn from luki91_java2.Book where Book_isbn =?
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Snapshot select: select sfbook_.Book_isbn, sfbook_1_.Shelf_idShelf as Shelf2_3_, sfbook_1_.Book_author as Book3_3_, sfbook_1_.Book_title as Book4_3_, sfbook_1_.Book_description as Book5_3_, sfbook_1_.Book_price as Book6_3_, sfbook_.SF_movie as SF2_2_ from SFBook sfbook_ inner join luki91_java2.Book sfbook_1_ on sfbook_.Book_isbn=sfbook_1_.Book_isbn where sfbook_.Book_isbn=?
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Insert 0: insert into luki91_java2.Book (Shelf_idShelf, Book_author, Book_title, Book_description, Book_price, Book_isbn) values (?, ?, ?, ?, ?, ?)
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Update 0: update luki91_java2.Book set Shelf_idShelf=?, Book_author=?, Book_title=?, Book_description=?, Book_price=? where Book_isbn=?
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Delete 0: delete from luki91_java2.Book where Book_isbn=?
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Insert 1: insert into SFBook (SF_movie, Book_isbn) values (?, ?)
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Update 1: update SFBook set SF_movie=? where Book_isbn=?
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Delete 1: delete from SFBook where Book_isbn=?
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.id], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.idShelf], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf], existing type = [org.hibernate.type.ManyToOneType(com.java.java_zaliczenie.Shelf)], incoming type = [org.hibernate.type.ManyToOneType(com.java.java_zaliczenie.Shelf)]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.id], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.id], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.idShelf], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.idShelf], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [bookAuthor], existing type = [org.hibernate.type.StringType@3dc16307], incoming type = [org.hibernate.type.StringType@3dc16307]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [bookTitle], existing type = [org.hibernate.type.StringType@3dc16307], incoming type = [org.hibernate.type.StringType@3dc16307]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [bookDescription], existing type = [org.hibernate.type.StringType@3dc16307], incoming type = [org.hibernate.type.StringType@3dc16307]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [bookPrice], existing type = [org.hibernate.type.LongType@68bac49a], incoming type = [org.hibernate.type.LongType@68bac49a]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [adventureInformations], existing type = [org.hibernate.type.StringType@3dc16307], incoming type = [org.hibernate.type.StringType@3dc16307]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [sfMovie], existing type = [org.hibernate.type.StringType@3dc16307], incoming type = [org.hibernate.type.StringType@3dc16307]
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister - Static SQL for entity: com.java.java_zaliczenie.Book
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Version select: select Book_isbn from luki91_java2.Book where Book_isbn =?
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Snapshot select: select book_.Book_isbn, book_.Shelf_idShelf as Shelf2_3_, book_.Book_author as Book3_3_, book_.Book_title as Book4_3_, book_.Book_description as Book5_3_, book_.Book_price as Book6_3_ from luki91_java2.Book book_ where book_.Book_isbn=?
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Insert 0: insert into luki91_java2.Book (Shelf_idShelf, Book_author, Book_title, Book_description, Book_price, Book_isbn) values (?, ?, ?, ?, ?, ?)
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Update 0: update luki91_java2.Book set Shelf_idShelf=?, Book_author=?, Book_title=?, Book_description=?, Book_price=? where Book_isbn=?
-DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Delete 0: delete from luki91_java2.Book where Book_isbn=?
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [stand.id], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [stand.idStand], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [stand], existing type = [org.hibernate.type.ManyToOneType(com.java.java_zaliczenie.Stand)], incoming type = [org.hibernate.type.ManyToOneType(com.java.java_zaliczenie.Stand)]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [stand.id], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
-TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [stand.id], existing type = [org.hibernate.type.IntegerType@693f23a2], incoming type = [org.hibernate.type.IntegerType@693f23a2]
+TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.id], existing type = [org.hibernate.type.IntegerType@43e47e37], incoming type = [org.hibernate.type.IntegerType@43e47e37]
+TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.id], existing type = [org.hibernate.type.IntegerType@43e47e37], incoming type = [org.hibernate.type.IntegerType@43e47e37]
+TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.idShelf], existing type = [org.hibernate.type.IntegerType@43e47e37], incoming type = [org.hibernate.type.IntegerType@43e47e37]
+TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [shelf.idShelf], existing type = [org.hibernate.type.IntegerType@43e47e37], incoming type = [org.hibernate.type.IntegerType@43e47e37]
+TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [bookAuthor], existing type = [org.hibernate.type.StringType@515063db], incoming type = [org.hibernate.type.StringType@515063db]
+TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [bookTitle], existing type = [org.hibernate.type.StringType@515063db], incoming type = [org.hibernate.type.StringType@515063db]
+TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [bookDescription], existing type = [org.hibernate.type.StringType@515063db], incoming type = [org.hibernate.type.StringType@515063db]
+TRACE main org.hibernate.persister.entity.AbstractPropertyMapping - Skipping duplicate registration of path [bookPrice], existing type = [org.hibernate.type.LongType@2443ac12], incoming type = [org.hibernate.type.LongType@2443ac12]
