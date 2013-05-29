@@ -1,5 +1,5 @@
 package com.java.java_zaliczenie;
-// Generated 2013-05-29 19:46:30 by Hibernate Tools 3.2.1.GA
+// Generated 2013-05-29 20:35:51 by Hibernate Tools 3.2.1.GA
 
 
 

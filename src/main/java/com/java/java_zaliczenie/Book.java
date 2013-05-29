@@ -1,5 +1,5 @@
 package com.java.java_zaliczenie;
-// Generated 2013-05-29 19:46:30 by Hibernate Tools 3.2.1.GA
+// Generated 2013-05-29 20:35:51 by Hibernate Tools 3.2.1.GA
 
 
 
@@ -21,10 +21,8 @@ public class Book  implements java.io.Serializable {
     }
 
 	
-    public Book(String bookIsbn, Category category, Shelf shelf, String bookAuthor, String bookTitle, long bookPrice) {
+    public Book(String bookIsbn, String bookAuthor, String bookTitle, long bookPrice) {
         this.bookIsbn = bookIsbn;
-        this.category = category;
-        this.shelf = shelf;
         this.bookAuthor = bookAuthor;
         this.bookTitle = bookTitle;
         this.bookPrice = bookPrice;

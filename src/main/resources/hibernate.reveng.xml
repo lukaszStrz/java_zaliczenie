@@ -2,11 +2,11 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="luki91_java2"/>
-  <table-filter match-name="Book"/>
-  <table-filter match-name="Shelf"/>
-  <table-filter match-name="Stand"/>
-  <table-filter match-name="SF"/>
-  <table-filter match-name="Category"/>
   <table-filter match-name="Adventure"/>
+  <table-filter match-name="SF"/>
+  <table-filter match-name="Stand"/>
+  <table-filter match-name="Shelf"/>
+  <table-filter match-name="Book"/>
+  <table-filter match-name="Category"/>
   <table-filter match-name="Drama"/>
 </hibernate-reverse-engineering>

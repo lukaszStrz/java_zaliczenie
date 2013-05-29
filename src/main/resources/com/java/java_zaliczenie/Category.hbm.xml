@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2013-05-29 19:46:30 by Hibernate Tools 3.2.1.GA -->
+<!-- Generated 2013-05-29 20:35:51 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="com.java.java_zaliczenie.Category" table="Category" catalog="luki91_java2">
         <id name="idCategory" type="java.lang.Integer">
@@ -10,7 +10,7 @@
         </id>
         <set name="books" inverse="true">
             <key>
-                <column name="Category_idCategory" not-null="true" />
+                <column name="Category_idCategory" />
             </key>
             <one-to-many class="com.java.java_zaliczenie.Book" />
         </set>
