@@ -16,17 +16,16 @@ public class XmlDaoFactory extends DaoFactory {
 
     @Override
     public DaoBook getBookDao() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new XmlDaoBook();
     }
 
     @Override
     public DaoShelf getShelfDao() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new XmlDaoShelf();
     }
 
     @Override
     public DaoStand getStandDao() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new XmlDaoStand();
     }
-    
 }

@@ -82,7 +82,8 @@ public class App {
 
                     System.out.println("Wybierz sposób eksportu:");
                     System.out.println("1 - eksport do XML");
-                    System.out.println("2 - eksport do CSV");
+                    System.out.println("2 - eksport do JSON");
+                    System.out.println("3 - eksport do CSV");
 
                     try {
                         exportType = scanner.nextInt();

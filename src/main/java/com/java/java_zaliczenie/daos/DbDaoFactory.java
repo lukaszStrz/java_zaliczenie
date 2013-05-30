@@ -4,7 +4,10 @@
  */
 package com.java.java_zaliczenie.daos;
 
-import com.java.java_zaliczenie.daos.interfaces.*;
+import com.java.java_zaliczenie.daos.interfaces.DaoBook;
+import com.java.java_zaliczenie.daos.interfaces.DaoShelf;
+import com.java.java_zaliczenie.daos.interfaces.DaoStand;
+
 
 /**
  *

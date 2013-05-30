@@ -21,7 +21,7 @@ import org.hibernate.Transaction;
 public class DbDaoBook implements DaoBook {
     
     Session session = HibernateUtil.getSessionFactory().openSession();
-    Logger logger = Logger.getLogger(DaoBook.class.getName());
+    Logger logger = Logger.getLogger(DbDaoBook.class.getName());
 
     @Override
     public void addBook(Book book)

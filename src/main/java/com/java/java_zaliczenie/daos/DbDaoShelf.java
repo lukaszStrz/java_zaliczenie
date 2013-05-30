@@ -22,7 +22,7 @@ public class DbDaoShelf implements DaoShelf
 {
 
     Session session = HibernateUtil.getSessionFactory().openSession();
-    Logger logger = Logger.getLogger(DaoShelf.class.getName());
+    Logger logger = Logger.getLogger(DbDaoShelf.class.getName());
 
     @Override
     public void addShelf(Shelf shelf)

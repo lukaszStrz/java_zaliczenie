@@ -22,7 +22,7 @@ public class DbDaoStand implements DaoStand
 {
 
     Session session = HibernateUtil.getSessionFactory().openSession();
-    Logger logger = Logger.getLogger(DaoStand.class.getName());
+    Logger logger = Logger.getLogger(DbDaoStand.class.getName());
 
     @Override
     public void addStand(Stand stand)
