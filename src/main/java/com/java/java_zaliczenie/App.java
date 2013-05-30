@@ -1,5 +1,7 @@
 package com.java.java_zaliczenie;
 
+import com.java.java_zaliczenie.daos.DbDaoFactory;
+import com.java.java_zaliczenie.daos.DaoFactory;
 import com.java.java_zaliczenie.daos.interfaces.DaoBook;
 import com.java.java_zaliczenie.daos.interfaces.DaoStand;
 import com.java.java_zaliczenie.daos.interfaces.DaoShelf;
