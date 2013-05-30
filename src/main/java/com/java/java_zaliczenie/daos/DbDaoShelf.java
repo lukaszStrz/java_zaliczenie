@@ -18,31 +18,25 @@ import org.hibernate.Transaction;
  *
  * @author Wojciech
  */
-public class DbDaoShelf implements DaoShelf
-{
+public class DbDaoShelf implements DaoShelf {
 
-    Session session = HibernateUtil.getSession();
+    Session session = HibernateUtil.getSessionFactory().openSession();
     Logger logger = Logger.getLogger(DbDaoShelf.class.getName());
 
     @Override
-    public void addShelf(Shelf shelf)
-    {
+    public void addShelf(Shelf shelf) {
         logger.trace("Adding new Shelf " + shelf.getIdShelf());
         Transaction trns = null;
-        try
-        {
+        try {
             trns = session.beginTransaction();
             session.save(shelf);
             session.getTransaction().commit();
-        } catch (RuntimeException e)
-        {
-            if (trns != null)
-            {
+        } catch (RuntimeException e) {
+            if (trns != null) {
                 trns.rollback();
             }
             logger.error(e);
-        } finally
-        {
+        } finally {
             session.flush();
 //            session.close();
         }
@@ -50,25 +44,20 @@ public class DbDaoShelf implements DaoShelf
     }
 
     @Override
-    public void deleteShelf(int id)
-    {
+    public void deleteShelf(int id) {
         logger.trace("Deleting Shelf " + id);
         Transaction trns = null;
-        try
-        {
+        try {
             trns = session.beginTransaction();
             Shelf shelf = (Shelf) session.load(Shelf.class, new Integer(id));
             session.delete(shelf);
             session.getTransaction().commit();
-        } catch (RuntimeException e)
-        {
-            if (trns != null)
-            {
+        } catch (RuntimeException e) {
+            if (trns != null) {
                 trns.rollback();
             }
             logger.error(e);
-        } finally
-        {
+        } finally {
             session.flush();
 //            session.close();
         }
@@ -76,24 +65,19 @@ public class DbDaoShelf implements DaoShelf
     }
 
     @Override
-    public void updateShelf(Shelf shelf)
-    {
+    public void updateShelf(Shelf shelf) {
         logger.trace("Updating shelf " + shelf.getIdShelf());
         Transaction trns = null;
-        try
-        {
+        try {
             trns = session.beginTransaction();
             session.update(shelf);
             session.getTransaction().commit();
-        } catch (RuntimeException e)
-        {
-            if (trns != null)
-            {
+        } catch (RuntimeException e) {
+            if (trns != null) {
                 trns.rollback();
             }
             logger.error(e);
-        } finally
-        {
+        } finally {
             session.flush();
 //            session.close();
         }
@@ -101,20 +85,16 @@ public class DbDaoShelf implements DaoShelf
     }
 
     @Override
-    public List<Shelf> getAllShelfs()
-    {
+    public List<Shelf> getAllShelfs() {
         logger.trace("Listing Shelfs");
         List<Shelf> people = new ArrayList<Shelf>();
         Transaction trns = null;
-        try
-        {
+        try {
             trns = session.beginTransaction();
             people = session.createQuery("from Shelf").list();
-        } catch (RuntimeException e)
-        {
+        } catch (RuntimeException e) {
             logger.error(e);
-        } finally
-        {
+        } finally {
             session.flush();
 //            session.close();
         }
@@ -123,23 +103,19 @@ public class DbDaoShelf implements DaoShelf
     }
 
     @Override
-    public Shelf getShelfById(int id)
-    {
+    public Shelf getShelfById(int id) {
         logger.trace("Getting Shelf " + id);
         Shelf user = null;
         Transaction trns = null;
-        try
-        {
+        try {
             trns = session.beginTransaction();
             String queryString = "from Shelf where idShelf = :id";
             Query query = session.createQuery(queryString);
             query.setInteger("id", id);
             user = (Shelf) query.uniqueResult();
-        } catch (RuntimeException e)
-        {
+        } catch (RuntimeException e) {
             logger.error(e);
-        } finally
-        {
+        } finally {
             session.flush();
 //            session.close();
         }

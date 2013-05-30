@@ -19,29 +19,24 @@ import org.hibernate.Transaction;
  * @author Wojciech
  */
 public class DbDaoBook implements DaoBook {
-    
-    Session session = HibernateUtil.getSession();
+
+    Session session = HibernateUtil.getSessionFactory().openSession();
     Logger logger = Logger.getLogger(DbDaoBook.class.getName());
 
     @Override
-    public void addBook(Book book)
-    {
+    public void addBook(Book book) {
         logger.trace("Adding new Book " + book.getBookIsbn());
         Transaction trns = null;
-        try
-        {
+        try {
             trns = session.beginTransaction();
             session.save(book);
             session.getTransaction().commit();
-        } catch (RuntimeException e)
-        {
-            if (trns != null)
-            {
+        } catch (RuntimeException e) {
+            if (trns != null) {
                 trns.rollback();
             }
             logger.error(e);
-        } finally
-        {
+        } finally {
             session.flush();
 //            session.close();
         }
@@ -49,25 +44,20 @@ public class DbDaoBook implements DaoBook {
     }
 
     @Override
-    public void deleteBook(String isbn)
-    {
+    public void deleteBook(String isbn) {
         logger.trace("Deleting Book " + isbn);
         Transaction trns = null;
-        try
-        {
+        try {
             trns = session.beginTransaction();
             Book book = (Book) session.load(Book.class, isbn);
             session.delete(book);
             session.getTransaction().commit();
-        } catch (RuntimeException e)
-        {
-            if (trns != null)
-            {
+        } catch (RuntimeException e) {
+            if (trns != null) {
                 trns.rollback();
             }
             logger.error(e);
-        } finally
-        {
+        } finally {
             session.flush();
 //            session.close();
         }
@@ -75,24 +65,19 @@ public class DbDaoBook implements DaoBook {
     }
 
     @Override
-    public void updateBook(Book book)
-    {
+    public void updateBook(Book book) {
         logger.trace("Updating book " + book.getBookIsbn());
         Transaction trns = null;
-        try
-        {
+        try {
             trns = session.beginTransaction();
             session.update(book);
             session.getTransaction().commit();
-        } catch (RuntimeException e)
-        {
-            if (trns != null)
-            {
+        } catch (RuntimeException e) {
+            if (trns != null) {
                 trns.rollback();
             }
             logger.error(e);
-        } finally
-        {
+        } finally {
             session.flush();
 //            session.close();
         }
@@ -100,20 +85,16 @@ public class DbDaoBook implements DaoBook {
     }
 
     @Override
-    public List<Book> getAllBooks()
-    {
+    public List<Book> getAllBooks() {
         logger.trace("Listing Books");
         List<Book> people = new ArrayList<Book>();
         Transaction trns = null;
-        try
-        {
+        try {
             trns = session.beginTransaction();
             people = session.createQuery("from Book").list();
-        } catch (RuntimeException e)
-        {
+        } catch (RuntimeException e) {
             logger.error(e);
-        } finally
-        {
+        } finally {
             session.flush();
 //            session.close();
         }
@@ -122,23 +103,19 @@ public class DbDaoBook implements DaoBook {
     }
 
     @Override
-    public Book getBookById(String isbn)
-    {
+    public Book getBookById(String isbn) {
         logger.trace("Getting Book " + isbn);
         Book user = null;
         Transaction trns = null;
-        try
-        {
+        try {
             trns = session.beginTransaction();
             String queryString = "from Book where Book_isbn = :isbn";
             Query query = session.createQuery(queryString);
             query.setString("isbn", isbn);
             user = (Book) query.uniqueResult();
-        } catch (RuntimeException e)
-        {
+        } catch (RuntimeException e) {
             logger.error(e);
-        } finally
-        {
+        } finally {
             session.flush();
 //            session.close();
         }

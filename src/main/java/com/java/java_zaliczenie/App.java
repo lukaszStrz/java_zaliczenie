@@ -2,11 +2,9 @@ package com.java.java_zaliczenie;
 
 import com.java.java_zaliczenie.daos.DbDaoFactory;
 import com.java.java_zaliczenie.daos.DaoFactory;
-import com.java.java_zaliczenie.daos.interfaces.DaoBook;
-import com.java.java_zaliczenie.daos.interfaces.DaoStand;
-import com.java.java_zaliczenie.daos.interfaces.DaoShelf;
 import com.java.java_zaliczenie.utils.HibernateUtil;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 import org.apache.log4j.Logger;
 
@@ -23,7 +21,7 @@ public class App {
     private void run() {
         daoFactory = selectDao();
 
-        int choice = 0;
+        int choice;
         do {
             System.out.println();
             System.out.println("1 - dodawanie regałów z półkami");
@@ -38,18 +36,18 @@ public class App {
             try {
                 choice = scanner.nextInt();
             } catch (InputMismatchException ex) {
-                logger.error("Choice is not a number");
-                System.out.print("Zły wybór, spróbuj jeszcze raz");
+                logger.debug("Choice is not a number");
                 choice = -1;
                 scanner = new Scanner(System.in); /*to jest jakieś gówno...
                  * na bank nie jest to optymalne, ale bez tego np po wpisaniu "dupa", on tę "dupę"
                  * trzyma cały czas w bufforze i... znów ją daje do .nextInt()... */
             }
             System.out.println();
-            
+
 
             switch (choice) {
                 case 1:
+                    task1();
                     break;
                 case 2:
                     break;
@@ -79,8 +77,7 @@ public class App {
                     try {
                         exportType = scanner.nextInt();
                     } catch (InputMismatchException ex) {
-                        logger.error("ExportType is not a number");
-                        System.out.print("Zły wybór typu eksportu, spróbuj jeszcze raz");
+                        logger.debug("ExportType is not a number");
                         exportType = -1;
                         scanner = new Scanner(System.in); /* jak wcześniej */
                     }
@@ -101,13 +98,11 @@ public class App {
             }
             System.out.println();
         } while (choice != 0);
-
-        HibernateUtil.closeSession();
     }
 
     private DaoFactory selectDao() {
         do {
-            int choice = 0;
+            int choice;
             System.out.println("Wybierz źródło danych:");
             System.out.println("1 - baza danych");
             System.out.println("2 - plik tekstowy");
@@ -116,8 +111,7 @@ public class App {
             try {
                 choice = scanner.nextInt();
             } catch (InputMismatchException ex) {
-                logger.error("Choice is not a number");
-                System.out.print("Zły wybór, spróbuj jeszcze raz");
+                logger.debug("Choice is not a number");
                 choice = -1;
                 scanner = new Scanner(System.in);
             }
@@ -129,5 +123,82 @@ public class App {
                     break;
             }
         } while (true);
+    }
+
+    private void task1() {
+        int choice;
+        do {
+            System.out.println();
+            System.out.println("1 - dodawanie regałów ");
+            System.out.println("2 - dodawanie półek");
+            System.out.println("0 - koniec");
+
+            try {
+                choice = scanner.nextInt();
+            } catch (InputMismatchException ex) {
+                logger.debug("Choice is not a number");
+                choice = -1;
+                scanner = new Scanner(System.in);
+            }
+            System.out.println();
+
+
+            switch (choice) {
+                case 1:
+                    addStand();
+                    break;
+                case 2:
+                    Stand stand = selectStand();
+                    addShelf(stand);
+                    break;
+                default:
+                    break;
+            }
+            System.out.println();
+        } while (choice != 0);
+    }
+
+    private void addStand() {
+        System.out.println("Podaj nazwę, jaka ma zostać przypisana:");
+        String name = "";
+        do {
+            name = scanner.nextLine();
+        } while (name.equals(""));
+        Stand stand = new Stand(name);
+        daoFactory.getStandDao().addStand(stand);
+    }
+
+    private Stand selectStand() {
+        System.out.println("Wybierz regał:");
+        List<Stand> stands = daoFactory.getStandDao().getAllStands();
+        for (int i = 0; i < stands.size(); i++) {
+            System.out.print(i);
+            System.out.println(" - " + stands.get(i).getStandName() + "(" + stands.get(i).getIdStand().toString() + ")");
+        }
+        do {
+            int choice;
+            try {
+                choice = scanner.nextInt();
+            } catch (InputMismatchException ex) {
+                logger.debug("Choice is not a number");
+                System.out.println("Zły wybór, spróbuj jeszcze raz");
+                choice = -1;
+                scanner = new Scanner(System.in);
+            }
+            if (choice >= 0 && choice < stands.size()) {
+                return stands.get(choice);
+            }
+        } while (true);
+    }
+
+    private void addShelf(Stand stand) {
+        System.out.println("Podaj nazwę, jaka ma zostać przypisana:");
+        String name = "";
+        do {
+            name = scanner.nextLine();
+        } while (name.equals(""));
+
+        Shelf shelf = new Shelf(stand, name);
+        daoFactory.getShelfDao().addShelf(shelf);
     }
 }
