@@ -7,8 +7,6 @@ public interface DaoStand
 {
     void addStand(Stand stand);
 
-    void closeSession();
-
     void deleteStand(int id);
 
     List<Stand> getAllStands();

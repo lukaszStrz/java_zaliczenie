@@ -20,7 +20,7 @@ import org.hibernate.Transaction;
  */
 public class DbDaoBook implements DaoBook {
     
-    Session session = HibernateUtil.getSessionFactory().openSession();
+    Session session = HibernateUtil.getSession();
     Logger logger = Logger.getLogger(DbDaoBook.class.getName());
 
     @Override
@@ -144,11 +144,5 @@ public class DbDaoBook implements DaoBook {
         }
         logger.trace("Got book " + isbn);
         return user;
-    }
-    
-    @Override
-    public void closeSession()
-    {
-        session.close();
     }
 }

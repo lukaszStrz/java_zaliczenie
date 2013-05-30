@@ -5,6 +5,7 @@ import com.java.java_zaliczenie.daos.DaoFactory;
 import com.java.java_zaliczenie.daos.interfaces.DaoBook;
 import com.java.java_zaliczenie.daos.interfaces.DaoStand;
 import com.java.java_zaliczenie.daos.interfaces.DaoShelf;
+import com.java.java_zaliczenie.utils.HibernateUtil;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import org.apache.log4j.Logger;
@@ -109,10 +110,7 @@ public class App {
             }
             System.out.println();
         } while (choice != 0);
-        daoBook.closeSession();
-
-        daoShelf.closeSession();
-
-        daoStand.closeSession();
+        
+        HibernateUtil.closeSession();
     }
 }

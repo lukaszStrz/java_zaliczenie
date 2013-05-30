@@ -21,7 +21,7 @@ import org.hibernate.Transaction;
 public class DbDaoShelf implements DaoShelf
 {
 
-    Session session = HibernateUtil.getSessionFactory().openSession();
+    Session session = HibernateUtil.getSession();
     Logger logger = Logger.getLogger(DbDaoShelf.class.getName());
 
     @Override
@@ -145,11 +145,5 @@ public class DbDaoShelf implements DaoShelf
         }
         logger.trace("Got shelf " + id);
         return user;
-    }
-    
-    @Override
-    public void closeSession()
-    {
-        session.close();
     }
 }

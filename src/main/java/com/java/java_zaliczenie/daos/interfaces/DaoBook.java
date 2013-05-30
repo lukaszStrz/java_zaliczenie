@@ -7,8 +7,6 @@ public interface DaoBook
 {
     void addBook(Book book);
 
-    void closeSession();
-
     void deleteBook(String isbn);
 
     List<Book> getAllBooks();

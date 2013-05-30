@@ -21,7 +21,7 @@ import org.hibernate.Transaction;
 public class DbDaoStand implements DaoStand
 {
 
-    Session session = HibernateUtil.getSessionFactory().openSession();
+    Session session = HibernateUtil.getSession();
     Logger logger = Logger.getLogger(DbDaoStand.class.getName());
 
     @Override
@@ -145,11 +145,5 @@ public class DbDaoStand implements DaoStand
         }
         logger.trace("Got stand " + id);
         return user;
-    }
-    
-    @Override
-    public void closeSession()
-    {
-        session.close();
     }
 }

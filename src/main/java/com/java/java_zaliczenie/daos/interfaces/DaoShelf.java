@@ -7,8 +7,6 @@ public interface DaoShelf
 {
     void addShelf(Shelf shelf);
 
-    void closeSession();
-
     void deleteShelf(int id);
 
     List<Shelf> getAllShelfs();
