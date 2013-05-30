@@ -1,6 +1,8 @@
 package com.java.java_zaliczenie;
 
-import com.java.java_zaliczenie.daos.*;
+import com.java.java_zaliczenie.daos.interfaces.DaoBook;
+import com.java.java_zaliczenie.daos.interfaces.DaoStand;
+import com.java.java_zaliczenie.daos.interfaces.DaoShelf;
 import java.util.Scanner;
 import org.apache.log4j.Logger;
 
@@ -11,10 +13,11 @@ import org.apache.log4j.Logger;
 public class App
 {
 
-    DaoBook daobook = new DaoBook();
-    DaoShelf daoshelf = new DaoShelf();
-    DaoStand daostand = new DaoStand();
-    Logger logger = Logger.getLogger(App.class.getName());
+    private DaoFactory daoFactory;
+    private DaoBook daoBook;
+    private DaoShelf daoShelf;
+    private DaoStand daoStand;
+    private Logger logger = Logger.getLogger(App.class.getName());
 
     public static void main(String[] args)
     {
@@ -23,6 +26,14 @@ public class App
 
     private void run()
     {
+        daoFactory = new DbDaoFactory();
+        //daoFactory = new XmlDaoFactory();
+        //daoFactory = new TxtDaoFactory();
+        
+        daoBook = daoFactory.getBookDao();
+        daoShelf = daoFactory.getShelfDao();
+        daoStand = daoFactory.getStandDao();
+        
         Scanner scanner = new Scanner(System.in);
         int choice = 0;
         do
@@ -49,7 +60,7 @@ public class App
                 case 4:
                     break;
                 case 5:
-                    for (Stand stand : daostand.getAllStands())
+                    for (Stand stand : daoStand.getAllStands())
                     {
                         System.out.println(stand.getStandName() + ":");
                         for (Object shelf : stand.getShelfs())
@@ -69,8 +80,8 @@ public class App
             }
             System.out.println();
         } while (choice != 0);
-        daobook.closeSession();
-        daoshelf.closeSession();
-        daostand.closeSession();
+        daoBook.closeSession();
+        daoShelf.closeSession();
+        daoStand.closeSession();
     }
 }
