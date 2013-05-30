@@ -8,25 +8,48 @@ import com.java.java_zaliczenie.daos.interfaces.DaoBook;
 import com.java.java_zaliczenie.daos.interfaces.DaoShelf;
 import com.java.java_zaliczenie.daos.interfaces.DaoStand;
 
-
 /**
  *
  * @author Wojciech
  */
 public class DbDaoFactory extends DaoFactory {
 
+    DbDaoBook daobook;
+    DbDaoShelf daoshelf;
+    DbDaoStand daostand;
+    private static DbDaoFactory instance;
+
+    private DbDaoFactory() {
+    }
+
+    public static DbDaoFactory getInstance() {
+        if (instance == null) {
+            instance = new DbDaoFactory();
+        }
+        return instance;
+    }
+
     @Override
     public DaoBook getBookDao() {
-        return new DbDaoBook();
+        if (daobook == null) {
+            daobook = new DbDaoBook();
+        }
+        return daobook;
     }
 
     @Override
     public DaoShelf getShelfDao() {
-        return new DbDaoShelf();
+        if (daoshelf == null) {
+            daoshelf = new DbDaoShelf();
+        }
+        return daoshelf;
     }
 
     @Override
     public DaoStand getStandDao() {
-        return new DbDaoStand();
+        if (daostand == null) {
+            daostand = new DbDaoStand();
+        }
+        return daostand;
     }
 }
