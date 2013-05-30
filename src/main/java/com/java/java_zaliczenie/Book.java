@@ -1,7 +1,6 @@
 package com.java.java_zaliczenie;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.math.BigDecimal;
 
 
 public class Book implements java.io.Serializable
@@ -12,13 +11,13 @@ public class Book implements java.io.Serializable
     private String bookAuthor;
     private String bookTitle;
     private String bookDescription;
-    private long bookPrice;
+    private BigDecimal bookPrice;
 
     public Book()
     {
     }
 
-    public Book(String bookIsbn, Shelf shelf, String bookAuthor, String bookTitle, long bookPrice)
+    public Book(String bookIsbn, Shelf shelf, String bookAuthor, String bookTitle, BigDecimal bookPrice)
     {
         this.bookIsbn = bookIsbn;
         this.shelf = shelf;
@@ -77,12 +76,12 @@ public class Book implements java.io.Serializable
         this.bookDescription = bookDescription;
     }
 
-    public long getBookPrice()
+    public BigDecimal getBookPrice()
     {
         return this.bookPrice;
     }
 
-    public void setBookPrice(long bookPrice)
+    public void setBookPrice(BigDecimal bookPrice)
     {
         this.bookPrice = bookPrice;
     }
@@ -90,6 +89,6 @@ public class Book implements java.io.Serializable
     @Override
     public String toString()
     {
-        return bookAuthor+" "+bookTitle+" "+bookIsbn;
+        return bookAuthor+" "+bookTitle+" "+bookIsbn+" "+bookPrice.doubleValue()+"zł";
     }
 }

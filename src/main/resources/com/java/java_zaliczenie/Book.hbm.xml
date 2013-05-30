@@ -20,8 +20,8 @@
         <property name="bookDescription" type="string">
             <column name="Book_description" length="500" />
         </property>
-        <property name="bookPrice" type="long">
-            <column name="Book_price" precision="10" scale="0" not-null="true" />
+        <property name="bookPrice" type="big_decimal">
+            <column name="Book_price" not-null="true" />
         </property>
         <joined-subclass name="com.java.java_zaliczenie.AdventureBook" table="AdventureBook">
             <key>
