@@ -106,8 +106,8 @@ public class App {
     }
 
     private DaoFactory selectDao() {
-        int choice = 0;
         do {
+            int choice = 0;
             System.out.println("Wybierz źródło danych:");
             System.out.println("1 - baza danych");
             System.out.println("2 - plik tekstowy");
@@ -126,11 +126,8 @@ public class App {
                 case 1:
                     return DbDaoFactory.getInstance();
                 default:
-                    choice = -1;
                     break;
             }
-        } while (choice == -1);
-        logger.error("Nie wybrano DAO");
-        throw new UnsupportedOperationException("Nie wybrano DAO");
+        } while (true);
     }
 }
