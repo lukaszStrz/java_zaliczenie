@@ -6,6 +6,9 @@ package com.java.java_zaliczenie.daos;
 
 import com.java.java_zaliczenie.Stand;
 import com.java.java_zaliczenie.daos.interfaces.DaoStand;
+import flexjson.JSONDeserializer;
+import flexjson.JSONSerializer;
+import java.util.ArrayList;
 import java.util.List;
 import org.apache.log4j.Logger;
 
@@ -15,10 +18,14 @@ import org.apache.log4j.Logger;
  */
 public class TxtDaoStand implements DaoStand {
 
-    Logger logger = Logger.getLogger(TxtDaoStand.class.getName());
+    private List<Stand> stands = new ArrayList<Stand>();
+    private Logger logger = Logger.getLogger(TxtDaoStand.class.getName());
 
     public void addStand(Stand stand) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String tmp = TxtDaoFactory.jsonText;
+        stands = new JSONDeserializer<List<Stand>>().deserialize(tmp);
+        stands.add(stand);
+        TxtDaoFactory.jsonText = new JSONSerializer().deepSerialize(stands);
     }
 
     public void closeSession() {
@@ -26,15 +33,34 @@ public class TxtDaoStand implements DaoStand {
     }
 
     public void deleteStand(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String tmp = TxtDaoFactory.jsonText;
+        stands = new JSONDeserializer<List<Stand>>().deserialize(tmp);
+        Stand stand = null;
+        for (Stand s : stands) {
+            if (s.getIdStand() == id) {
+                stand = s;
+                break;
+            }
+        }
+        stands.remove(stand);
+        TxtDaoFactory.jsonText = new JSONSerializer().deepSerialize(stands);
     }
 
     public List<Stand> getAllStands() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String tmp = TxtDaoFactory.jsonText;
+        stands = new JSONDeserializer<List<Stand>>().deserialize(tmp);
+        return stands;
     }
 
     public Stand getStandById(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String tmp = TxtDaoFactory.jsonText;
+        stands = new JSONDeserializer<List<Stand>>().deserialize(tmp);
+        for (Stand s : stands) {
+            if (s.getIdStand() == id) {
+                return s;
+            }
+        }
+        return null;
     }
 
     public void updateStand(Stand stand) {
