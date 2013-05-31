@@ -2,6 +2,8 @@ package com.java.java_zaliczenie;
 
 import com.java.java_zaliczenie.daos.DbDaoFactory;
 import com.java.java_zaliczenie.daos.DaoFactory;
+import com.java.java_zaliczenie.utils.CSVFormatter;
+import com.java.java_zaliczenie.utils.DataLineFormatter;
 import flexjson.JSONDeserializer;
 import flexjson.JSONSerializer;
 import java.math.BigDecimal;
@@ -9,6 +11,8 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import org.apache.log4j.Logger;
+import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
 
 public class App {
 
@@ -325,12 +329,14 @@ public class App {
 
         switch (exportType) {
             case 1:
+                //super testowy
                 System.out.println(exportToXML());
                 break;
             case 2:
                 System.out.println(exportToJSON());
                 break;
             case 3:
+                //super testowy
                 System.out.println(exportToCSV());
                 break;
             default:
@@ -340,6 +346,9 @@ public class App {
 
     private String exportToXML() {
         String result = "piękny xml";
+        XMLEncoder encoder = new XMLEncoder(System.out);
+        encoder.writeObject(daoFactory.getStandDao().getAllStands());
+        encoder.close();
         return result;
     }
 
@@ -349,8 +358,22 @@ public class App {
     }
 
     private String exportToCSV() {
-        String result = "csv";
-        return result;
+        DataLineFormatter dataLineFormatter = new CSVFormatter();
+        StringBuilder stringBuilder = new StringBuilder();
+        
+        stringBuilder.append(dataLineFormatter.formatHeader(new String[]{
+            "ala", "1", "1", "1", "1"
+        }));
+
+        stringBuilder.append("\n");
+
+        for (int i = 0; i < 10; i++) {
+            stringBuilder.append(dataLineFormatter.formatLine(new String[]{
+                "ala" + i, "1", "2", "3", "4"}));
+            stringBuilder.append("\n");
+        }
+
+        return stringBuilder.toString();
     }
 
     private void findBook() {
