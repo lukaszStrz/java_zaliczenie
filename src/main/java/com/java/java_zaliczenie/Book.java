@@ -73,7 +73,7 @@ public class Book implements java.io.Serializable {
     @Override
     public String toString() {
         return "Autor: "
-                + bookAuthor
+                + bookAuthor 
                 + " Tytuł: " + bookTitle
                 + " ISBN: " + bookIsbn
                 + " Cena: " + bookPrice.doubleValue() + "zł";

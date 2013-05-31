@@ -1,38 +1,33 @@
 package com.java.java_zaliczenie;
 
-public class Sfbook extends Book implements java.io.Serializable
-{
+public class Sfbook extends Book implements java.io.Serializable {
 
     private String sfMovie;
 
-    public Sfbook()
-    {
+    public Sfbook() {
     }
 
-    public Sfbook(String bookIsbn, Book book)
-    {
+    public Sfbook(String bookIsbn, Book book) {
         super(bookIsbn, book.getShelf(), book.getBookAuthor(), book.getBookTitle(), book.getBookPrice());
     }
 
-    public Sfbook(String bookIsbn, Book book, String sfMovie)
-    {
+    public Sfbook(String bookIsbn, Book book, String sfMovie) {
         super(bookIsbn, book.getShelf(), book.getBookAuthor(), book.getBookTitle(), book.getBookPrice());
         this.sfMovie = sfMovie;
     }
 
-    public String getSfMovie()
-    {
+    public String getSfMovie() {
         return this.sfMovie;
     }
 
-    public void setSfMovie(String sfMovie)
-    {
+    public void setSfMovie(String sfMovie) {
         this.sfMovie = sfMovie;
     }
 
     @Override
-    public String toString()
-    {
-        return super.toString() + " (s-f)";
+    public String toString() {
+        return super.toString()
+                + " Ekranizacja: " + sfMovie
+                + " (s-f)";
     }
 }

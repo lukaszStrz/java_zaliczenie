@@ -15,6 +15,7 @@ public class DramaBook extends Book implements java.io.Serializable
     @Override
     public String toString()
     {
-        return super.toString() + " (dramat)";
+        return super.toString()
+                + " (dramat)";
     }
 }

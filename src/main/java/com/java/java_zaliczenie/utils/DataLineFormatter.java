@@ -11,6 +11,4 @@ package com.java.java_zaliczenie.utils;
 public interface DataLineFormatter {
 
     public String formatLine(String[] dataLine);
-
-    public String formatHeader(String[] header);
 }

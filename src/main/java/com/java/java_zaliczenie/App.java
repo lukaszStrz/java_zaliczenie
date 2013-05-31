@@ -141,7 +141,7 @@ public class App {
                 case 2:
                     return TxtDaoFactory.getInstance();
                 case 3:
-                    return new XmlDaoFactory();
+                    return XmlDaoFactory.getInstance();
                 default:
                     choice = -1;
                     break;
@@ -409,16 +409,18 @@ public class App {
     private String exportToCSV() {
         DataLineFormatter dataLineFormatter = new CSVFormatter();
         StringBuilder stringBuilder = new StringBuilder();
-
-        stringBuilder.append(dataLineFormatter.formatHeader(new String[]{
-            "ala", "1", "1", "1", "1"
-        }));
-
-        stringBuilder.append("\n");
-
-        for (int i = 0; i < 10; i++) {
+        List<Book> books = daoFactory.getBookDao().getAllBooks();
+        for(Book b:books){
             stringBuilder.append(dataLineFormatter.formatLine(new String[]{
-                "ala" + i, "1", "2", "3", "4"}));
+                "Regał: " + b.getShelf().getStand().getStandName(), 
+                "Półka: " + b.getShelf().getShelfName(), 
+                "Tytuł: " + b.getBookTitle(), 
+                "Autor: " + b.getBookAuthor(), 
+                "ISBN: " + b.getBookIsbn(),
+                "Opis: " + b.getBookDescription(),
+                "Cena: ",
+                b.getBookPrice().toString()
+            }));
             stringBuilder.append("\n");
         }
 

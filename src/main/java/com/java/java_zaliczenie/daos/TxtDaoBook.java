@@ -57,8 +57,12 @@ public class TxtDaoBook implements DaoBook {
         List<Book> books = new ArrayList<Book>();
         for (Stand stand : stands) {
             for (Object shelf : stand.getShelfs()) {
-                for (Object book : ((Shelf) shelf).getBooks()) {
-                    books.add((Book) book);
+                Shelf tmpShelf = (Shelf) shelf;
+                tmpShelf.setStand(stand);
+                for (Object book : tmpShelf.getBooks()) {
+                    Book tmpBook = (Book) book;
+                    tmpBook.setShelf((Shelf) shelf);
+                    books.add(tmpBook);
                 }
             }
         }
