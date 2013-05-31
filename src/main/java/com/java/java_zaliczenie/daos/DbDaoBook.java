@@ -12,7 +12,6 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 /**
  *
@@ -25,16 +24,13 @@ public class DbDaoBook implements DaoBook {
     @Override
     public void addBook(Book book) {
         logger.trace("Adding new Book " + book.getBookIsbn());
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction trns = null;
+        Session session = HibernateUtil.getSession();
         try {
-            trns = session.beginTransaction();
+            session.getTransaction().begin();
             session.save(book);
             session.getTransaction().commit();
         } catch (RuntimeException e) {
-            if (trns != null) {
-                trns.rollback();
-            }
+            session.getTransaction().rollback();
             logger.error(e);
         } finally {
 //            session.flush();
@@ -46,17 +42,14 @@ public class DbDaoBook implements DaoBook {
     @Override
     public void deleteBook(String isbn) {
         logger.trace("Deleting Book " + isbn);
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction trns = null;
+        Session session = HibernateUtil.getSession();
         try {
-            trns = session.beginTransaction();
+            session.getTransaction().begin();
             Book book = (Book) session.load(Book.class, isbn);
             session.delete(book);
             session.getTransaction().commit();
         } catch (RuntimeException e) {
-            if (trns != null) {
-                trns.rollback();
-            }
+            session.getTransaction().rollback();
             logger.error(e);
         } finally {
 //            session.flush();
@@ -68,16 +61,13 @@ public class DbDaoBook implements DaoBook {
     @Override
     public void updateBook(Book book) {
         logger.trace("Updating book " + book.getBookIsbn());
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction trns = null;
+        Session session = HibernateUtil.getSession();
         try {
-            trns = session.beginTransaction();
+            session.getTransaction().begin();
             session.update(book);
             session.getTransaction().commit();
         } catch (RuntimeException e) {
-            if (trns != null) {
-                trns.rollback();
-            }
+            session.getTransaction().rollback();
             logger.error(e);
         } finally {
 //            session.flush();
@@ -89,13 +79,14 @@ public class DbDaoBook implements DaoBook {
     @Override
     public List<Book> getAllBooks() {
         logger.trace("Listing Books");
-        Session session = HibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSession();
         List<Book> books = new ArrayList<Book>();
-        Transaction trns = null;
         try {
-            trns = session.beginTransaction();
+            session.getTransaction().begin();
             books = session.createQuery("from Book").list();
+            session.getTransaction().commit();
         } catch (RuntimeException e) {
+            session.getTransaction().rollback();
             logger.error(e);
         } finally {
 //            session.flush();
@@ -108,16 +99,17 @@ public class DbDaoBook implements DaoBook {
     @Override
     public Book getBookById(String isbn) {
         logger.trace("Getting Book " + isbn);
-        Session session = HibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSession();
         Book user = null;
-        Transaction trns = null;
         try {
-            trns = session.beginTransaction();
+            session.getTransaction().begin();
             String queryString = "from Book where Book_isbn = :isbn";
             Query query = session.createQuery(queryString);
             query.setString("isbn", isbn);
             user = (Book) query.uniqueResult();
+            session.getTransaction().commit();
         } catch (RuntimeException e) {
+            session.getTransaction().rollback();
             logger.error(e);
         } finally {
 //            session.flush();

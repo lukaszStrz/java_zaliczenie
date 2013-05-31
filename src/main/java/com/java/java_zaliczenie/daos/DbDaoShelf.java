@@ -12,7 +12,6 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 /**
  *
@@ -25,16 +24,13 @@ public class DbDaoShelf implements DaoShelf {
     @Override
     public void addShelf(Shelf shelf) {
         logger.trace("Adding new Shelf " + shelf.getIdShelf());
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction trns = null;
+        Session session = HibernateUtil.getSession();
         try {
-            trns = session.beginTransaction();
+            session.getTransaction().begin();
             session.save(shelf);
             session.getTransaction().commit();
         } catch (RuntimeException e) {
-            if (trns != null) {
-                trns.rollback();
-            }
+            session.getTransaction().rollback();
             logger.error(e);
         } finally {
 //            session.flush();
@@ -46,17 +42,14 @@ public class DbDaoShelf implements DaoShelf {
     @Override
     public void deleteShelf(int id) {
         logger.trace("Deleting Shelf " + id);
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction trns = null;
+        Session session = HibernateUtil.getSession();
         try {
-            trns = session.beginTransaction();
+            session.getTransaction().begin();
             Shelf shelf = (Shelf) session.load(Shelf.class, new Integer(id));
             session.delete(shelf);
             session.getTransaction().commit();
         } catch (RuntimeException e) {
-            if (trns != null) {
-                trns.rollback();
-            }
+            session.getTransaction().rollback();
             logger.error(e);
         } finally {
 //            session.flush();
@@ -68,16 +61,13 @@ public class DbDaoShelf implements DaoShelf {
     @Override
     public void updateShelf(Shelf shelf) {
         logger.trace("Updating shelf " + shelf.getIdShelf());
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction trns = null;
+        Session session = HibernateUtil.getSession();
         try {
-            trns = session.beginTransaction();
+            session.getTransaction().begin();
             session.update(shelf);
             session.getTransaction().commit();
         } catch (RuntimeException e) {
-            if (trns != null) {
-                trns.rollback();
-            }
+            session.getTransaction().rollback();
             logger.error(e);
         } finally {
 //            session.flush();
@@ -89,13 +79,14 @@ public class DbDaoShelf implements DaoShelf {
     @Override
     public List<Shelf> getAllShelfs() {
         logger.trace("Listing Shelfs");
-        Session session = HibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSession();
         List<Shelf> people = new ArrayList<Shelf>();
-        Transaction trns = null;
         try {
-            trns = session.beginTransaction();
+            session.getTransaction().begin();
             people = session.createQuery("from Shelf").list();
+            session.getTransaction().commit();
         } catch (RuntimeException e) {
+            session.getTransaction().rollback();
             logger.error(e);
         } finally {
 //            session.flush();
@@ -108,16 +99,17 @@ public class DbDaoShelf implements DaoShelf {
     @Override
     public Shelf getShelfById(int id) {
         logger.trace("Getting Shelf " + id);
-        Session session = HibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSession();
         Shelf user = null;
-        Transaction trns = null;
         try {
-            trns = session.beginTransaction();
+            session.getTransaction().begin();
             String queryString = "from Shelf where idShelf = :id";
             Query query = session.createQuery(queryString);
             query.setInteger("id", id);
             user = (Shelf) query.uniqueResult();
+            session.getTransaction().commit();
         } catch (RuntimeException e) {
+            session.getTransaction().rollback();
             logger.error(e);
         } finally {
 //            session.flush();

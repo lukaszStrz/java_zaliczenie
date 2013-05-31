@@ -8,6 +8,7 @@ public class HibernateUtil {
 
     private static SessionFactory sessionFactory;
     private static ServiceRegistry serviceRegistry;
+    private static Session session;
 
     private static SessionFactory configureSessionFactory() throws HibernateException {
         Configuration configuration = new Configuration();
@@ -22,5 +23,17 @@ public class HibernateUtil {
             sessionFactory = configureSessionFactory();
         }
         return sessionFactory;
+    }
+
+    public static Session getSession() {
+        if (session == null) {
+            session = getSessionFactory().openSession();
+        }
+        return session;
+    }
+
+    public static void refreshSession() {
+        getSession().close();
+        session = getSessionFactory().openSession();
     }
 }
