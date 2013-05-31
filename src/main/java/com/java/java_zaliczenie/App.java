@@ -407,8 +407,8 @@ public class App {
             System.out.println("1 - Cena");
             System.out.println("2 - Tytuł");
             System.out.println("3 - Autor");
-            System.out.println("4 - Kategoria*");
-            System.out.println("0 - Zakończ wyszukiwanie*");
+            System.out.println("4 - Kategoria");
+            System.out.println("0 - Zakończ wyszukiwanie");
 
             try {
                 choice = scanner.nextInt();
@@ -436,21 +436,21 @@ public class App {
                     case 1:
                         for (Book b : books) {
                             if (b.getBookPrice().toString().equals(value)) {
-                                System.out.println("price " + b.getBookTitle());
+                                System.out.println(b.toString());
                             }
                         }
                         break;
                     case 2:
                         for (Book b : books) {
                             if (b.getBookTitle().contains(value)) {
-                                System.out.println("tit " + b.getBookTitle());
+                                System.out.println(b.toString());
                             }
                         }
                         break;
                     case 3:
                         for (Book b : books) {
                             if (b.getBookAuthor().contains(value)) {
-                                System.out.println("a " + b.getBookTitle());
+                                System.out.println(b.toString());
                             }
                         }
                         break;
@@ -458,15 +458,15 @@ public class App {
                         for (Book b : books) {
                             if (value.equals("1")) {
                                 if (b instanceof DramaBook) {
-                                    System.out.println(b.getBookTitle() + "DramaBook");
+                                    System.out.println(b.toString());
                                 }
                             } else if (value.equals("2")) {
                                 if (b instanceof AdventureBook) {
-                                    System.out.println(b.getBookTitle() + "AdventureBook");
+                                    System.out.println(b.toString());
                                 }
                             } else if (value.equals("3")) {
                                 if (b instanceof Sfbook) {
-                                    System.out.println(b.getBookTitle() + "Sfbook");
+                                    System.out.println(b.toString());
                                 }
                             } else {
                             }
@@ -485,14 +485,14 @@ public class App {
 
     private void showAllBooks() {
         for (Stand stand : daoFactory.getStandDao().getAllStands()) {
-            System.out.println(stand.getStandName() + ":");
+            System.out.println("Regał# " + stand.getStandName() + ":");
             for (Object shelf : stand.getShelfs()) {
-                System.out.println("\t" + ((Shelf) shelf).getShelfName() + ":");
+                System.out.println("\t Półka# " + ((Shelf) shelf).getShelfName() + ":");
                 for (Object book : ((Shelf) shelf).getBooks()) {
-                    System.out.println("\t\t1" + ((Book) book).toString());
-                    String tmp = new JSONSerializer().deepSerialize((Book) book);
-                    Book b = new JSONDeserializer<Book>().deserialize(tmp);
-                    System.out.println("\t\t2" + ((Book) book).toString());
+                    System.out.println("\t\t Książka# " + ((Book) book).toString());
+                    //String tmp = new JSONSerializer().deepSerialize((Book) book);
+                    //Book b = new JSONDeserializer<Book>().deserialize(tmp);
+                    //System.out.println("\t\t2" + ((Book) book).toString());
                 }
             }
         }
