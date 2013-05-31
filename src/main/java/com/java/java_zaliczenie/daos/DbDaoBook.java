@@ -90,7 +90,11 @@ public class DbDaoBook implements DaoBook {
         List<Book> people = new ArrayList<Book>();
         Transaction trns = null;
         try {
-            trns = session.beginTransaction();
+            if (session.isOpen()) {
+                trns = session.getTransaction();
+            } else {
+                trns = session.beginTransaction();
+            }
             people = session.createQuery("from Book").list();
         } catch (RuntimeException e) {
             logger.error(e);
