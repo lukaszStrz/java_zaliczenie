@@ -19,10 +19,10 @@ import org.apache.log4j.Logger;
  * @author Wojciech
  */
 public class TxtDaoBook implements DaoBook {
-
+    
     private List<Stand> stands = new ArrayList<Stand>();
     Logger logger = Logger.getLogger(TxtDaoBook.class.getName());
-
+    
     public void addBook(Book book) {
         String tmp = TxtDaoFactory.jsonText;
         stands = new JSONDeserializer<List<Stand>>().deserialize(tmp);
@@ -41,28 +41,44 @@ public class TxtDaoBook implements DaoBook {
                 }
             }
         } else {
-            logger.error("Nie znalezioo regału.... Lipa");
+            logger.warn("Nie znalezioo regału.... Lipa");
             return;
         }
         TxtDaoFactory.jsonText = new JSONSerializer().deepSerialize(stands);
     }
-
+    
     public void closeSession() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     public void deleteBook(String isbn) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     public List<Book> getAllBooks() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String tmp = TxtDaoFactory.jsonText;
+        stands = new JSONDeserializer<List<Stand>>().deserialize(tmp);
+        List<Book> books = new ArrayList<Book>();
+        for (Stand stand : stands) {
+            for (Object shelf : stand.getShelfs()) {
+                for (Object book : ((Shelf) shelf).getBooks()) {
+                    books.add((Book) book);
+                }
+            }
+        }
+        return books;
     }
-
+    
     public Book getBookById(String isbn) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for (Book b : getAllBooks()) {
+            if (b.getBookIsbn().equals(isbn)) {
+                return b;
+            }
+        }
+        logger.warn("Nie znaleziono książki: " + isbn);
+        return null;
     }
-
+    
     public void updateBook(Book book) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
