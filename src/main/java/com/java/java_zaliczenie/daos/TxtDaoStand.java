@@ -28,10 +28,6 @@ public class TxtDaoStand implements DaoStand {
         TxtDaoFactory.jsonText = new JSONSerializer().deepSerialize(stands);
     }
 
-    public void closeSession() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public void deleteStand(int id) {
         String tmp = TxtDaoFactory.jsonText;
         stands = new JSONDeserializer<List<Stand>>().deserialize(tmp);

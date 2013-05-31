@@ -14,9 +14,9 @@ import com.java.java_zaliczenie.daos.interfaces.DaoStand;
  */
 public class DbDaoFactory extends DaoFactory {
 
-    DbDaoBook daobook;
-    DbDaoShelf daoshelf;
-    DbDaoStand daostand;
+    private DbDaoBook daobook;
+    private DbDaoShelf daoshelf;
+    private DbDaoStand daostand;
     private static DbDaoFactory instance;
 
     private DbDaoFactory() {
