@@ -80,6 +80,25 @@ public class TxtDaoBook implements DaoBook {
     }
     
     public void updateBook(Book book) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String tmp = TxtDaoFactory.jsonText;
+        stands = new JSONDeserializer<List<Stand>>().deserialize(tmp);
+        for (Stand stand : stands) {
+            for (Object shelf : stand.getShelfs()) {
+                Shelf tmpShelf = (Shelf) shelf;
+                for (Object b : tmpShelf.getBooks()) {
+                    Book tmpBook = (Book) b;
+                    if (tmpBook.getBookIsbn().equals(book.getBookIsbn())) {
+                        tmpShelf.getBooks().remove(tmpBook);
+                        tmpBook.setBookAuthor(book.getBookAuthor());
+                        tmpBook.setBookDescription(book.getBookDescription());
+                        tmpBook.setBookPrice(book.getBookPrice());
+                        tmpBook.setBookTitle(book.getBookTitle());
+                        tmpBook.setShelf(book.getShelf());
+                        book.getShelf().getBooks().add(tmpBook);
+                    }
+                }
+            }
+        }
+        TxtDaoFactory.jsonText = new JSONSerializer().deepSerialize(stands);
     }
 }
