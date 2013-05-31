@@ -8,7 +8,6 @@ import com.java.java_zaliczenie.utils.CSVFormatter;
 import com.java.java_zaliczenie.utils.DataLineFormatter;
 import com.java.java_zaliczenie.utils.HibernateUtil;
 import com.thoughtworks.xstream.XStream;
-import flexjson.JSONDeserializer;
 import flexjson.JSONSerializer;
 import java.math.BigDecimal;
 import java.util.InputMismatchException;
@@ -53,9 +52,7 @@ public class App {
             } catch (InputMismatchException ex) {
                 logger.debug("Choice is not a number");
                 choice = -1;
-                scanner = new Scanner(System.in); /*to jest jakieś gówno...
-                 * na bank nie jest to optymalne, ale bez tego np po wpisaniu "dupa", on tę "dupę"
-                 * trzyma cały czas w bufforze i... znów ją daje do .nextInt()... */
+                scanner = new Scanner(System.in);
             }
             System.out.println();
 
@@ -74,20 +71,11 @@ public class App {
                 break;
                 case 3: {
                     HibernateUtil.refreshSession();
-                    System.out.println("Najpierw wybierz książkę, którą chcesz przestawić.");
-                    Stand standFrom = selectStand();
-                    Shelf shelfFrom = selectShelf(standFrom);
-                    Book book = selectBook(shelfFrom);
-                    System.out.println("Teraz wybierz półkę i regał, na którym ma zostać ustawiona.");
-                    Stand standTo = selectStand();
-                    Shelf shelfTo = selectShelf(standTo);
-                    book.setShelf(shelfTo);
-                    daoFactory.getBookDao().updateBook(book);
+                    moveBook();
                 }
                 break;
                 case 4:
                     HibernateUtil.refreshSession();
-                    //do poprawek
                     findBook();
                     break;
                 case 5:
@@ -96,17 +84,11 @@ public class App {
                     break;
                 case 6:
                     HibernateUtil.refreshSession();
-                    //tutaj trzeba pewnie zastosować znów jakiś wzorzec, żeby się przepinać
-                    //chyba coś takiego aksenczer pokazywał
                     exportLibrary();
                     break;
                 case 7: {
                     HibernateUtil.refreshSession();
-                    System.out.println("Najpierw wybierz półkę, którą chcesz przestawić.");
-                    Shelf shelf = selectShelf(selectStand());
-                    System.out.println("Teraz wybierz regał docelowy.");
-                    shelf.setStand(selectStand());
-                    daoFactory.getShelfDao().updateShelf(shelf);
+                    moveShelf();
                 }
                 break;
                 case 9:
@@ -364,14 +346,12 @@ public class App {
 
         switch (exportType) {
             case 1:
-                //super testowy
                 System.out.println(exportToXML());
                 break;
             case 2:
                 System.out.println(exportToJSON());
                 break;
             case 3:
-                //super testowy
                 System.out.println(exportToCSV());
                 break;
             default:
@@ -380,7 +360,6 @@ public class App {
     }
 
     private String exportToXML() {
-//        String result = "piękny xml";
         List<Stand> stands = daoFactory.getStandDao().getAllStands();
         Hibernate.initialize(stands);
         for (Stand stand : stands) {
@@ -395,10 +374,6 @@ public class App {
         XStream xstream = new XStream();
         String xml = xstream.toXML(stands);
         return xml;
-//        XMLEncoder encoder = new XMLEncoder(System.out);
-//        encoder.writeObject(daoFactory.getStandDao().getAllStands());
-//        encoder.close();
-//        return result;
     }
 
     private String exportToJSON() {
@@ -410,12 +385,12 @@ public class App {
         DataLineFormatter dataLineFormatter = new CSVFormatter();
         StringBuilder stringBuilder = new StringBuilder();
         List<Book> books = daoFactory.getBookDao().getAllBooks();
-        for(Book b:books){
+        for (Book b : books) {
             stringBuilder.append(dataLineFormatter.formatLine(new String[]{
-                "Regał: " + b.getShelf().getStand().getStandName(), 
-                "Półka: " + b.getShelf().getShelfName(), 
-                "Tytuł: " + b.getBookTitle(), 
-                "Autor: " + b.getBookAuthor(), 
+                "Regał: " + b.getShelf().getStand().getStandName(),
+                "Półka: " + b.getShelf().getShelfName(),
+                "Tytuł: " + b.getBookTitle(),
+                "Autor: " + b.getBookAuthor(),
                 "ISBN: " + b.getBookIsbn(),
                 "Opis: " + b.getBookDescription(),
                 "Cena: ",
@@ -497,7 +472,6 @@ public class App {
                                 }
                             } else {
                             }
-                            //w: może poprawić to jakoś :P?
                         }
                         break;
                     case 0:
@@ -517,9 +491,6 @@ public class App {
                 System.out.println("\t Półka# " + ((Shelf) shelf).getShelfName() + ":");
                 for (Object book : ((Shelf) shelf).getBooks()) {
                     System.out.println("\t\t Książka# " + ((Book) book).toString());
-                    //String tmp = new JSONSerializer().deepSerialize((Book) book);
-                    //Book b = new JSONDeserializer<Book>().deserialize(tmp);
-                    //System.out.println("\t\t2" + ((Book) book).toString());
                 }
             }
         }
@@ -546,5 +517,25 @@ public class App {
                 return book;
             }
         } while (true);
+    }
+
+    private void moveBook() {
+        System.out.println("Najpierw wybierz książkę, którą chcesz przestawić.");
+        Stand standFrom = selectStand();
+        Shelf shelfFrom = selectShelf(standFrom);
+        Book book = selectBook(shelfFrom);
+        System.out.println("Teraz wybierz półkę i regał, na którym ma zostać ustawiona.");
+        Stand standTo = selectStand();
+        Shelf shelfTo = selectShelf(standTo);
+        book.setShelf(shelfTo);
+        daoFactory.getBookDao().updateBook(book);
+    }
+
+    private void moveShelf() {
+        System.out.println("Najpierw wybierz półkę, którą chcesz przestawić.");
+        Shelf shelf = selectShelf(selectStand());
+        System.out.println("Teraz wybierz regał docelowy.");
+        shelf.setStand(selectStand());
+        daoFactory.getShelfDao().updateShelf(shelf);
     }
 }
