@@ -37,7 +37,7 @@ public class DbDaoShelf implements DaoShelf {
             }
             logger.error(e);
         } finally {
-            session.flush();
+//            session.flush();
 //            session.close();
         }
         logger.trace("New Shelf " + shelf.getIdShelf() + " added");
@@ -59,7 +59,7 @@ public class DbDaoShelf implements DaoShelf {
             }
             logger.error(e);
         } finally {
-            session.flush();
+//            session.flush();
 //            session.close();
         }
         logger.trace("Shelf " + id + " deleted");
@@ -80,7 +80,7 @@ public class DbDaoShelf implements DaoShelf {
             }
             logger.error(e);
         } finally {
-            session.flush();
+//            session.flush();
 //            session.close();
         }
         logger.trace("Shelf " + shelf.getIdShelf() + " updated");
@@ -98,7 +98,7 @@ public class DbDaoShelf implements DaoShelf {
         } catch (RuntimeException e) {
             logger.error(e);
         } finally {
-            session.flush();
+//            session.flush();
 //            session.close();
         }
         logger.trace("Shelfs listed");
@@ -120,7 +120,7 @@ public class DbDaoShelf implements DaoShelf {
         } catch (RuntimeException e) {
             logger.error(e);
         } finally {
-            session.flush();
+//            session.flush();
 //            session.close();
         }
         logger.trace("Got shelf " + id);

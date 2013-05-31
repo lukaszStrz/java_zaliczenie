@@ -37,7 +37,7 @@ public class DbDaoBook implements DaoBook {
             }
             logger.error(e);
         } finally {
-            session.flush();
+//            session.flush();
 //            session.close();
         }
         logger.trace("New Book " + book.getBookIsbn() + " added");
@@ -59,7 +59,7 @@ public class DbDaoBook implements DaoBook {
             }
             logger.error(e);
         } finally {
-            session.flush();
+//            session.flush();
 //            session.close();
         }
         logger.trace("Book " + isbn + " deleted");
@@ -80,7 +80,7 @@ public class DbDaoBook implements DaoBook {
             }
             logger.error(e);
         } finally {
-            session.flush();
+//            session.flush();
 //            session.close();
         }
         logger.trace("Book " + book.getBookIsbn() + " updated");
@@ -98,7 +98,7 @@ public class DbDaoBook implements DaoBook {
         } catch (RuntimeException e) {
             logger.error(e);
         } finally {
-            session.flush();
+//            session.flush();
 //            session.close();
         }
         logger.trace("Books listed");
@@ -120,7 +120,7 @@ public class DbDaoBook implements DaoBook {
         } catch (RuntimeException e) {
             logger.error(e);
         } finally {
-            session.flush();
+//            session.flush();
 //            session.close();
         }
         logger.trace("Got book " + isbn);

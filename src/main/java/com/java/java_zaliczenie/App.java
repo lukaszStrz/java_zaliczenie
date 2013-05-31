@@ -4,6 +4,7 @@ import com.java.java_zaliczenie.daos.DbDaoFactory;
 import com.java.java_zaliczenie.daos.DaoFactory;
 import com.java.java_zaliczenie.utils.CSVFormatter;
 import com.java.java_zaliczenie.utils.DataLineFormatter;
+import com.thoughtworks.xstream.XStream;
 import flexjson.JSONDeserializer;
 import flexjson.JSONSerializer;
 import java.math.BigDecimal;
@@ -11,27 +12,27 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import org.apache.log4j.Logger;
-import java.beans.XMLDecoder;
-import java.beans.XMLEncoder;
+//import java.beans.XMLEncoder;
+import org.hibernate.Hibernate;
 
 public class App {
-
+    
     private DaoFactory daoFactory;
     private Logger logger;
     Scanner scanner;
-
+    
     public static void main(String[] args) {
         new App().run();
     }
-
+    
     public App() {
         this.scanner = new Scanner(System.in);
         this.logger = Logger.getLogger(App.class.getName());
     }
-
+    
     private void run() {
         daoFactory = selectDao();
-
+        
         int choice;
         do {
             System.out.println();
@@ -43,7 +44,7 @@ public class App {
             System.out.println("6 - export danych o stanie biblioteki");
             System.out.println("9 - zmiana źródła danych");
             System.out.println("0 - koniec");
-
+            
             try {
                 choice = scanner.nextInt();
             } catch (InputMismatchException ex) {
@@ -54,8 +55,8 @@ public class App {
                  * trzyma cały czas w bufforze i... znów ją daje do .nextInt()... */
             }
             System.out.println();
-
-
+            
+            
             switch (choice) {
                 case 1:
                     //zmienić nazwę ;)?
@@ -91,7 +92,7 @@ public class App {
             System.out.println();
         } while (choice != 0);
     }
-
+    
     private DaoFactory selectDao() {
         do {
             int choice;
@@ -99,7 +100,7 @@ public class App {
             System.out.println("1 - baza danych");
             System.out.println("2 - plik tekstowy");
             System.out.println("3 - plik XML");
-
+            
             try {
                 choice = scanner.nextInt();
             } catch (InputMismatchException ex) {
@@ -107,7 +108,7 @@ public class App {
                 choice = -1;
                 scanner = new Scanner(System.in);
             }
-
+            
             switch (choice) {
                 case 1:
                     return DbDaoFactory.getInstance();
@@ -116,7 +117,7 @@ public class App {
             }
         } while (true);
     }
-
+    
     private void task1() {
         int choice;
         do {
@@ -124,7 +125,7 @@ public class App {
             System.out.println("1 - dodawanie regałów ");
             System.out.println("2 - dodawanie półek");
             System.out.println("0 - koniec");
-
+            
             try {
                 choice = scanner.nextInt();
             } catch (InputMismatchException ex) {
@@ -133,8 +134,8 @@ public class App {
                 scanner = new Scanner(System.in);
             }
             System.out.println();
-
-
+            
+            
             switch (choice) {
                 case 1:
                     addStand();
@@ -149,7 +150,7 @@ public class App {
             System.out.println();
         } while (choice != 0);
     }
-
+    
     private void addStand() {
         System.out.println("Podaj nazwę, jaka ma zostać przypisana:");
         String name = "";
@@ -159,7 +160,7 @@ public class App {
         Stand stand = new Stand(name);
         daoFactory.getStandDao().addStand(stand);
     }
-
+    
     private Stand selectStand() {
         System.out.println("Wybierz regał:");
         List<Stand> stands = daoFactory.getStandDao().getAllStands();
@@ -182,18 +183,18 @@ public class App {
             }
         } while (true);
     }
-
+    
     private void addShelf(Stand stand) {
         System.out.println("Podaj nazwę, jaka ma zostać przypisana:");
         String name = "";
         do {
             name = scanner.nextLine();
         } while (name.equals(""));
-
+        
         Shelf shelf = new Shelf(stand, name);
         daoFactory.getShelfDao().addShelf(shelf);
     }
-
+    
     private Shelf selectShelf(Stand stand) {
         System.out.println("Wybierz półkę:");
         Object[] shelves = stand.getShelfs().toArray();
@@ -215,26 +216,26 @@ public class App {
             }
         } while (true);
     }
-
+    
     private void addBook(Shelf shelf) {
         System.out.println("Podaj tytuł:");
         String title = "";
         do {
             title = scanner.nextLine();
         } while (title.equals(""));
-
+        
         System.out.println("Podaj autora:");
         String author = "";
         do {
             author = scanner.nextLine();
         } while (author.equals(""));
-
+        
         System.out.println("Podaj opis:");
         String description = "";
         do {
             description = scanner.nextLine();
         } while (description.equals(""));
-
+        
         System.out.println("Podaj isbn:");
         String isbn = "";
         do {
@@ -244,7 +245,7 @@ public class App {
                 System.out.println("ISBN musi być długości 13 znaków. Podaj ponownie:");
             }
         } while (isbn.equals(""));
-
+        
         System.out.println("Podaj cenę:");
         BigDecimal price;
         do {
@@ -256,7 +257,7 @@ public class App {
                 scanner = new Scanner(System.in);
             }
         } while (price.compareTo(BigDecimal.ZERO) == -1);
-
+        
         Book book = new Book();
         int choice;
         do {
@@ -264,7 +265,7 @@ public class App {
             System.out.println("1 - dramat");
             System.out.println("2 - książka przygodowa");
             System.out.println("3 - SF");
-
+            
             try {
                 choice = scanner.nextInt();
             } catch (InputMismatchException ex) {
@@ -272,7 +273,7 @@ public class App {
                 choice = -1;
                 scanner = new Scanner(System.in);
             }
-
+            
             switch (choice) {
                 case 1:
                     book = new DramaBook();
@@ -310,15 +311,15 @@ public class App {
         } while (choice != 0);
         daoFactory.getBookDao().addBook(book);
     }
-
+    
     private void exportLibrary() {
         int exportType = 0;
-
+        
         System.out.println("Wybierz sposób eksportu:");
         System.out.println("1 - eksport do XML");
         System.out.println("2 - eksport do JSON");
         System.out.println("3 - eksport do CSV");
-
+        
         try {
             exportType = scanner.nextInt();
         } catch (InputMismatchException ex) {
@@ -326,7 +327,7 @@ public class App {
             exportType = -1;
             scanner = new Scanner(System.in); /* jak wcześniej */
         }
-
+        
         switch (exportType) {
             case 1:
                 //super testowy
@@ -343,20 +344,35 @@ public class App {
                 break;
         }
     }
-
+    
     private String exportToXML() {
-        String result = "piękny xml";
-        XMLEncoder encoder = new XMLEncoder(System.out);
-        encoder.writeObject(daoFactory.getStandDao().getAllStands());
-        encoder.close();
-        return result;
+//        String result = "piękny xml";
+        List<Stand> stands = daoFactory.getStandDao().getAllStands();
+        Hibernate.initialize(stands);
+        for (Stand stand : stands) {
+            Hibernate.initialize(stand.getShelfs());
+            for(Object shelf : stand.getShelfs())
+            {
+                Hibernate.initialize(((Shelf)shelf).getBooks());
+                for(Object book : ((Shelf)shelf).getBooks()){
+                    Hibernate.initialize(((Book)book));
+                }
+            }
+        }
+        XStream xstream = new XStream();
+        String xml = xstream.toXML(stands);
+        return xml;
+//        XMLEncoder encoder = new XMLEncoder(System.out);
+//        encoder.writeObject(daoFactory.getStandDao().getAllStands());
+//        encoder.close();
+//        return result;
     }
-
+    
     private String exportToJSON() {
         String result = new JSONSerializer().deepSerialize(daoFactory.getStandDao().getAllStands());
         return result;
     }
-
+    
     private String exportToCSV() {
         DataLineFormatter dataLineFormatter = new CSVFormatter();
         StringBuilder stringBuilder = new StringBuilder();
@@ -364,18 +380,18 @@ public class App {
         stringBuilder.append(dataLineFormatter.formatHeader(new String[]{
             "ala", "1", "1", "1", "1"
         }));
-
+        
         stringBuilder.append("\n");
-
+        
         for (int i = 0; i < 10; i++) {
             stringBuilder.append(dataLineFormatter.formatLine(new String[]{
                 "ala" + i, "1", "2", "3", "4"}));
             stringBuilder.append("\n");
         }
-
+        
         return stringBuilder.toString();
     }
-
+    
     private void findBook() {
         int choice;
         do {
@@ -385,7 +401,7 @@ public class App {
             System.out.println("3 - Autor");
             System.out.println("4 - Kategoria*");
             System.out.println("0 - Zakończ wyszukiwanie*");
-
+            
             try {
                 choice = scanner.nextInt();
             } catch (InputMismatchException ex) {
@@ -394,7 +410,7 @@ public class App {
                 scanner = new Scanner(System.in);
             }
             System.out.println();
-
+            
             if (choice != 0) {
                 System.out.println("Szukana wartość:");
                 if (choice == 4) {
@@ -405,9 +421,9 @@ public class App {
                 }
                 String value = scanner.next();
                 System.out.println();
-
+                
                 List<Book> books = daoFactory.getBookDao().getAllBooks();
-
+                
                 switch (choice) {
                     case 1:
                         for (Book b : books) {
@@ -458,7 +474,7 @@ public class App {
             }
         } while (choice != 0);
     }
-
+    
     private void showAllBooks() {
         for (Stand stand : daoFactory.getStandDao().getAllStands()) {
             System.out.println(stand.getStandName() + ":");

@@ -37,7 +37,7 @@ public class DbDaoStand implements DaoStand {
             }
             logger.error(e);
         } finally {
-            session.flush();
+//            session.flush();
 //            session.close();
         }
         logger.trace("New Stand " + stand.getIdStand() + " added");
@@ -59,7 +59,7 @@ public class DbDaoStand implements DaoStand {
             }
             logger.error(e);
         } finally {
-            session.flush();
+//            session.flush();
 //            session.close();
         }
         logger.trace("Stand " + id + " deleted");
@@ -80,7 +80,7 @@ public class DbDaoStand implements DaoStand {
             }
             logger.error(e);
         } finally {
-            session.flush();
+//            session.flush();
 //            session.close();
         }
         logger.trace("Stand " + stand.getIdStand() + " updated");
@@ -98,7 +98,7 @@ public class DbDaoStand implements DaoStand {
         } catch (RuntimeException e) {
             logger.error(e);
         } finally {
-            session.flush();
+//            session.flush();
 //            session.close();
         }
         logger.trace("Stands listed");
@@ -120,7 +120,7 @@ public class DbDaoStand implements DaoStand {
         } catch (RuntimeException e) {
             logger.error(e);
         } finally {
-            session.flush();
+//            session.flush();
 //            session.close();
         }
         logger.trace("Got stand " + id);
