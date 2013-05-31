@@ -20,12 +20,12 @@ import org.hibernate.Transaction;
  */
 public class DbDaoShelf implements DaoShelf {
 
-    Session session = HibernateUtil.getSessionFactory().openSession();
     Logger logger = Logger.getLogger(DbDaoShelf.class.getName());
 
     @Override
     public void addShelf(Shelf shelf) {
         logger.trace("Adding new Shelf " + shelf.getIdShelf());
+        Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction trns = null;
         try {
             trns = session.beginTransaction();
@@ -46,6 +46,7 @@ public class DbDaoShelf implements DaoShelf {
     @Override
     public void deleteShelf(int id) {
         logger.trace("Deleting Shelf " + id);
+        Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction trns = null;
         try {
             trns = session.beginTransaction();
@@ -67,6 +68,7 @@ public class DbDaoShelf implements DaoShelf {
     @Override
     public void updateShelf(Shelf shelf) {
         logger.trace("Updating shelf " + shelf.getIdShelf());
+        Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction trns = null;
         try {
             trns = session.beginTransaction();
@@ -87,6 +89,7 @@ public class DbDaoShelf implements DaoShelf {
     @Override
     public List<Shelf> getAllShelfs() {
         logger.trace("Listing Shelfs");
+        Session session = HibernateUtil.getSessionFactory().openSession();
         List<Shelf> people = new ArrayList<Shelf>();
         Transaction trns = null;
         try {
@@ -105,6 +108,7 @@ public class DbDaoShelf implements DaoShelf {
     @Override
     public Shelf getShelfById(int id) {
         logger.trace("Getting Shelf " + id);
+        Session session = HibernateUtil.getSessionFactory().openSession();
         Shelf user = null;
         Transaction trns = null;
         try {

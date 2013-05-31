@@ -20,12 +20,12 @@ import org.hibernate.Transaction;
  */
 public class DbDaoBook implements DaoBook {
 
-    Session session = HibernateUtil.getSessionFactory().openSession();
     Logger logger = Logger.getLogger(DbDaoBook.class.getName());
 
     @Override
     public void addBook(Book book) {
         logger.trace("Adding new Book " + book.getBookIsbn());
+        Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction trns = null;
         try {
             trns = session.beginTransaction();
@@ -46,6 +46,7 @@ public class DbDaoBook implements DaoBook {
     @Override
     public void deleteBook(String isbn) {
         logger.trace("Deleting Book " + isbn);
+        Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction trns = null;
         try {
             trns = session.beginTransaction();
@@ -67,6 +68,7 @@ public class DbDaoBook implements DaoBook {
     @Override
     public void updateBook(Book book) {
         logger.trace("Updating book " + book.getBookIsbn());
+        Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction trns = null;
         try {
             trns = session.beginTransaction();
@@ -87,15 +89,12 @@ public class DbDaoBook implements DaoBook {
     @Override
     public List<Book> getAllBooks() {
         logger.trace("Listing Books");
-        List<Book> people = new ArrayList<Book>();
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        List<Book> books = new ArrayList<Book>();
         Transaction trns = null;
         try {
-            if (session.isOpen()) {
-                trns = session.getTransaction();
-            } else {
-                trns = session.beginTransaction();
-            }
-            people = session.createQuery("from Book").list();
+            trns = session.beginTransaction();
+            books = session.createQuery("from Book").list();
         } catch (RuntimeException e) {
             logger.error(e);
         } finally {
@@ -103,12 +102,13 @@ public class DbDaoBook implements DaoBook {
 //            session.close();
         }
         logger.trace("Books listed");
-        return people;
+        return books;
     }
 
     @Override
     public Book getBookById(String isbn) {
         logger.trace("Getting Book " + isbn);
+        Session session = HibernateUtil.getSessionFactory().openSession();
         Book user = null;
         Transaction trns = null;
         try {

@@ -20,12 +20,12 @@ import org.hibernate.Transaction;
  */
 public class DbDaoStand implements DaoStand {
 
-    Session session = HibernateUtil.getSessionFactory().openSession();
     Logger logger = Logger.getLogger(DbDaoStand.class.getName());
 
     @Override
     public void addStand(Stand stand) {
         logger.trace("Adding new Stand " + stand.getIdStand());
+        Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction trns = null;
         try {
             trns = session.beginTransaction();
@@ -46,6 +46,7 @@ public class DbDaoStand implements DaoStand {
     @Override
     public void deleteStand(int id) {
         logger.trace("Deleting Stand " + id);
+        Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction trns = null;
         try {
             trns = session.beginTransaction();
@@ -67,6 +68,7 @@ public class DbDaoStand implements DaoStand {
     @Override
     public void updateStand(Stand stand) {
         logger.trace("Updating stand " + stand.getIdStand());
+        Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction trns = null;
         try {
             trns = session.beginTransaction();
@@ -87,6 +89,7 @@ public class DbDaoStand implements DaoStand {
     @Override
     public List<Stand> getAllStands() {
         logger.trace("Listing Stands");
+        Session session = HibernateUtil.getSessionFactory().openSession();
         List<Stand> people = new ArrayList<Stand>();
         Transaction trns = null;
         try {
@@ -105,6 +108,7 @@ public class DbDaoStand implements DaoStand {
     @Override
     public Stand getStandById(int id) {
         logger.trace("Getting Stand " + id);
+        Session session = HibernateUtil.getSessionFactory().openSession();
         Stand user = null;
         Transaction trns = null;
         try {
