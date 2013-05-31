@@ -60,8 +60,7 @@ public class App {
 
             switch (choice) {
                 case 1:
-                    //zmienić nazwę ;)?
-                    task1();
+                    addStandOrShelf();
                     break;
                 case 2: {
                     Stand stand = selectStand();
@@ -70,7 +69,15 @@ public class App {
                 }
                 break;
                 case 3:
-                    //to będzie ciekawe...
+                    System.out.println("Najpierw wybierz książkę, którą chcesz przestawić.");
+                    Stand standFrom = selectStand();
+                    Shelf shelfFrom = selectShelf(standFrom);
+                    Book book = selectBook(shelfFrom);
+                    System.out.println("Teraz wybierz półkę i regał, na którym ma zostać ustawiona.");
+                    Stand standTo = selectStand();
+                    Shelf shelfTo = selectShelf(standTo);
+                    book.setShelf(shelfTo);
+                    daoFactory.getBookDao().updateBook(book);
                     break;
                 case 4:
                     //do poprawek
@@ -125,7 +132,7 @@ public class App {
         return null;
     }
 
-    private void task1() {
+    private void addStandOrShelf() {
         int choice;
         do {
             System.out.println();
@@ -496,5 +503,28 @@ public class App {
                 }
             }
         }
+    }
+    
+    private Book selectBook(Shelf shelf) {
+        System.out.println("Wybierz książkę:");
+        Object[] books = shelf.getBooks().toArray();
+        for (int i = 0; i < books.length; i++) {
+            System.out.print(i);
+            System.out.println(" - " + ((Book) books[i]).toString());
+        }
+        do {
+            int choice;
+            try {
+                choice = scanner.nextInt();
+            } catch (InputMismatchException ex) {
+                logger.debug("Choice is not a number");
+                choice = -1;
+                scanner = new Scanner(System.in);
+            }
+            if (choice >= 0 && choice < books.length) {
+                Book book = (Book) books[choice];
+                return book;
+            }
+        } while (true);
     }
 }
