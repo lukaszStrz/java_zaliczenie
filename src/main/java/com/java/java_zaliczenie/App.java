@@ -6,6 +6,7 @@ import com.java.java_zaliczenie.daos.TxtDaoFactory;
 import com.java.java_zaliczenie.daos.XmlDaoFactory;
 import com.java.java_zaliczenie.utils.CSVFormatter;
 import com.java.java_zaliczenie.utils.DataLineFormatter;
+import com.java.java_zaliczenie.utils.HibernateUtil;
 import com.thoughtworks.xstream.XStream;
 import flexjson.JSONDeserializer;
 import flexjson.JSONSerializer;
@@ -43,6 +44,7 @@ public class App {
             System.out.println("4 - wyszukiwanie książek");
             System.out.println("5 - wypisywanie książek");
             System.out.println("6 - export danych o stanie biblioteki");
+            System.out.println("7 - przestawianie półek (z książkami) między regałami");
             System.out.println("9 - zmiana źródła danych");
             System.out.println("0 - koniec");
 
@@ -60,15 +62,18 @@ public class App {
 
             switch (choice) {
                 case 1:
+                    HibernateUtil.refreshSession();
                     addStandOrShelf();
                     break;
                 case 2: {
+                    HibernateUtil.refreshSession();
                     Stand stand = selectStand();
                     Shelf shelf = selectShelf(stand);
                     addBook(shelf);
                 }
                 break;
-                case 3:
+                case 3: {
+                    HibernateUtil.refreshSession();
                     System.out.println("Najpierw wybierz książkę, którą chcesz przestawić.");
                     Stand standFrom = selectStand();
                     Shelf shelfFrom = selectShelf(standFrom);
@@ -78,19 +83,32 @@ public class App {
                     Shelf shelfTo = selectShelf(standTo);
                     book.setShelf(shelfTo);
                     daoFactory.getBookDao().updateBook(book);
-                    break;
+                }
+                break;
                 case 4:
+                    HibernateUtil.refreshSession();
                     //do poprawek
                     findBook();
                     break;
                 case 5:
+                    HibernateUtil.refreshSession();
                     showAllBooks();
                     break;
                 case 6:
+                    HibernateUtil.refreshSession();
                     //tutaj trzeba pewnie zastosować znów jakiś wzorzec, żeby się przepinać
                     //chyba coś takiego aksenczer pokazywał
                     exportLibrary();
                     break;
+                case 7: {
+                    HibernateUtil.refreshSession();
+                    System.out.println("Najpierw wybierz półkę, którą chcesz przestawić.");
+                    Shelf shelf = selectShelf(selectStand());
+                    System.out.println("Teraz wybierz regał docelowy.");
+                    shelf.setStand(selectStand());
+                    daoFactory.getShelfDao().updateShelf(shelf);
+                }
+                break;
                 case 9:
                     daoFactory = selectDao();
                     break;
@@ -504,7 +522,7 @@ public class App {
             }
         }
     }
-    
+
     private Book selectBook(Shelf shelf) {
         System.out.println("Wybierz książkę:");
         Object[] books = shelf.getBooks().toArray();
