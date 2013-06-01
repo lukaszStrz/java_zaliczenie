@@ -59,35 +59,49 @@ public class App {
 
             switch (choice) {
                 case 1:
-                    HibernateUtil.refreshSession();
+                    if (daoFactory instanceof DbDaoFactory) {
+                        HibernateUtil.refreshSession();
+                    }
                     addStandOrShelf();
                     break;
                 case 2: {
-                    HibernateUtil.refreshSession();
+                    if (daoFactory instanceof DbDaoFactory) {
+                        HibernateUtil.refreshSession();
+                    }
                     Stand stand = selectStand();
                     Shelf shelf = selectShelf(stand);
                     addBook(shelf);
                 }
                 break;
                 case 3: {
-                    HibernateUtil.refreshSession();
+                    if (daoFactory instanceof DbDaoFactory) {
+                        HibernateUtil.refreshSession();
+                    }
                     moveBook();
                 }
                 break;
                 case 4:
-                    HibernateUtil.refreshSession();
+                    if (daoFactory instanceof DbDaoFactory) {
+                        HibernateUtil.refreshSession();
+                    }
                     findBook();
                     break;
                 case 5:
-                    HibernateUtil.refreshSession();
+                    if (daoFactory instanceof DbDaoFactory) {
+                        HibernateUtil.refreshSession();
+                    }
                     showAllBooks();
                     break;
                 case 6:
-                    HibernateUtil.refreshSession();
+                    if (daoFactory instanceof DbDaoFactory) {
+                        HibernateUtil.refreshSession();
+                    }
                     exportLibrary();
                     break;
                 case 7: {
-                    HibernateUtil.refreshSession();
+                    if (daoFactory instanceof DbDaoFactory) {
+                        HibernateUtil.refreshSession();
+                    }
                     moveShelf();
                 }
                 break;
@@ -329,7 +343,7 @@ public class App {
     }
 
     private void exportLibrary() {
-        int exportType = 0;
+        int exportType;
 
         System.out.println("Wybierz sposób eksportu:");
         System.out.println("1 - eksport do XML");
@@ -361,13 +375,15 @@ public class App {
 
     private String exportToXML() {
         List<Stand> stands = daoFactory.getStandDao().getAllStands();
-        Hibernate.initialize(stands);
-        for (Stand stand : stands) {
-            Hibernate.initialize(stand.getShelfs());
-            for (Object shelf : stand.getShelfs()) {
-                Hibernate.initialize(((Shelf) shelf).getBooks());
-                for (Object book : ((Shelf) shelf).getBooks()) {
-                    Hibernate.initialize(((Book) book));
+        if (daoFactory instanceof DbDaoFactory) {
+            Hibernate.initialize(stands);
+            for (Stand stand : stands) {
+                Hibernate.initialize(stand.getShelfs());
+                for (Object shelf : stand.getShelfs()) {
+                    Hibernate.initialize(((Shelf) shelf).getBooks());
+                    for (Object book : ((Shelf) shelf).getBooks()) {
+                        Hibernate.initialize(((Book) book));
+                    }
                 }
             }
         }

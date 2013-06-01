@@ -1,0 +1,195 @@
+<list>
+  <com.java.java__zaliczenie.Stand>
+    <idStand>1</idStand>
+    <standName>Rega³ nr 1</standName>
+    <shelfs class="org.hibernate.collection.internal.PersistentSet">
+      <initialized>true</initialized>
+      <owner class="com.java.java_zaliczenie.Stand" reference="../.."/>
+      <cachedSize>-1</cachedSize>
+      <role>com.java.java_zaliczenie.Stand.shelfs</role>
+      <key class="int">1</key>
+      <dirty>false</dirty>
+      <storedSnapshot class="map">
+        <entry>
+          <com.java.java__zaliczenie.Shelf>
+            <idShelf>2</idShelf>
+            <stand reference="../../../../.."/>
+            <shelfName>Pó³ka nr 1 na regale 1</shelfName>
+            <books class="org.hibernate.collection.internal.PersistentSet">
+              <initialized>true</initialized>
+              <owner class="com.java.java_zaliczenie.Shelf" reference="../.."/>
+              <cachedSize>-1</cachedSize>
+              <role>com.java.java_zaliczenie.Shelf.books</role>
+              <key class="int">2</key>
+              <dirty>false</dirty>
+              <storedSnapshot class="map"/>
+              <specjLazyLoad>false</specjLazyLoad>
+              <set/>
+            </books>
+          </com.java.java__zaliczenie.Shelf>
+          <com.java.java__zaliczenie.Shelf reference="../com.java.java__zaliczenie.Shelf"/>
+        </entry>
+      </storedSnapshot>
+      <specjLazyLoad>false</specjLazyLoad>
+      <set>
+        <com.java.java__zaliczenie.Shelf reference="../../storedSnapshot/entry/com.java.java__zaliczenie.Shelf"/>
+      </set>
+    </shelfs>
+  </com.java.java__zaliczenie.Stand>
+  <com.java.java__zaliczenie.Stand>
+    <idStand>2</idStand>
+    <standName>Rega³ nr 2</standName>
+    <shelfs class="org.hibernate.collection.internal.PersistentSet">
+      <initialized>true</initialized>
+      <owner class="com.java.java_zaliczenie.Stand" reference="../.."/>
+      <cachedSize>-1</cachedSize>
+      <role>com.java.java_zaliczenie.Stand.shelfs</role>
+      <key class="int">2</key>
+      <dirty>false</dirty>
+      <storedSnapshot class="map">
+        <entry>
+          <com.java.java__zaliczenie.Shelf>
+            <idShelf>4</idShelf>
+            <stand reference="../../../../.."/>
+            <shelfName>superPolka</shelfName>
+            <books class="org.hibernate.collection.internal.PersistentSet">
+              <initialized>true</initialized>
+              <owner class="com.java.java_zaliczenie.Shelf" reference="../.."/>
+              <cachedSize>-1</cachedSize>
+              <role>com.java.java_zaliczenie.Shelf.books</role>
+              <key class="int">4</key>
+              <dirty>false</dirty>
+              <storedSnapshot class="map">
+                <entry>
+                  <com.java.java__zaliczenie.AdventureBook>
+                    <bookIsbn>1234567890123</bookIsbn>
+                    <shelf reference="../../../../.."/>
+                    <bookAuthor>jakiœtam autor</bookAuthor>
+                    <bookTitle>pupa pupa pupa</bookTitle>
+                    <bookDescription>fjdksafhdjkvba,vbuiahfuirealhfn</bookDescription>
+                    <bookPrice>9.000000000000000000000000000000</bookPrice>
+                    <adventureInformations>informacje jakieœ do przygodówki</adventureInformations>
+                  </com.java.java__zaliczenie.AdventureBook>
+                  <com.java.java__zaliczenie.AdventureBook reference="../com.java.java__zaliczenie.AdventureBook"/>
+                </entry>
+              </storedSnapshot>
+              <specjLazyLoad>false</specjLazyLoad>
+              <set>
+                <com.java.java__zaliczenie.AdventureBook reference="../../storedSnapshot/entry/com.java.java__zaliczenie.AdventureBook"/>
+              </set>
+            </books>
+          </com.java.java__zaliczenie.Shelf>
+          <com.java.java__zaliczenie.Shelf reference="../com.java.java__zaliczenie.Shelf"/>
+        </entry>
+      </storedSnapshot>
+      <specjLazyLoad>false</specjLazyLoad>
+      <set>
+        <com.java.java__zaliczenie.Shelf reference="../../storedSnapshot/entry/com.java.java__zaliczenie.Shelf"/>
+      </set>
+    </shelfs>
+  </com.java.java__zaliczenie.Stand>
+  <com.java.java__zaliczenie.Stand>
+    <idStand>5</idStand>
+    <standName>Nowy regal</standName>
+    <shelfs class="org.hibernate.collection.internal.PersistentSet">
+      <initialized>true</initialized>
+      <owner class="com.java.java_zaliczenie.Stand" reference="../.."/>
+      <cachedSize>-1</cachedSize>
+      <role>com.java.java_zaliczenie.Stand.shelfs</role>
+      <key class="int">5</key>
+      <dirty>false</dirty>
+      <storedSnapshot class="map">
+        <entry>
+          <com.java.java__zaliczenie.Shelf>
+            <idShelf>3</idShelf>
+            <stand reference="../../../../.."/>
+            <shelfName>sasasasas</shelfName>
+            <books class="org.hibernate.collection.internal.PersistentSet">
+              <initialized>true</initialized>
+              <owner class="com.java.java_zaliczenie.Shelf" reference="../.."/>
+              <cachedSize>-1</cachedSize>
+              <role>com.java.java_zaliczenie.Shelf.books</role>
+              <key class="int">3</key>
+              <dirty>false</dirty>
+              <storedSnapshot class="map">
+                <entry>
+                  <com.java.java__zaliczenie.Sfbook>
+                    <bookIsbn>0123456789123</bookIsbn>
+                    <shelf reference="../../../../.."/>
+                    <bookAuthor>2</bookAuthor>
+                    <bookTitle>1</bookTitle>
+                    <bookDescription>3</bookDescription>
+                    <bookPrice>1.000000000000000000000000000000</bookPrice>
+                    <sfMovie>sajensfikszyn</sfMovie>
+                  </com.java.java__zaliczenie.Sfbook>
+                  <com.java.java__zaliczenie.Sfbook reference="../com.java.java__zaliczenie.Sfbook"/>
+                </entry>
+              </storedSnapshot>
+              <specjLazyLoad>false</specjLazyLoad>
+              <set>
+                <com.java.java__zaliczenie.Sfbook reference="../../storedSnapshot/entry/com.java.java__zaliczenie.Sfbook"/>
+              </set>
+            </books>
+          </com.java.java__zaliczenie.Shelf>
+          <com.java.java__zaliczenie.Shelf reference="../com.java.java__zaliczenie.Shelf"/>
+        </entry>
+      </storedSnapshot>
+      <specjLazyLoad>false</specjLazyLoad>
+      <set>
+        <com.java.java__zaliczenie.Shelf reference="../../storedSnapshot/entry/com.java.java__zaliczenie.Shelf"/>
+      </set>
+    </shelfs>
+  </com.java.java__zaliczenie.Stand>
+  <com.java.java__zaliczenie.Stand>
+    <idStand>6</idStand>
+    <standName>testregalw</standName>
+    <shelfs class="org.hibernate.collection.internal.PersistentSet">
+      <initialized>true</initialized>
+      <owner class="com.java.java_zaliczenie.Stand" reference="../.."/>
+      <cachedSize>-1</cachedSize>
+      <role>com.java.java_zaliczenie.Stand.shelfs</role>
+      <key class="int">6</key>
+      <dirty>false</dirty>
+      <storedSnapshot class="map">
+        <entry>
+          <com.java.java__zaliczenie.Shelf>
+            <idShelf>1</idShelf>
+            <stand reference="../../../../.."/>
+            <shelfName>Pó³ka nr 1 na regale 2</shelfName>
+            <books class="org.hibernate.collection.internal.PersistentSet">
+              <initialized>true</initialized>
+              <owner class="com.java.java_zaliczenie.Shelf" reference="../.."/>
+              <cachedSize>-1</cachedSize>
+              <role>com.java.java_zaliczenie.Shelf.books</role>
+              <key class="int">1</key>
+              <dirty>false</dirty>
+              <storedSnapshot class="map">
+                <entry>
+                  <com.java.java__zaliczenie.Sfbook>
+                    <bookIsbn>0000000000000</bookIsbn>
+                    <shelf reference="../../../../.."/>
+                    <bookAuthor>nowy autor</bookAuthor>
+                    <bookTitle>jakis nowy tytul</bookTitle>
+                    <bookDescription>blabla blablu</bookDescription>
+                    <bookPrice>8.880000000000000000000000000000</bookPrice>
+                    <sfMovie>jakistam film</sfMovie>
+                  </com.java.java__zaliczenie.Sfbook>
+                  <com.java.java__zaliczenie.Sfbook reference="../com.java.java__zaliczenie.Sfbook"/>
+                </entry>
+              </storedSnapshot>
+              <specjLazyLoad>false</specjLazyLoad>
+              <set>
+                <com.java.java__zaliczenie.Sfbook reference="../../storedSnapshot/entry/com.java.java__zaliczenie.Sfbook"/>
+              </set>
+            </books>
+          </com.java.java__zaliczenie.Shelf>
+          <com.java.java__zaliczenie.Shelf reference="../com.java.java__zaliczenie.Shelf"/>
+        </entry>
+      </storedSnapshot>
+      <specjLazyLoad>false</specjLazyLoad>
+      <set>
+        <com.java.java__zaliczenie.Shelf reference="../../storedSnapshot/entry/com.java.java__zaliczenie.Shelf"/>
+      </set>
+    </shelfs>
+  </com.java.java__zaliczenie.Stand>
+</list>
